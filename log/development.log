@@ -359,3 +359,52 @@ Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 11:10:41) [GET]
 Rendering template within layouts/card_sets
 Rendering card_sets/index
 Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/card_sets]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCards (20100504142030)
+Migrating to CreateCardSets (20100504161012)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("card_sets")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("cards")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sets")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-04 11:15:05) [GET]
+  Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+
+ActionController::RoutingError (No route matches "/card_set/new.xml" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing CardSetsController#new to xml (for 127.0.0.1 at 2010-05-04 11:15:46) [GET]
+  Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]
+
+
+Processing CardSetsController#new to xml (for 127.0.0.1 at 2010-05-04 11:18:35) [GET]
+  Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]

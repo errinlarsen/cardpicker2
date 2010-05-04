@@ -24,11 +24,15 @@ class CardSetsController < ApplicationController
   # GET /card_sets/new
   # GET /card_sets/new.xml
   def new
-    @card_set = CardSet.new
+    @card_set = CardSet.new(
+      :name => "Sample Set",
+      :set_type => "Sample",
+      :comments => "This is a Card Set sample."
+    )
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @card_set }
+      format.xml  { render :xml => @card_set.to_xml( :except => [:id, :created_at, :updated_at] )}
     end
   end
 
