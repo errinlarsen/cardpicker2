@@ -18,7 +18,7 @@
   <table>
     <tr><th>Game</th><th>Expansion</th><th>Name</th></tr>
   <% for card in @card_set.cards.all( :order => "game, expansion, name" ) %>
-    <tr><td><%=h card.game%></td><td><%=h card.expansion %></td><td><%=h card.name %></td></tr>
+    <tr><td><%=h card.game%></td><td><%=h card.expansion %></td><td><%= link_to card.name, card %></td></tr>
   <% end %>
   </table>
 </p>
