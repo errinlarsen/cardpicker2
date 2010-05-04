@@ -2209,3 +2209,242 @@ Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:29:48) [GET]
 Rendering template within layouts/card_sets
 Rendering card_sets/index
 Completed in 49ms (View: 42, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#new (for 127.0.0.1 at 2010-05-04 15:33:38) [GET]
+Rendering template within layouts/card_sets
+Rendering card_sets/new
+  [4;36;1mCard Load (17.9ms)[0m   [0;1mSELECT * FROM "cards" ORDER BY game, expansion, name[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 28) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 39) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 33) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 41) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 44) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 38) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 51) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 48) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (23.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 49) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 31) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 34) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 47) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 35) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 42) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 30) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.3ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 36) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 43) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 32) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 40) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 45) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 50) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 37) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 52) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 46) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 29) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 54) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 53) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 55) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 56) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 57) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 58) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 59) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 60) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 61) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 62) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 63) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 64) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 65) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 66) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 67) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 68) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 69) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 70) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 71) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 72) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 73) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 74) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 75) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 76) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 77) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.7ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 78) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 79) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 9) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 20) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 19) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 13) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 3) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 21) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 7) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 23) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 6) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 16) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 5) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.6ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 8) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 25) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 2) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 12) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 24) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.7ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 4) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 15) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 14) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 18) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 11) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 26) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 17) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 22) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 10) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 27) AND (("memberships".card_set_id = NULL)) LIMIT 1[0m
+Completed in 324ms (View: 253, DB: 55) | 200 OK [http://localhost/card_sets/new]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:33:49) [GET]
+  [4;35;1mCardSet Load (1.0ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 49ms (View: 33, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 15:38:33) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mCardSet Load (0.3ms)[0m   [0;1mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 7) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+  [4;35;1mCard Load (1.8ms)[0m   [0mSELECT DISTINCT "cards".* FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE (("memberships".card_set_id = 7)) ORDER BY game, expansion, name[0m
+Completed in 109ms (View: 23, DB: 2) | 200 OK [http://localhost/card_sets/7]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:38:46) [GET]
+  [4;36;1mCardSet Load (1.1ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 43ms (View: 30, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#edit (for 127.0.0.1 at 2010-05-04 15:38:48) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mCardSet Load (0.3ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 7) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/edit
+  [4;36;1mCard Load (14.5ms)[0m   [0;1mSELECT * FROM "cards" ORDER BY game, expansion, name[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 28) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 39) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 33) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 41) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 44) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 38) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 51) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 48) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 49) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 31) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 34) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 47) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.3ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 35) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 42) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 30) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 36) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (9.9ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 43) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.3ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 32) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 40) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 45) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.3ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 50) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 37) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 52) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 46) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.3ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 29) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 54) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 53) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 55) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 56) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (4.6ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 57) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 58) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 59) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 60) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 61) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 62) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 63) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 64) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 65) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 66) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 67) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 68) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 69) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 70) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 71) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 72) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 73) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 74) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 75) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 76) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 77) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 78) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 79) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 9) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 20) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 19) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 13) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 3) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 21) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 7) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 23) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 6) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 16) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 5) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 8) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 25) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 2) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 12) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 24) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 4) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 15) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 14) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 18) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 11) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 26) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 17) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 22) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 10) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE ("cards"."id" = 27) AND (("memberships".card_set_id = 7)) LIMIT 1[0m
+Completed in 259ms (View: 205, DB: 42) | 200 OK [http://localhost/card_sets/7/edit]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 15:39:11) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mCardSet Load (0.2ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 7) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+  [4;36;1mCard Load (1.6ms)[0m   [0;1mSELECT DISTINCT "cards".* FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE (("memberships".card_set_id = 7)) ORDER BY game, expansion, name[0m
+Completed in 29ms (View: 14, DB: 2) | 200 OK [http://localhost/card_sets/7]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:39:13) [GET]
+  [4;35;1mCardSet Load (1.0ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 99ms (View: 91, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:40:16) [GET]
+  [4;36;1mCardSet Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: game: SELECT * FROM "card_sets" ORDER BY game, expansion, name[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: game: SELECT * FROM "card_sets"  ORDER BY game, expansion, name):
+  app/controllers/card_sets_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:40:35) [GET]
+  [4;35;1mCardSet Load (1.2ms)[0m   [0mSELECT * FROM "card_sets" ORDER BY name[0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 32ms (View: 24, DB: 1) | 200 OK [http://localhost/card_sets]

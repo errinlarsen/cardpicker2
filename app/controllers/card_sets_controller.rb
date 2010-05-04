@@ -2,7 +2,7 @@ class CardSetsController < ApplicationController
   # GET /card_sets
   # GET /card_sets.xml
   def index
-    @card_sets = CardSet.all
+    @card_sets = CardSet.all( :order => "name" )
 
     respond_to do |format|
       format.html # index.html.erb
