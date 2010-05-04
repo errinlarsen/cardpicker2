@@ -433,3 +433,13 @@ Migrating to CreateMemberships (20100504163927)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("lists")[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("memberships")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("sets")[0m
+
+
+Processing CardSetsController#new to xml (for 127.0.0.1 at 2010-05-04 12:03:32) [GET]
+  Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+Completed in 42ms (View: 0, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]
+
+
+Processing CardSetsController#new to xml (for 127.0.0.1 at 2010-05-04 12:04:04) [GET]
+  Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+Completed in 21ms (View: 0, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]

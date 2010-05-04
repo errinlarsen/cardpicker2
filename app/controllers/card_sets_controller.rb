@@ -30,9 +30,27 @@ class CardSetsController < ApplicationController
       :comments => "This is a Card Set sample."
     )
 
+    @card_set.cards.build(
+      :game => "Sample: the Game",
+      :expansion => "Base",
+      :name => "First Sample",
+      :card_type => "Sample",
+      :cost => "1",
+      :card_text => "This is sample card #1"
+    )
+
+    @card_set.cards.build(
+      :game => "Sample: the Game",
+      :expansion => "Base",
+      :name => "Second Sample",
+      :card_type => "Sample",
+      :cost => "1",
+      :card_text => "This is sample card #2"
+    )
+
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @card_set.to_xml( :except => [:id, :created_at, :updated_at] )}
+      format.xml  { render :xml => @card_set.to_xml( :include => :cards, :except => [:id, :created_at, :updated_at] )}
     end
   end
 
