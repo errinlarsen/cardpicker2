@@ -24,29 +24,35 @@ class CardSetsController < ApplicationController
   # GET /card_sets/new
   # GET /card_sets/new.xml
   def new
-    @card_set = CardSet.new(
-      :name => "Sample Set",
-      :set_type => "Sample",
-      :comments => "This is a Card Set sample."
-    )
+    unless request.format.xml?
+      @card_set = CardSet.new
 
-    @card_set.cards.build(
-      :game => "Sample: the Game",
-      :expansion => "Base",
-      :name => "First Sample",
-      :card_type => "Sample",
-      :cost => "1",
-      :card_text => "This is sample card #1"
-    )
+    # Give XML requests sample data for reference
+    else
+      @card_set = CardSet.new(
+        :name => "Sample Set",
+        :set_type => "Sample",
+        :comments => "This is a Card Set sample."
+      )
 
-    @card_set.cards.build(
-      :game => "Sample: the Game",
-      :expansion => "Base",
-      :name => "Second Sample",
-      :card_type => "Sample",
-      :cost => "1",
-      :card_text => "This is sample card #2"
-    )
+      @card_set.cards.build(
+        :game => "Sample: the Game",
+        :expansion => "Base",
+        :name => "First Sample",
+        :card_type => "Sample",
+        :cost => "1",
+        :card_text => "This is sample card #1"
+      )
+
+      @card_set.cards.build(
+        :game => "Sample: the Game",
+        :expansion => "Base",
+        :name => "Second Sample",
+        :card_type => "Sample",
+        :cost => "1",
+        :card_text => "This is sample card #2"
+      )
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -79,6 +85,7 @@ class CardSetsController < ApplicationController
   # PUT /card_sets/1
   # PUT /card_sets/1.xml
   def update
+    params[:card_set][:card_ids] ||= []
     @card_set = CardSet.find(params[:id])
 
     respond_to do |format|
