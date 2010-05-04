@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @card_set.name %>
+</p>
+
+<p>
+  <b>Set type:</b>
+  <%=h @card_set.set_type %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%=h @card_set.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_set_path(@card_set) %> |
+<%= link_to 'Back', card_sets_path %>

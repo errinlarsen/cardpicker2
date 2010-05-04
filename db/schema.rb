@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100504142030) do
+ActiveRecord::Schema.define(:version => 20100504161012) do
+
+  create_table "card_sets", :force => true do |t|
+    t.string   "name"
+    t.string   "set_type"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cards", :force => true do |t|
     t.string   "game"
@@ -18,6 +26,22 @@ ActiveRecord::Schema.define(:version => 20100504142030) do
     t.string   "card_type"
     t.string   "cost"
     t.text     "card_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lists", :force => true do |t|
+    t.string   "name"
+    t.string   "list_type"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sets", :force => true do |t|
+    t.string   "name"
+    t.string   "set_type"
+    t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -92,3 +92,270 @@ Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/cards/new.xml]
 
 Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:48:05) [GET]
 Completed in 9ms (View: 0, DB: 0) | 200 OK [http://localhost/cards/new.xml]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCards (20100504142030)
+Migrating to CreateSets (20100504155401)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "sets" already exists: CREATE TABLE "sets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "set_type" varchar(255), "comments" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCards (20100504142030)
+Migrating to CreateSets (20100504155401)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "sets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "set_type" varchar(255), "comments" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100504155401')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("cards")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sets")[0m
+
+
+Processing SetsController#index (for 127.0.0.1 at 2010-05-04 10:57:16) [GET]
+
+NoMethodError (undefined method `all' for Set:Class):
+  app/controllers/sets_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SetsController#index (for 127.0.0.1 at 2010-05-04 10:57:17) [GET]
+
+NoMethodError (undefined method `all' for Set:Class):
+  app/controllers/sets_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SetsController#new (for 127.0.0.1 at 2010-05-04 10:57:23) [GET]
+Rendering template within layouts/sets
+Rendering sets/new
+
+ActionView::TemplateError (undefined method `errors' for #<Set: {}>) on line #4 of app/views/sets/new.html.erb:
+1: <h1>New set</h1>
+2: 
+3: <% form_for(@set) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+7:     <%= f.label :name %><br />
+
+    app/views/sets/new.html.erb:4
+    app/views/sets/new.html.erb:3
+    app/controllers/sets_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SetsController#edit (for 127.0.0.1 at 2010-05-04 10:58:01) [GET]
+  Parameters: {"id"=>"1"}
+
+NoMethodError (undefined method `find' for Set:Class):
+  app/controllers/sets_controller.rb:37:in `edit'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (85.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 10:58:16) [GET]
+  [4;36;1mCard Load (1.1ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 26ms (View: 19, DB: 1) | 200 OK [http://localhost/cards]
+
+
+Processing CardsController#new (for 127.0.0.1 at 2010-05-04 10:58:19) [GET]
+Rendering template within layouts/cards
+Rendering cards/new
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/cards/new]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 10:58:23) [GET]
+  [4;35;1mCard Load (0.5ms)[0m   [0mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/cards]
+
+
+Processing CardsController#edit (for 127.0.0.1 at 2010-05-04 10:58:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCard Load (0.3ms)[0m   [0;1mSELECT * FROM "cards" WHERE ("cards"."id" = 1) [0m
+Rendering template within layouts/cards
+Rendering cards/edit
+Completed in 69ms (View: 62, DB: 0) | 200 OK [http://localhost/cards/1/edit]
+
+
+Processing CardsController#update (for 127.0.0.1 at 2010-05-04 10:58:29) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"QFT0wAmogx2mQhBaiSrEK2MXzaQOh1q7M+ncX3ycYFM=", "id"=>"1", "card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+  [4;35;1mCard Load (0.3ms)[0m   [0mSELECT * FROM "cards" WHERE ("cards"."id" = 1) [0m
+Redirected to http://localhost:3000/cards/1
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/cards/1]
+
+
+Processing CardsController#show (for 127.0.0.1 at 2010-05-04 10:58:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCard Load (0.4ms)[0m   [0;1mSELECT * FROM "cards" WHERE ("cards"."id" = 1) [0m
+Rendering template within layouts/cards
+Rendering cards/show
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/cards/1]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 10:58:34) [GET]
+  [4;35;1mCard Load (0.6ms)[0m   [0mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/cards]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCards (20100504142030)
+Migrating to CreateSets (20100504155401)
+Migrating to CreateLists (20100504155932)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "list_type" varchar(255), "comments" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100504155932')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("cards")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("lists")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("sets")[0m
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 11:00:11) [GET]
+  [4;36;1mCard Load (0.7ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 36ms (View: 31, DB: 1) | 200 OK [http://localhost/cards]
+
+
+Processing ListsController#index (for 127.0.0.1 at 2010-05-04 11:00:19) [GET]
+  [4;35;1mList Load (0.4ms)[0m   [0mSELECT * FROM "lists" [0m
+Rendering template within layouts/lists
+Rendering lists/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/LISTS]
+
+
+Processing SetsController#index (for 127.0.0.1 at 2010-05-04 11:00:26) [GET]
+
+NoMethodError (undefined method `all' for Set:Class):
+  app/controllers/sets_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCards (20100504142030)
+Migrating to CreateCardSets (20100504161012)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "card_sets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "set_type" varchar(255), "comments" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100504161012')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("card_sets")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("cards")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("lists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sets")[0m
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 11:10:34) [GET]
+  [4;36;1mCard Load (0.7ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 33ms (View: 27, DB: 1) | 200 OK [http://localhost/cards]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 11:10:41) [GET]
+  [4;35;1mCardSet Load (0.4ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/card_sets]

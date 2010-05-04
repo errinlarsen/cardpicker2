@@ -1,0 +1,24 @@
+<h1>Listing card_sets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Set type</th>
+    <th>Comments</th>
+  </tr>
+
+<% @card_sets.each do |card_set| %>
+  <tr>
+    <td><%=h card_set.name %></td>
+    <td><%=h card_set.set_type %></td>
+    <td><%=h card_set.comments %></td>
+    <td><%= link_to 'Show', card_set %></td>
+    <td><%= link_to 'Edit', edit_card_set_path(card_set) %></td>
+    <td><%= link_to 'Destroy', card_set, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New card_set', new_card_set_path %>
