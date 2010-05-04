@@ -24,14 +24,20 @@ class CardsController < ApplicationController
   # GET /cards/new
   # GET /cards/new.xml
   def new
-    @card = Card.new(
-      :game => "Sample: the Game",
-      :expansion => "Base",
-      :name => "Sample Name",
-      :card_type => "Sample",
-      :cost => "1",
-      :card_text => "This is a sample card"
-    )
+    unless request.format.xml?
+      @card = Card.new
+
+    # Give XML requests sample data for reference
+    else
+      @card = Card.new(
+        :game => "Sample: the Game",
+        :expansion => "Base",
+        :name => "Sample Name",
+        :card_type => "Sample",
+        :cost => "1",
+        :card_text => "This is a sample card"
+      )
+    end
 
     respond_to do |format|
       format.html # new.html.erb
