@@ -40,3 +40,55 @@ Migrating to CreateCards (20100504142030)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("cards")[0m
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 09:29:44) [GET]
+  [4;36;1mCard Load (0.4ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 33ms (View: 28, DB: 0) | 200 OK [http://localhost/cards]
+
+
+Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:34:34) [GET]
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/cards/new.xml]
+
+
+Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:37:35) [GET]
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/cards/new.xml]
+
+
+Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:40:57) [GET]
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/cards/new.xml]
+
+
+Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:45:52) [GET]
+Completed in 8ms (View: 0, DB: 0) | 200 OK [http://localhost/cards/new.xml]
+
+
+Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:46:52) [GET]
+
+ActiveRecord::UnknownAttributeError (unknown attribute: text):
+  app/controllers/cards_controller.rb:27:in `new'
+  app/controllers/cards_controller.rb:27:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:47:19) [GET]
+Completed in 10ms (View: 1, DB: 0) | 200 OK [http://localhost/cards/new.xml]
+
+
+Processing CardsController#new to xml (for 127.0.0.1 at 2010-05-04 09:48:05) [GET]
+Completed in 9ms (View: 0, DB: 0) | 200 OK [http://localhost/cards/new.xml]

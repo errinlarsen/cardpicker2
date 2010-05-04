@@ -24,11 +24,18 @@ class CardsController < ApplicationController
   # GET /cards/new
   # GET /cards/new.xml
   def new
-    @card = Card.new
+    @card = Card.new(
+      :game => "Sample: the Game",
+      :expansion => "Base",
+      :name => "Sample Name",
+      :card_type => "Sample",
+      :cost => "1",
+      :card_text => "This is a sample card"
+    )
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @card }
+      format.xml  { render :xml => @card.to_xml( :except => [:id, :created_at, :updated_at] )}
     end
   end
 
