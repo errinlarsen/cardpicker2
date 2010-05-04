@@ -2448,3 +2448,32 @@ Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:40:35) [GET]
 Rendering template within layouts/card_sets
 Rendering card_sets/index
 Completed in 32ms (View: 24, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 15:42:01) [GET]
+  [4;36;1mCard Load (9.3ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 327ms (View: 240, DB: 9) | 200 OK [http://localhost/cards]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 15:42:56) [GET]
+  [4;35;1mCard Load (23.6ms)[0m   [0mSELECT * FROM "cards" ORDER BY game, expansion, name[0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 293ms (View: 257, DB: 24) | 200 OK [http://localhost/cards]
+
+
+Processing CardsController#show (for 127.0.0.1 at 2010-05-04 15:43:10) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mCard Load (0.3ms)[0m   [0;1mSELECT * FROM "cards" WHERE ("cards"."id" = 5) [0m
+Rendering template within layouts/cards
+Rendering cards/show
+Completed in 26ms (View: 8, DB: 0) | 200 OK [http://localhost/cards/5]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 15:43:12) [GET]
+  [4;35;1mCard Load (18.2ms)[0m   [0mSELECT * FROM "cards" ORDER BY game, expansion, name[0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 480ms (View: 452, DB: 18) | 200 OK [http://localhost/cards]
