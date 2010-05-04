@@ -1,6 +1,10 @@
 class CardSet < ActiveRecord::Base
   has_many :memberships
-  has_many :cards, :through => :memberships
+
+  # the :uniq parameter below was added to deal with the
+  # duplication bug detailed further below.  It does not fix
+  # the problem, it only hides it from the results from us.
+  has_many :cards, :through => :memberships, :uniq => true
 
   # The following code is BROKEN in rails 2.3.5.  The accepts_nested_attributes_for
   # method call creates duplicate entries in Membership for every nested model

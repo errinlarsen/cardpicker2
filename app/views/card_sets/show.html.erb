@@ -13,6 +13,15 @@
   <%=h @card_set.comments %>
 </p>
 
+<p>
+  <b>Cards:</b>
+  <table>
+    <tr><th>Game</th><th>Expansion</th><th>Name</th></tr>
+  <% @card_set.cards.each do |c| %>
+    <tr><td><%=h c.game%></td><td><%=h c.expansion %></td><td><%=h c.name %></td></tr>
+  <% end %>
+  </table>
+</p>
 
 <%= link_to 'Edit', edit_card_set_path(@card_set) %> |
 <%= link_to 'Back', card_sets_path %>

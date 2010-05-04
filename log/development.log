@@ -1636,3 +1636,83 @@ Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 14:39:47) [GET]
 Rendering template within layouts/card_sets
 Rendering card_sets/index
 Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 15:00:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mCardSet Load (0.3ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 3) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+  [4;36;1mCard Load (5.7ms)[0m   [0;1mSELECT "cards".* FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE (("memberships".card_set_id = 3)) [0m
+Completed in 36ms (View: 22, DB: 6) | 200 OK [http://localhost/card_sets/3]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:01:05) [GET]
+  [4;35;1mCardSet Load (1.0ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 29ms (View: 22, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 15:01:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mCardSet Load (0.3ms)[0m   [0;1mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 4) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+  [4;35;1mCard Load (0.6ms)[0m   [0mSELECT "cards".* FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE (("memberships".card_set_id = 4)) [0m
+Completed in 42ms (View: 21, DB: 1) | 200 OK [http://localhost/card_sets/4]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:01:14) [GET]
+  [4;36;1mCardSet Load (1.0ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 35ms (View: 27, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 15:02:56) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mCardSet Load (0.3ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 4) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+  [4;36;1mCard Load (0.5ms)[0m   [0;1mSELECT DISTINCT "cards".* FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE (("memberships".card_set_id = 4)) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/card_sets/4]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:02:59) [GET]
+  [4;35;1mCardSet Load (1.0ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 141ms (View: 33, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 15:04:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCardSet Load (0.3ms)[0m   [0;1mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 2) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+  [4;35;1mCard Load (0.5ms)[0m   [0mSELECT DISTINCT "cards".* FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE (("memberships".card_set_id = 2)) [0m
+Completed in 41ms (View: 23, DB: 1) | 200 OK [http://localhost/card_sets/2]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:04:03) [GET]
+  [4;36;1mCardSet Load (1.0ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 29ms (View: 22, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 15:04:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCardSet Load (0.3ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 1) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+  [4;36;1mCard Load (3.5ms)[0m   [0;1mSELECT DISTINCT "cards".* FROM "cards" INNER JOIN "memberships" ON "cards".id = "memberships".card_id WHERE (("memberships".card_set_id = 1)) [0m
+Completed in 139ms (View: 118, DB: 4) | 200 OK [http://localhost/card_sets/1]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 15:04:07) [GET]
+  [4;35;1mCardSet Load (1.0ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 47ms (View: 30, DB: 1) | 200 OK [http://localhost/card_sets]
