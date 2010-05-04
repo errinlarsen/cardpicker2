@@ -443,3 +443,754 @@ Completed in 42ms (View: 0, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]
 Processing CardSetsController#new to xml (for 127.0.0.1 at 2010-05-04 12:04:04) [GET]
   Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
 Completed in 21ms (View: 0, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]
+
+
+Processing CardSetsController#create to xml (for 127.0.0.1 at 2010-05-04 12:19:33) [POST]
+  Parameters: {"card_set"=>{"name"=>"Dominion: Seaside", "comments"=>"The second Dominion expansion.  Seaside was release in 2009.", "cards"=>[{"name"=>"Native Village", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.            You may look at the cards on your mat at any time; return them to your deck at the end of the game."}, {"name"=>"Embargo", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Trash this card.  Put an Embargo token on top of a Supply pile.            ---            When a player buys a card, he gains a Curse card per Embargo token on that pile."}, {"name"=>"Pearl Diver", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            Look at the bottom of your deck.  You may put it on top."}, {"name"=>"Lighthouse", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Action            Now and at the start of your next turn: +1            ---            While this is in play, when another player plays an Attack card, it doesn't affect you."}, {"name"=>"Haven", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Cards            +1 Action            Set aside a card from your hand face down.  At the start of your next turn, put it into your hand."}, {"name"=>"Fishing Village", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+2 Actions            +1 Coin            At the start of your next turn:            +1 Action            +1 Coin"}, {"name"=>"Lookout", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Action            Look at the top 3 cards of your deck.  Trash one of them.  Discard one of them.  Put the other one on top of your deck."}, {"name"=>"Ambassador", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Reveal a card from your hand.  Return up to 2 copies of it from your hand to the supply.  Then each other player gains a copy of it."}, {"game"=>"Dominion", "name"=>"Warehouse", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+3 Cards            +1 Action            Discard 3 cards."}, {"name"=>"Smugglers", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Gain a copy of a card costing up to 6 Coin that the player to your right gained on his last turn."}, {"name"=>"Navigator", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+2 Coin            Look at the top 5 cards of your deck.  Either discard all of them, or put them back on top of your deck in any order."}, {"game"=>"Dominion", "name"=>"Cutpurse", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"+2 Coin            Each other player discards a Copper card (or reveals a hand with no Copper)."}, {"name"=>"Salvager", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Buy            Trash a card from your hand.            + Coin equal to its cost."}, {"name"=>"Pirate Ship", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you've taken with Pirate Ships this game."}, {"name"=>"Island", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Victory", "expansion"=>"Seaside", "card_text"=>"Set aside this and another card from your hand.  Return them to your deck at the end of the game.            ---            2 VP"}, {"name"=>"Treasure Map", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Trash this and another copy of Treasure Map from your hand.  If you do trash two Treasure Maps, gain 4 Gold cards, putting them on top of your deck."}, {"name"=>"Sea Hag", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Each other player discards the top card of his deck, then gains a Curse card, putting it on top of his deck."}, {"name"=>"Caravan", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            At the start of your next turn, +1 Card."}, {"name"=>"Bazaar", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +2 Actions            +1 Coin"}, {"name"=>"Explorer", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"You may reveal a Province card from your hand.  If you do, gain a Gold card, putting it into your hand.  Otherwise, gain a Silver card, putting it into your hand."}, {"name"=>"Treasury", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            +1 Coin            ---            When you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck."}, {"name"=>"Ghost Ship", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"+2 Cards            Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand."}, {"name"=>"Outpost", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"You only draw 3 cards (instead of 5) in this turn's Clean-up phase.  Take an extra turn after this one.  This can't cause you to take more than two consecutive turns."}, {"name"=>"Merchant Ship", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"Now and at the start of your next turn:            +2 Cards            +1 Buy"}, {"name"=>"Tactician", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"Discard your hand.  If you discarded any cards this way, then at the start of your next turn, +5 Cards, +1 Buy, and +1 Action."}], "set_type"=>"Expansion"}}
+
+ActiveRecord::AssociationTypeMismatch (Card(#69854436510540) expected, got HashWithIndifferentAccess(#69854468309680)):
+  app/controllers/card_sets_controller.rb:65:in `new'
+  app/controllers/card_sets_controller.rb:65:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (3.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 12:19:55) [GET]
+  [4;36;1mCard Load (0.7ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/cards]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 12:20:09) [GET]
+  [4;35;1mCardSet Load (0.4ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 80ms (View: 10, DB: 0) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#create to xml (for 127.0.0.1 at 2010-05-04 12:26:05) [POST]
+  Parameters: {"card_set"=>{"name"=>"Dominion: Seaside", "comments"=>"The second Dominion expansion.  Seaside was release in 2009.", "cards"=>[{"name"=>"Native Village", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.            You may look at the cards on your mat at any time; return them to your deck at the end of the game."}, {"name"=>"Embargo", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Trash this card.  Put an Embargo token on top of a Supply pile.            ---            When a player buys a card, he gains a Curse card per Embargo token on that pile."}, {"name"=>"Pearl Diver", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            Look at the bottom of your deck.  You may put it on top."}, {"name"=>"Lighthouse", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Action            Now and at the start of your next turn: +1            ---            While this is in play, when another player plays an Attack card, it doesn't affect you."}, {"name"=>"Haven", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Cards            +1 Action            Set aside a card from your hand face down.  At the start of your next turn, put it into your hand."}, {"name"=>"Fishing Village", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+2 Actions            +1 Coin            At the start of your next turn:            +1 Action            +1 Coin"}, {"name"=>"Lookout", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Action            Look at the top 3 cards of your deck.  Trash one of them.  Discard one of them.  Put the other one on top of your deck."}, {"name"=>"Ambassador", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Reveal a card from your hand.  Return up to 2 copies of it from your hand to the supply.  Then each other player gains a copy of it."}, {"game"=>"Dominion", "name"=>"Warehouse", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+3 Cards            +1 Action            Discard 3 cards."}, {"name"=>"Smugglers", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Gain a copy of a card costing up to 6 Coin that the player to your right gained on his last turn."}, {"name"=>"Navigator", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+2 Coin            Look at the top 5 cards of your deck.  Either discard all of them, or put them back on top of your deck in any order."}, {"game"=>"Dominion", "name"=>"Cutpurse", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"+2 Coin            Each other player discards a Copper card (or reveals a hand with no Copper)."}, {"name"=>"Salvager", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Buy            Trash a card from your hand.            + Coin equal to its cost."}, {"name"=>"Pirate Ship", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you've taken with Pirate Ships this game."}, {"name"=>"Island", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Victory", "expansion"=>"Seaside", "card_text"=>"Set aside this and another card from your hand.  Return them to your deck at the end of the game.            ---            2 VP"}, {"name"=>"Treasure Map", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Trash this and another copy of Treasure Map from your hand.  If you do trash two Treasure Maps, gain 4 Gold cards, putting them on top of your deck."}, {"name"=>"Sea Hag", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Each other player discards the top card of his deck, then gains a Curse card, putting it on top of his deck."}, {"name"=>"Caravan", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            At the start of your next turn, +1 Card."}, {"name"=>"Bazaar", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +2 Actions            +1 Coin"}, {"name"=>"Explorer", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"You may reveal a Province card from your hand.  If you do, gain a Gold card, putting it into your hand.  Otherwise, gain a Silver card, putting it into your hand."}, {"name"=>"Treasury", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            +1 Coin            ---            When you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck."}, {"name"=>"Ghost Ship", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"+2 Cards            Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand."}, {"name"=>"Outpost", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"You only draw 3 cards (instead of 5) in this turn's Clean-up phase.  Take an extra turn after this one.  This can't cause you to take more than two consecutive turns."}, {"name"=>"Merchant Ship", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"Now and at the start of your next turn:            +2 Cards            +1 Buy"}, {"name"=>"Tactician", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"Discard your hand.  If you discarded any cards this way, then at the start of your next turn, +5 Cards, +1 Buy, and +1 Action."}], "set_type"=>"Expansion"}}
+
+ActiveRecord::AssociationTypeMismatch (Card(#69854436707100) expected, got HashWithIndifferentAccess(#69854468309680)):
+  app/controllers/card_sets_controller.rb:65:in `new'
+  app/controllers/card_sets_controller.rb:65:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.9ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+Error occurred while parsing request parameters.
+Contents:
+
+<?xml version="1.0" encoding="UTF-8"?><card-set>    <comments>The second Dominion expansion.  Seaside was release in 2009.</comments>    <name>Dominion: Seaside</name>    <set-type>Expansion</set-type>    <cards_attributes type="array">        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Native Village</name>            <card-type>Action</card-type>            <cost>2</cost>            <card-text>Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.            You may look at the cards on your mat at any time; return them to your deck at the end of the game.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Embargo</name>            <card-type>Action</card-type>            <cost>2</cost>            <card-text>Trash this card.  Put an Embargo token on top of a Supply pile.            ---            When a player buys a card, he gains a Curse card per Embargo token on that pile.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Pearl Diver</name>            <card-type>Action</card-type>            <cost>2</cost>            <card-text>+1 Card            +1 Action            Look at the bottom of your deck.  You may put it on top.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Lighthouse</name>            <card-type>Action - Duration</card-type>            <cost>2</cost>            <card-text>+1 Action            Now and at the start of your next turn: +1            ---            While this is in play, when another player plays an Attack card, it doesn't affect you.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Haven</name>            <card-type>Action - Duration</card-type>            <cost>2</cost>            <card-text>+1 Cards            +1 Action            Set aside a card from your hand face down.  At the start of your next turn, put it into your hand.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Fishing Village</name>            <card-type>Action - Duration</card-type>            <cost>3</cost>            <card-text>+2 Actions            +1 Coin            At the start of your next turn:            +1 Action            +1 Coin</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Lookout</name>            <card-type>Action</card-type>            <cost>3</cost>            <card-text>+1 Action            Look at the top 3 cards of your deck.  Trash one of them.  Discard one of them.  Put the other one on top of your deck.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Ambassador</name>            <card-type>Action - Attack</card-type>            <cost>3</cost>            <card-text>Reveal a card from your hand.  Return up to 2 copies of it from your hand to the supply.  Then each other player gains a copy of it.</card-text>        </card>        <card>            <expansion>Seaside</expansion>            <name>Warehouse</name>            <game>Dominion</game>            <card-type>Action</card-type>            <cost>3</cost>            <card-text>+3 Cards            +1 Action            Discard 3 cards.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Smugglers</name>            <card-type>Action</card-type>            <cost>3</cost>            <card-text>Gain a copy of a card costing up to 6 Coin that the player to your right gained on his last turn.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Navigator</name>            <card-type>Action</card-type>            <cost>4</cost>            <card-text>+2 Coin            Look at the top 5 cards of your deck.  Either discard all of them, or put them back on top of your deck in any order.</card-text>        </card>        <card>            <expansion>Seaside</expansion>            <name>Cutpurse</name>            <card-type>Action - Attack</card-type>            <game>Dominion</game>            <cost>4</cost>            <card-text>+2 Coin            Each other player discards a Copper card (or reveals a hand with no Copper).</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Salvager</name>            <card-type>Action</card-type>            <cost>4</cost>            <card-text>+1 Buy            Trash a card from your hand.            + Coin equal to its cost.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Pirate Ship</name>            <card-type>Action - Attack</card-type>            <cost>4</cost>            <card-text>Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you've taken with Pirate Ships this game.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Island</name>            <card-type>Action - Victory</card-type>            <cost>4</cost>            <card-text>Set aside this and another card from your hand.  Return them to your deck at the end of the game.            ---            2 VP</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Treasure Map</name>            <card-type>Action</card-type>            <cost>4</cost>            <card-text>Trash this and another copy of Treasure Map from your hand.  If you do trash two Treasure Maps, gain 4 Gold cards, putting them on top of your deck.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Sea Hag</name>            <card-type>Action - Attack</card-type>            <cost>4</cost>            <card-text>Each other player discards the top card of his deck, then gains a Curse card, putting it on top of his deck.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Caravan</name>            <card-type>Action - Duration</card-type>            <cost>4</cost>            <card-text>+1 Card            +1 Action            At the start of your next turn, +1 Card.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Bazaar</name>            <card-type>Action</card-type>            <cost>5</cost>            <card-text>+1 Card            +2 Actions            +1 Coin</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Explorer</name>            <card-type>Action</card-type>            <cost>5</cost>            <card-text>You may reveal a Province card from your hand.  If you do, gain a Gold card, putting it into your hand.  Otherwise, gain a Silver card, putting it into your hand.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Treasury</name>            <card-type>Action</card-type>            <cost>5</cost>            <card-text>+1 Card            +1 Action            +1 Coin            ---            When you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Ghost Ship</name>            <card-type>Action - Attack</card-type>            <cost>5</cost>            <card-text>+2 Cards            Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Outpost</name>            <card-type>Action - Duration</card-type>            <cost>5</cost>            <card-text>You only draw 3 cards (instead of 5) in this turn's Clean-up phase.  Take an extra turn after this one.  This can't cause you to take more than two consecutive turns.</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Merchant Ship</name>            <card-type>Action - Duration</card-type>            <cost>5</cost>            <card-text>Now and at the start of your next turn:            +2 Cards            +1 Buy</card-text>        </card>        <card>            <game>Dominion</game>            <expansion>Seaside</expansion>            <name>Tactician</name>            <card-type>Action - Duration</card-type>            <cost>5</cost>            <card-text>Discard your hand.  If you discarded any cards this way, then at the start of your next turn, +5 Cards, +1 Buy, and +1 Action.</card-text>        </card>    </cards></card-set>
+/!\ FAILSAFE /!\  Tue May 04 12:29:34 -0500 2010
+  Status: 500 Internal Server Error
+  #<REXML::ParseException: Missing end tag for 'cards_attributes' (got "cards")
+Line: 
+Position: 
+Last 80 unconsumed characters:
+</card-set>>
+/usr/lib/ruby/1.8/rexml/parsers/baseparser.rb:330:in `pull'
+/usr/lib/ruby/1.8/rexml/parsers/treeparser.rb:22:in `parse'
+/usr/lib/ruby/1.8/rexml/document.rb:228:in `build'
+/usr/lib/ruby/1.8/rexml/document.rb:43:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini/rexml.rb:17:in `new'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini/rexml.rb:17:in `parse'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini.rb:12:in `__send__'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini.rb:12:in `parse'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/hash/conversions.rb:164:in `from_xml'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:34:in `parse_formatted_parameters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+...
+Missing end tag for 'cards_attributes' (got "cards")
+Line: 
+Position: 
+Last 80 unconsumed characters:
+</card-set>
+Line: 
+Position: 
+Last 80 unconsumed characters:
+</card-set>
+    /usr/lib/ruby/1.8/rexml/parsers/treeparser.rb:92:in `parse'
+    /usr/lib/ruby/1.8/rexml/document.rb:228:in `build'
+    /usr/lib/ruby/1.8/rexml/document.rb:43:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini/rexml.rb:17:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini/rexml.rb:17:in `parse'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini.rb:12:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/xml_mini.rb:12:in `parse'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/hash/conversions.rb:164:in `from_xml'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:34:in `parse_formatted_parameters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing CardSetsController#create to xml (for 127.0.0.1 at 2010-05-04 12:30:47) [POST]
+  Parameters: {"card_set"=>{"name"=>"Dominion: Seaside", "cards_attributes"=>[{"name"=>"Native Village", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand.            You may look at the cards on your mat at any time; return them to your deck at the end of the game."}, {"name"=>"Embargo", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Trash this card.  Put an Embargo token on top of a Supply pile.            ---            When a player buys a card, he gains a Curse card per Embargo token on that pile."}, {"name"=>"Pearl Diver", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            Look at the bottom of your deck.  You may put it on top."}, {"name"=>"Lighthouse", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Action            Now and at the start of your next turn: +1            ---            While this is in play, when another player plays an Attack card, it doesn't affect you."}, {"name"=>"Haven", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Cards            +1 Action            Set aside a card from your hand face down.  At the start of your next turn, put it into your hand."}, {"name"=>"Fishing Village", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+2 Actions            +1 Coin            At the start of your next turn:            +1 Action            +1 Coin"}, {"name"=>"Lookout", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Action            Look at the top 3 cards of your deck.  Trash one of them.  Discard one of them.  Put the other one on top of your deck."}, {"name"=>"Ambassador", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Reveal a card from your hand.  Return up to 2 copies of it from your hand to the supply.  Then each other player gains a copy of it."}, {"game"=>"Dominion", "name"=>"Warehouse", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+3 Cards            +1 Action            Discard 3 cards."}, {"name"=>"Smugglers", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Gain a copy of a card costing up to 6 Coin that the player to your right gained on his last turn."}, {"name"=>"Navigator", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+2 Coin            Look at the top 5 cards of your deck.  Either discard all of them, or put them back on top of your deck in any order."}, {"game"=>"Dominion", "name"=>"Cutpurse", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"+2 Coin            Each other player discards a Copper card (or reveals a hand with no Copper)."}, {"name"=>"Salvager", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Buy            Trash a card from your hand.            + Coin equal to its cost."}, {"name"=>"Pirate Ship", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you've taken with Pirate Ships this game."}, {"name"=>"Island", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Victory", "expansion"=>"Seaside", "card_text"=>"Set aside this and another card from your hand.  Return them to your deck at the end of the game.            ---            2 VP"}, {"name"=>"Treasure Map", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"Trash this and another copy of Treasure Map from your hand.  If you do trash two Treasure Maps, gain 4 Gold cards, putting them on top of your deck."}, {"name"=>"Sea Hag", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"Each other player discards the top card of his deck, then gains a Curse card, putting it on top of his deck."}, {"name"=>"Caravan", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            At the start of your next turn, +1 Card."}, {"name"=>"Bazaar", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +2 Actions            +1 Coin"}, {"name"=>"Explorer", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"You may reveal a Province card from your hand.  If you do, gain a Gold card, putting it into your hand.  Otherwise, gain a Silver card, putting it into your hand."}, {"name"=>"Treasury", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Seaside", "card_text"=>"+1 Card            +1 Action            +1 Coin            ---            When you discard this from play, if you didn't buy a Victory card this turn, you may put this on top of your deck."}, {"name"=>"Ghost Ship", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Attack", "expansion"=>"Seaside", "card_text"=>"+2 Cards            Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand."}, {"name"=>"Outpost", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"You only draw 3 cards (instead of 5) in this turn's Clean-up phase.  Take an extra turn after this one.  This can't cause you to take more than two consecutive turns."}, {"name"=>"Merchant Ship", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"Now and at the start of your next turn:            +2 Cards            +1 Buy"}, {"name"=>"Tactician", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Duration", "expansion"=>"Seaside", "card_text"=>"Discard your hand.  If you discarded any cards this way, then at the start of your next turn, +5 Cards, +1 Buy, and +1 Action."}], "comments"=>"The second Dominion expansion.  Seaside was release in 2009.", "set_type"=>"Expansion"}}
+  [4;36;1mCardSet Create (0.4ms)[0m   [0;1mINSERT INTO "card_sets" ("name", "created_at", "comments", "set_type", "updated_at") VALUES('Dominion: Seaside', '2010-05-04 17:30:47', 'The second Dominion expansion. Seaside was release in 2009.', 'Expansion', '2010-05-04 17:30:47')[0m
+  [4;35;1mCard Create (0.2ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Native Village', '2010-05-04 17:30:47', 'Action', '2', '2010-05-04 17:30:47', 'Seaside', 'Choose one: Set aside the top card of your deck face down on your Native Village mat; or put all the cards from your mat into your hand. You may look at the cards on your mat at any time; return them to your deck at the end of the game.')[0m
+  [4;36;1mMembership Create (0.3ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 2, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Embargo', '2010-05-04 17:30:47', 'Action', '2', '2010-05-04 17:30:47', 'Seaside', 'Trash this card. Put an Embargo token on top of a Supply pile. --- When a player buys a card, he gains a Curse card per Embargo token on that pile.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 3, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Pearl Diver', '2010-05-04 17:30:47', 'Action', '2', '2010-05-04 17:30:47', 'Seaside', '+1 Card +1 Action Look at the bottom of your deck. You may put it on top.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 4, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Lighthouse', '2010-05-04 17:30:47', 'Action - Duration', '2', '2010-05-04 17:30:47', 'Seaside', '+1 Action Now and at the start of your next turn: +1 --- While this is in play, when another player plays an Attack card, it doesn''t affect you.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 5, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Haven', '2010-05-04 17:30:47', 'Action - Duration', '2', '2010-05-04 17:30:47', 'Seaside', '+1 Cards +1 Action Set aside a card from your hand face down. At the start of your next turn, put it into your hand.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 6, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Fishing Village', '2010-05-04 17:30:47', 'Action - Duration', '3', '2010-05-04 17:30:47', 'Seaside', '+2 Actions +1 Coin At the start of your next turn: +1 Action +1 Coin')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 7, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Lookout', '2010-05-04 17:30:47', 'Action', '3', '2010-05-04 17:30:47', 'Seaside', '+1 Action Look at the top 3 cards of your deck. Trash one of them. Discard one of them. Put the other one on top of your deck.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 8, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Ambassador', '2010-05-04 17:30:47', 'Action - Attack', '3', '2010-05-04 17:30:47', 'Seaside', 'Reveal a card from your hand. Return up to 2 copies of it from your hand to the supply. Then each other player gains a copy of it.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 9, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Warehouse', '2010-05-04 17:30:47', 'Action', '3', '2010-05-04 17:30:47', 'Seaside', '+3 Cards +1 Action Discard 3 cards.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 10, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Smugglers', '2010-05-04 17:30:47', 'Action', '3', '2010-05-04 17:30:47', 'Seaside', 'Gain a copy of a card costing up to 6 Coin that the player to your right gained on his last turn.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 11, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Navigator', '2010-05-04 17:30:47', 'Action', '4', '2010-05-04 17:30:47', 'Seaside', '+2 Coin Look at the top 5 cards of your deck. Either discard all of them, or put them back on top of your deck in any order.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 12, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Cutpurse', '2010-05-04 17:30:47', 'Action - Attack', '4', '2010-05-04 17:30:47', 'Seaside', '+2 Coin Each other player discards a Copper card (or reveals a hand with no Copper).')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 13, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Salvager', '2010-05-04 17:30:47', 'Action', '4', '2010-05-04 17:30:47', 'Seaside', '+1 Buy Trash a card from your hand. + Coin equal to its cost.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 14, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Pirate Ship', '2010-05-04 17:30:47', 'Action - Attack', '4', '2010-05-04 17:30:47', 'Seaside', 'Choose one: Each other player reveals the top 2 cards of his deck, trashes a revealed Treasure that you choose, discards the rest, and if anyone trashed a Treasure you take a Coin token; or, +1 Coin per Coin token you''ve taken with Pirate Ships this game.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 15, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Island', '2010-05-04 17:30:47', 'Action - Victory', '4', '2010-05-04 17:30:47', 'Seaside', 'Set aside this and another card from your hand. Return them to your deck at the end of the game. --- 2 VP')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 16, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Treasure Map', '2010-05-04 17:30:47', 'Action', '4', '2010-05-04 17:30:47', 'Seaside', 'Trash this and another copy of Treasure Map from your hand. If you do trash two Treasure Maps, gain 4 Gold cards, putting them on top of your deck.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 17, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Sea Hag', '2010-05-04 17:30:47', 'Action - Attack', '4', '2010-05-04 17:30:47', 'Seaside', 'Each other player discards the top card of his deck, then gains a Curse card, putting it on top of his deck.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 18, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Caravan', '2010-05-04 17:30:47', 'Action - Duration', '4', '2010-05-04 17:30:47', 'Seaside', '+1 Card +1 Action At the start of your next turn, +1 Card.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 19, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Bazaar', '2010-05-04 17:30:47', 'Action', '5', '2010-05-04 17:30:47', 'Seaside', '+1 Card +2 Actions +1 Coin')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 20, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Explorer', '2010-05-04 17:30:47', 'Action', '5', '2010-05-04 17:30:47', 'Seaside', 'You may reveal a Province card from your hand. If you do, gain a Gold card, putting it into your hand. Otherwise, gain a Silver card, putting it into your hand.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 21, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Treasury', '2010-05-04 17:30:47', 'Action', '5', '2010-05-04 17:30:47', 'Seaside', '+1 Card +1 Action +1 Coin --- When you discard this from play, if you didn''t buy a Victory card this turn, you may put this on top of your deck.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 22, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Ghost Ship', '2010-05-04 17:30:47', 'Action - Attack', '5', '2010-05-04 17:30:47', 'Seaside', '+2 Cards Each other player with 4 or more cards in hand puts cards from his hand on top of his deck until he has 3 cards in his hand.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 23, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Outpost', '2010-05-04 17:30:47', 'Action - Duration', '5', '2010-05-04 17:30:47', 'Seaside', 'You only draw 3 cards (instead of 5) in this turn''s Clean-up phase. Take an extra turn after this one. This can''t cause you to take more than two consecutive turns.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 24, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Merchant Ship', '2010-05-04 17:30:47', 'Action - Duration', '5', '2010-05-04 17:30:47', 'Seaside', 'Now and at the start of your next turn: +2 Cards +1 Buy')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 25, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Tactician', '2010-05-04 17:30:47', 'Action - Duration', '5', '2010-05-04 17:30:47', 'Seaside', 'Discard your hand. If you discarded any cards this way, then at the start of your next turn, +5 Cards, +1 Buy, and +1 Action.')[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 26, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Load (1.8ms)[0m   [0mSELECT * FROM "memberships" WHERE ("memberships".card_set_id = 1) [0m
+  [4;36;1mMembership Create (0.2ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 2, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 3, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 4, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 5, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 6, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 7, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 8, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 9, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 10, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 11, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 12, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 13, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 14, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 15, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 16, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 17, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 18, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 19, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 20, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 21, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 22, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 23, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 24, '2010-05-04 17:30:47', 1)[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 25, '2010-05-04 17:30:47', 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:30:47', 26, '2010-05-04 17:30:47', 1)[0m
+Completed in 466ms (View: 57, DB: 9) | 201 Created [http://localhost/card_sets.xml]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 12:31:38) [GET]
+  [4;35;1mCardSet Load (0.6ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 72ms (View: 7, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 12:31:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCardSet Load (0.3ms)[0m   [0;1mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 1) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/card_sets/1]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 12:31:43) [GET]
+  [4;35;1mCardSet Load (0.6ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 12:31:46) [GET]
+  [4;36;1mCard Load (3.1ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 88ms (View: 78, DB: 3) | 200 OK [http://localhost/cards]
+
+
+Processing CardSetsController#new to xml (for 127.0.0.1 at 2010-05-04 12:46:32) [GET]
+  Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+Completed in 22ms (View: 0, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]
+
+
+Processing CardSetsController#new to xml (for 127.0.0.1 at 2010-05-04 12:48:02) [GET]
+  Parameters: {"card"=>{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin  ---  When  you shuffle, you may put this anywhere in your deck."}}
+Completed in 23ms (View: 1, DB: 0) | 200 OK [http://localhost/card_sets/new.xml]
+
+
+Processing CardSetsController#create to xml (for 127.0.0.1 at 2010-05-04 12:53:41) [POST]
+  Parameters: {"card_set"=>{"name"=>"Dominion: Stash", "cards_attributes"=>[{"name"=>"Stash", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Treasure", "expansion"=>"Stash", "card_text"=>"2 Coin          ---          When  you shuffle, you may put this anywhere in your deck."}], "comments"=>"The third Dominion promo card.  Stash is set to be released in 2010.", "set_type"=>"Expansion"}}
+  [4;35;1mCardSet Create (0.3ms)[0m   [0mINSERT INTO "card_sets" ("name", "created_at", "comments", "set_type", "updated_at") VALUES('Dominion: Stash', '2010-05-04 17:53:41', 'The third Dominion promo card. Stash is set to be released in 2010.', 'Expansion', '2010-05-04 17:53:41')[0m
+  [4;36;1mCard Create (0.2ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Stash', '2010-05-04 17:53:41', 'Treasure', '5', '2010-05-04 17:53:41', 'Stash', '2 Coin --- When you shuffle, you may put this anywhere in your deck.')[0m
+  [4;35;1mMembership Create (0.2ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:53:41', 27, '2010-05-04 17:53:41', 2)[0m
+  [4;36;1mMembership Load (0.3ms)[0m   [0;1mSELECT * FROM "memberships" WHERE ("memberships".card_set_id = 2) [0m
+  [4;35;1mMembership Create (0.2ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 17:53:41', 27, '2010-05-04 17:53:41', 2)[0m
+Completed in 207ms (View: 7, DB: 1) | 201 Created [http://localhost/card_sets.xml]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 12:53:46) [GET]
+  [4;36;1mCard Load (3.3ms)[0m   [0;1mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 93ms (View: 82, DB: 3) | 200 OK [http://localhost/cards]
+
+
+Processing CardsController#destroy (for 127.0.0.1 at 2010-05-04 12:53:52) [DELETE]
+  Parameters: {"authenticity_token"=>"zkWDu76e6s0I9K/jwyY/IlvNJbjmKOfKerq5ml+wzYU=", "id"=>"1"}
+  [4;35;1mCard Load (0.4ms)[0m   [0mSELECT * FROM "cards" WHERE ("cards"."id" = 1) [0m
+  [4;36;1mCard Destroy (0.2ms)[0m   [0;1mDELETE FROM "cards" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/cards
+Completed in 91ms (DB: 1) | 302 Found [http://localhost/cards/1]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 12:53:53) [GET]
+  [4;35;1mCard Load (3.2ms)[0m   [0mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 156ms (View: 145, DB: 3) | 200 OK [http://localhost/cards]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 12:54:01) [GET]
+  [4;36;1mCardSet Load (0.7ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 12:54:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCardSet Load (0.3ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 2) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/card_sets/2]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 12:54:05) [GET]
+  [4;36;1mCardSet Load (0.7ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 12:54:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCardSet Load (0.2ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 1) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/card_sets/1]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 12:54:08) [GET]
+  [4;36;1mCardSet Load (0.6ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#create to xml (for 127.0.0.1 at 2010-05-04 13:40:14) [POST]
+  Parameters: {"card_set"=>{"name"=>"Dominion", "cards_attributes"=>{"card"=>[{"name"=>"Adventurer", "game"=>"Dominion", "cost"=>"6", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Reveal cards from your deck until you reveal 2 Treasure cards.  Put those Treasure cards into your hand and discard the other revealed cards."}, {"name"=>"Adventurer", "game"=>"Dominion", "cost"=>"6", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Reveal cards from your deck until you reveal 2 Treasure cards.  Put those Treasure cards into your hand and discard the other revealed cards."}, {"name"=>"Workshop", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Gain a card costing up to 4 coin"}, {"name"=>"Moat", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Reaction", "expansion"=>"Base", "card_text"=>"+2 CardsWhen another player plays an Attack card, you may reveal this from your hand.  If you do, you are unaffected by that Attack."}, {"name"=>"Laboratory", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 Cards+1 Action"}, {"name"=>"Smithy", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+3 Cards"}, {"name"=>"Cellar", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 ActionDiscard any number of cards.  +1 Card per card discarded"}, {"name"=>"Library", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Draw until you have 7 cards in hand.  You may set aside any Action cards drawn this way"}, {"name"=>"Militia", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+2 CoinEach other player discards down to 3 cards in his hand"}, {"name"=>"Moneylender", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a Copper card from your hand.  If you do"}, {"name"=>"Village", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Card+2 Actions"}, {"name"=>"Council Room", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+4 Cards+1 BuyEach other player draws a card"}, {"name"=>"Bureaucrat", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"Gain a Silver card; put it on top of your deck.  Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards)."}, {"name"=>"Spy", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+1 Card+1 ActionEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice."}, {"name"=>"Chancellor", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 CoinYou may immediately put your deck into your discard pile."}, {"name"=>"Mine", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a Treasure card from your hand.  Gain a Treasure card costing up to (3) more; put it into your hand."}, {"name"=>"Remodel", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a card from your hand.  Gain a card costing up to 2 coin more than the trashed card."}, {"name"=>"Chapel", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash up to 4 cards from your hand."}, {"name"=>"Thief", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"Each other player reveals the top 2 cards of his deck.  If they revealed any Treasure cards"}, {"name"=>"Woodcutter", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Buy+2 Coin"}, {"name"=>"Market", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Card+1 Action+1 Buy+1 Coin"}, {"name"=>"Festival", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 Actions+1 Buy+2 Coin"}, {"name"=>"Gardens", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Victory", "expansion"=>"Base", "card_text"=>"Worth 1 Victory for every 10 cards in your deck (rounded down)."}, {"name"=>"Throne Room", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Choose an Action card in your hand.  Play it twice"}, {"name"=>"Feast", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash this card.  Gain a card costing up to 5 coin."}, {"name"=>"Witch", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+2 CardsEach other player gains a Curse card"}]}, "comments"=>"The original.  Domininon was released in 2008", "set_type"=>"Base"}}
+
+NoMethodError (undefined method `with_indifferent_access' for #<Array:0x7f1081c71328>):
+  app/controllers/card_sets_controller.rb:65:in `new'
+  app/controllers/card_sets_controller.rb:65:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 13:42:36) [GET]
+  [4;35;1mCardSet Load (0.6ms)[0m   [0mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#create to xml (for 127.0.0.1 at 2010-05-04 13:42:51) [POST]
+  Parameters: {"card_set"=>{"name"=>"Dominion", "cards_attributes"=>[{"name"=>"Adventurer", "game"=>"Dominion", "cost"=>"6", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Reveal cards from your deck until you reveal 2 Treasure cards.  Put those Treasure cards into your hand and discard the other revealed cards."}, {"name"=>"Adventurer", "game"=>"Dominion", "cost"=>"6", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Reveal cards from your deck until you reveal 2 Treasure cards.  Put those Treasure cards into your hand and discard the other revealed cards."}, {"name"=>"Workshop", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Gain a card costing up to 4 coin"}, {"name"=>"Moat", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Reaction", "expansion"=>"Base", "card_text"=>"+2 CardsWhen another player plays an Attack card, you may reveal this from your hand.  If you do, you are unaffected by that Attack."}, {"name"=>"Laboratory", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 Cards+1 Action"}, {"name"=>"Smithy", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+3 Cards"}, {"name"=>"Cellar", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 ActionDiscard any number of cards.  +1 Card per card discarded"}, {"name"=>"Library", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Draw until you have 7 cards in hand.  You may set aside any Action cards drawn this way"}, {"name"=>"Militia", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+2 CoinEach other player discards down to 3 cards in his hand"}, {"name"=>"Moneylender", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a Copper card from your hand.  If you do"}, {"name"=>"Village", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Card+2 Actions"}, {"name"=>"Council Room", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+4 Cards+1 BuyEach other player draws a card"}, {"name"=>"Bureaucrat", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"Gain a Silver card; put it on top of your deck.  Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards)."}, {"name"=>"Spy", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+1 Card+1 ActionEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice."}, {"name"=>"Chancellor", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 CoinYou may immediately put your deck into your discard pile."}, {"name"=>"Mine", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a Treasure card from your hand.  Gain a Treasure card costing up to (3) more; put it into your hand."}, {"name"=>"Remodel", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a card from your hand.  Gain a card costing up to 2 coin more than the trashed card."}, {"name"=>"Chapel", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash up to 4 cards from your hand."}, {"name"=>"Thief", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"Each other player reveals the top 2 cards of his deck.  If they revealed any Treasure cards"}, {"name"=>"Woodcutter", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Buy+2 Coin"}, {"name"=>"Market", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Card+1 Action+1 Buy+1 Coin"}, {"name"=>"Festival", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 Actions+1 Buy+2 Coin"}, {"name"=>"Gardens", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Victory", "expansion"=>"Base", "card_text"=>"Worth 1 Victory for every 10 cards in your deck (rounded down)."}, {"name"=>"Throne Room", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Choose an Action card in your hand.  Play it twice"}, {"name"=>"Feast", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash this card.  Gain a card costing up to 5 coin."}, {"name"=>"Witch", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+2 CardsEach other player gains a Curse card"}], "comments"=>"The original.  Domininon was released in 2008", "set_type"=>"Base"}}
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Adventurer') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Adventurer') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Workshop') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moat') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Laboratory') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Smithy') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Cellar') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Library') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Militia') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moneylender') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Village') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Council Room') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Bureaucrat') LIMIT 1[0m
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Spy') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chancellor') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Mine') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Remodel') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chapel') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Thief') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Woodcutter') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Market') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Festival') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Gardens') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Throne Room') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Feast') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Witch') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Adventurer') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Adventurer') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Workshop') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moat') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Laboratory') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Smithy') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Cellar') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Library') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Militia') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moneylender') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Village') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Council Room') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Bureaucrat') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Spy') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chancellor') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Mine') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Remodel') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chapel') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Thief') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Woodcutter') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Market') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Festival') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Gardens') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Throne Room') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Feast') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Witch') LIMIT 1[0m
+  [4;36;1mCardSet Load (0.2ms)[0m   [0;1mSELECT "card_sets".id FROM "card_sets" WHERE ("card_sets"."name" = 'Dominion') LIMIT 1[0m
+  [4;35;1mCardSet Create (0.2ms)[0m   [0mINSERT INTO "card_sets" ("name", "created_at", "comments", "set_type", "updated_at") VALUES('Dominion', '2010-05-04 18:42:51', 'The original. Domininon was released in 2008', 'Base', '2010-05-04 18:42:51')[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Adventurer', '2010-05-04 18:42:51', 'Action', '6', '2010-05-04 18:42:51', 'Base', 'Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards into your hand and discard the other revealed cards.')[0m
+  [4;35;1mMembership Load (0.2ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 28 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 28, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Adventurer', '2010-05-04 18:42:51', 'Action', '6', '2010-05-04 18:42:51', 'Base', 'Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards into your hand and discard the other revealed cards.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 29 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 29, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Workshop', '2010-05-04 18:42:51', 'Action', '3', '2010-05-04 18:42:51', 'Base', 'Gain a card costing up to 4 coin')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 30 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 30, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Moat', '2010-05-04 18:42:51', 'Action - Reaction', '2', '2010-05-04 18:42:51', 'Base', '+2 CardsWhen another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 31 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 31, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Laboratory', '2010-05-04 18:42:51', 'Action', '5', '2010-05-04 18:42:51', 'Base', '+2 Cards+1 Action')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 32 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 32, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Smithy', '2010-05-04 18:42:51', 'Action', '4', '2010-05-04 18:42:51', 'Base', '+3 Cards')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 33 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 33, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Cellar', '2010-05-04 18:42:51', 'Action', '2', '2010-05-04 18:42:51', 'Base', '+1 ActionDiscard any number of cards. +1 Card per card discarded')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 34 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 34, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Library', '2010-05-04 18:42:51', 'Action', '5', '2010-05-04 18:42:51', 'Base', 'Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 35 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 35, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Militia', '2010-05-04 18:42:51', 'Action - Attack', '4', '2010-05-04 18:42:51', 'Base', '+2 CoinEach other player discards down to 3 cards in his hand')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 36 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 36, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Moneylender', '2010-05-04 18:42:51', 'Action', '4', '2010-05-04 18:42:51', 'Base', 'Trash a Copper card from your hand. If you do')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 37 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 37, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Village', '2010-05-04 18:42:51', 'Action', '3', '2010-05-04 18:42:51', 'Base', '+1 Card+2 Actions')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 38 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 38, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Council Room', '2010-05-04 18:42:51', 'Action', '5', '2010-05-04 18:42:51', 'Base', '+4 Cards+1 BuyEach other player draws a card')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 39 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 39, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.2ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Bureaucrat', '2010-05-04 18:42:51', 'Action - Attack', '4', '2010-05-04 18:42:51', 'Base', 'Gain a Silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 40 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 40, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Spy', '2010-05-04 18:42:51', 'Action - Attack', '4', '2010-05-04 18:42:51', 'Base', '+1 Card+1 ActionEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice.')[0m
+  [4;36;1mMembership Load (0.2ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 41 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 41, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Chancellor', '2010-05-04 18:42:51', 'Action', '3', '2010-05-04 18:42:51', 'Base', '+2 CoinYou may immediately put your deck into your discard pile.')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 42 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 42, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Mine', '2010-05-04 18:42:51', 'Action', '5', '2010-05-04 18:42:51', 'Base', 'Trash a Treasure card from your hand. Gain a Treasure card costing up to (3) more; put it into your hand.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 43 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 43, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Remodel', '2010-05-04 18:42:51', 'Action', '4', '2010-05-04 18:42:51', 'Base', 'Trash a card from your hand. Gain a card costing up to 2 coin more than the trashed card.')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 44 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 44, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Chapel', '2010-05-04 18:42:51', 'Action', '2', '2010-05-04 18:42:51', 'Base', 'Trash up to 4 cards from your hand.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 45 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 45, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Thief', '2010-05-04 18:42:51', 'Action - Attack', '4', '2010-05-04 18:42:51', 'Base', 'Each other player reveals the top 2 cards of his deck. If they revealed any Treasure cards')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 46 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 46, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Woodcutter', '2010-05-04 18:42:51', 'Action', '3', '2010-05-04 18:42:51', 'Base', '+1 Buy+2 Coin')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 47 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 47, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Market', '2010-05-04 18:42:51', 'Action', '5', '2010-05-04 18:42:51', 'Base', '+1 Card+1 Action+1 Buy+1 Coin')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 48 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 48, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Festival', '2010-05-04 18:42:51', 'Action', '5', '2010-05-04 18:42:51', 'Base', '+2 Actions+1 Buy+2 Coin')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 49 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 49, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Gardens', '2010-05-04 18:42:51', 'Victory', '4', '2010-05-04 18:42:51', 'Base', 'Worth 1 Victory for every 10 cards in your deck (rounded down).')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 50 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 50, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Throne Room', '2010-05-04 18:42:51', 'Action', '4', '2010-05-04 18:42:51', 'Base', 'Choose an Action card in your hand. Play it twice')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 51 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 51, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Feast', '2010-05-04 18:42:51', 'Action', '4', '2010-05-04 18:42:51', 'Base', 'Trash this card. Gain a card costing up to 5 coin.')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 52 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 52, '2010-05-04 18:42:51', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Witch', '2010-05-04 18:42:51', 'Action - Attack', '5', '2010-05-04 18:42:51', 'Base', '+2 CardsEach other player gains a Curse card')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 53 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:42:51', 53, '2010-05-04 18:42:51', 3)[0m
+  [4;36;1mMembership Load (1.9ms)[0m   [0;1mSELECT * FROM "memberships" WHERE ("memberships".card_set_id = 3) [0m
+  [4;35;1mMembership Load (0.3ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 28 AND "memberships".card_set_id = 3) LIMIT 1[0m
+
+ActiveRecord::RecordInvalid (Validation failed: Card has already been taken):
+  app/controllers/card_sets_controller.rb:68
+  app/controllers/card_sets_controller.rb:67:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.9ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 13:43:14) [GET]
+  [4;36;1mCardSet Load (0.6ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#create to xml (for 127.0.0.1 at 2010-05-04 13:45:56) [POST]
+  Parameters: {"card_set"=>{"name"=>"Dominion", "cards_attributes"=>[{"name"=>"Adventurer", "game"=>"Dominion", "cost"=>"6", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Reveal cards from your deck until you reveal 2 Treasure cards.  Put those Treasure cards into your hand and discard the other revealed cards."}, {"name"=>"Workshop", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Gain a card costing up to 4 coin"}, {"name"=>"Moat", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action - Reaction", "expansion"=>"Base", "card_text"=>"+2 CardsWhen another player plays an Attack card, you may reveal this from your hand.  If you do, you are unaffected by that Attack."}, {"name"=>"Laboratory", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 Cards+1 Action"}, {"name"=>"Smithy", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+3 Cards"}, {"name"=>"Cellar", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 ActionDiscard any number of cards.  +1 Card per card discarded"}, {"name"=>"Library", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Draw until you have 7 cards in hand.  You may set aside any Action cards drawn this way"}, {"name"=>"Militia", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+2 CoinEach other player discards down to 3 cards in his hand"}, {"name"=>"Moneylender", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a Copper card from your hand.  If you do"}, {"name"=>"Village", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Card+2 Actions"}, {"name"=>"Council Room", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+4 Cards+1 BuyEach other player draws a card"}, {"name"=>"Bureaucrat", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"Gain a Silver card; put it on top of your deck.  Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards)."}, {"name"=>"Spy", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+1 Card+1 ActionEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice."}, {"name"=>"Chancellor", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 CoinYou may immediately put your deck into your discard pile."}, {"name"=>"Mine", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a Treasure card from your hand.  Gain a Treasure card costing up to (3) more; put it into your hand."}, {"name"=>"Remodel", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash a card from your hand.  Gain a card costing up to 2 coin more than the trashed card."}, {"name"=>"Chapel", "game"=>"Dominion", "cost"=>"2", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash up to 4 cards from your hand."}, {"name"=>"Thief", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"Each other player reveals the top 2 cards of his deck.  If they revealed any Treasure cards"}, {"name"=>"Woodcutter", "game"=>"Dominion", "cost"=>"3", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Buy+2 Coin"}, {"name"=>"Market", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+1 Card+1 Action+1 Buy+1 Coin"}, {"name"=>"Festival", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"+2 Actions+1 Buy+2 Coin"}, {"name"=>"Gardens", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Victory", "expansion"=>"Base", "card_text"=>"Worth 1 Victory for every 10 cards in your deck (rounded down)."}, {"name"=>"Throne Room", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Choose an Action card in your hand.  Play it twice"}, {"name"=>"Feast", "game"=>"Dominion", "cost"=>"4", "card_type"=>"Action", "expansion"=>"Base", "card_text"=>"Trash this card.  Gain a card costing up to 5 coin."}, {"name"=>"Witch", "game"=>"Dominion", "cost"=>"5", "card_type"=>"Action - Attack", "expansion"=>"Base", "card_text"=>"+2 CardsEach other player gains a Curse card"}], "comments"=>"The original.  Domininon was released in 2008", "set_type"=>"Base"}}
+  [4;35;1mCard Load (0.2ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Adventurer') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Workshop') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moat') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Laboratory') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Smithy') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Cellar') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Library') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Militia') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moneylender') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Village') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Council Room') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Bureaucrat') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Spy') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chancellor') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Mine') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Remodel') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chapel') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Thief') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Woodcutter') LIMIT 1[0m
+  [4;36;1mCard Load (0.2ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Market') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Festival') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Gardens') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Throne Room') LIMIT 1[0m
+  [4;36;1mCard Load (0.1ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Feast') LIMIT 1[0m
+  [4;35;1mCard Load (0.1ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Witch') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Adventurer') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Workshop') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moat') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Laboratory') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Smithy') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Cellar') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Library') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Militia') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Moneylender') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Village') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Council Room') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Bureaucrat') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Spy') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chancellor') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Mine') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Remodel') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Chapel') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Thief') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Woodcutter') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Market') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Festival') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Gardens') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Throne Room') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Feast') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "cards".id FROM "cards" WHERE ("cards"."name" = 'Witch') LIMIT 1[0m
+  [4;35;1mCardSet Load (0.2ms)[0m   [0mSELECT "card_sets".id FROM "card_sets" WHERE ("card_sets"."name" = 'Dominion') LIMIT 1[0m
+  [4;36;1mCardSet Create (0.2ms)[0m   [0;1mINSERT INTO "card_sets" ("name", "created_at", "comments", "set_type", "updated_at") VALUES('Dominion', '2010-05-04 18:45:56', 'The original. Domininon was released in 2008', 'Base', '2010-05-04 18:45:56')[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Adventurer', '2010-05-04 18:45:56', 'Action', '6', '2010-05-04 18:45:56', 'Base', 'Reveal cards from your deck until you reveal 2 Treasure cards. Put those Treasure cards into your hand and discard the other revealed cards.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 28 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 28, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Workshop', '2010-05-04 18:45:56', 'Action', '3', '2010-05-04 18:45:56', 'Base', 'Gain a card costing up to 4 coin')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 29 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 29, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Moat', '2010-05-04 18:45:56', 'Action - Reaction', '2', '2010-05-04 18:45:56', 'Base', '+2 CardsWhen another player plays an Attack card, you may reveal this from your hand. If you do, you are unaffected by that Attack.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 30 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 30, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Laboratory', '2010-05-04 18:45:56', 'Action', '5', '2010-05-04 18:45:56', 'Base', '+2 Cards+1 Action')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 31 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 31, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Smithy', '2010-05-04 18:45:56', 'Action', '4', '2010-05-04 18:45:56', 'Base', '+3 Cards')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 32 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 32, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Cellar', '2010-05-04 18:45:56', 'Action', '2', '2010-05-04 18:45:56', 'Base', '+1 ActionDiscard any number of cards. +1 Card per card discarded')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 33 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 33, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Library', '2010-05-04 18:45:56', 'Action', '5', '2010-05-04 18:45:56', 'Base', 'Draw until you have 7 cards in hand. You may set aside any Action cards drawn this way')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 34 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 34, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Militia', '2010-05-04 18:45:56', 'Action - Attack', '4', '2010-05-04 18:45:56', 'Base', '+2 CoinEach other player discards down to 3 cards in his hand')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 35 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 35, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Moneylender', '2010-05-04 18:45:56', 'Action', '4', '2010-05-04 18:45:56', 'Base', 'Trash a Copper card from your hand. If you do')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 36 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 36, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Village', '2010-05-04 18:45:56', 'Action', '3', '2010-05-04 18:45:56', 'Base', '+1 Card+2 Actions')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 37 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 37, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Council Room', '2010-05-04 18:45:56', 'Action', '5', '2010-05-04 18:45:56', 'Base', '+4 Cards+1 BuyEach other player draws a card')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 38 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 38, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Bureaucrat', '2010-05-04 18:45:56', 'Action - Attack', '4', '2010-05-04 18:45:56', 'Base', 'Gain a Silver card; put it on top of your deck. Each other player reveals a Victory card from his hand and puts it on his deck (or reveals a hand with no Victory cards).')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 39 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 39, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Spy', '2010-05-04 18:45:56', 'Action - Attack', '4', '2010-05-04 18:45:56', 'Base', '+1 Card+1 ActionEach player (including you) reveals the top card of his deck and either discards it or puts it back, your choice.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 40 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 40, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Chancellor', '2010-05-04 18:45:56', 'Action', '3', '2010-05-04 18:45:56', 'Base', '+2 CoinYou may immediately put your deck into your discard pile.')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 41 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 41, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Mine', '2010-05-04 18:45:56', 'Action', '5', '2010-05-04 18:45:56', 'Base', 'Trash a Treasure card from your hand. Gain a Treasure card costing up to (3) more; put it into your hand.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 42 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.2ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 42, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Remodel', '2010-05-04 18:45:56', 'Action', '4', '2010-05-04 18:45:56', 'Base', 'Trash a card from your hand. Gain a card costing up to 2 coin more than the trashed card.')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 43 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 43, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Chapel', '2010-05-04 18:45:56', 'Action', '2', '2010-05-04 18:45:56', 'Base', 'Trash up to 4 cards from your hand.')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 44 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 44, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Thief', '2010-05-04 18:45:56', 'Action - Attack', '4', '2010-05-04 18:45:56', 'Base', 'Each other player reveals the top 2 cards of his deck. If they revealed any Treasure cards')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 45 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 45, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Woodcutter', '2010-05-04 18:45:56', 'Action', '3', '2010-05-04 18:45:56', 'Base', '+1 Buy+2 Coin')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 46 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 46, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Market', '2010-05-04 18:45:56', 'Action', '5', '2010-05-04 18:45:56', 'Base', '+1 Card+1 Action+1 Buy+1 Coin')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 47 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 47, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Festival', '2010-05-04 18:45:56', 'Action', '5', '2010-05-04 18:45:56', 'Base', '+2 Actions+1 Buy+2 Coin')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 48 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 48, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Gardens', '2010-05-04 18:45:56', 'Victory', '4', '2010-05-04 18:45:56', 'Base', 'Worth 1 Victory for every 10 cards in your deck (rounded down).')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 49 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 49, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Throne Room', '2010-05-04 18:45:56', 'Action', '4', '2010-05-04 18:45:56', 'Base', 'Choose an Action card in your hand. Play it twice')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 50 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 50, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mCard Create (0.1ms)[0m   [0;1mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Feast', '2010-05-04 18:45:56', 'Action', '4', '2010-05-04 18:45:56', 'Base', 'Trash this card. Gain a card costing up to 5 coin.')[0m
+  [4;35;1mMembership Load (0.1ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 51 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 51, '2010-05-04 18:45:56', 3)[0m
+  [4;35;1mCard Create (0.1ms)[0m   [0mINSERT INTO "cards" ("game", "name", "created_at", "card_type", "cost", "updated_at", "expansion", "card_text") VALUES('Dominion', 'Witch', '2010-05-04 18:45:56', 'Action - Attack', '5', '2010-05-04 18:45:56', 'Base', '+2 CardsEach other player gains a Curse card')[0m
+  [4;36;1mMembership Load (0.1ms)[0m   [0;1mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 52 AND "memberships".card_set_id = 3) LIMIT 1[0m
+  [4;35;1mMembership Create (0.1ms)[0m   [0mINSERT INTO "memberships" ("created_at", "card_id", "updated_at", "card_set_id") VALUES('2010-05-04 18:45:56', 52, '2010-05-04 18:45:56', 3)[0m
+  [4;36;1mMembership Load (1.9ms)[0m   [0;1mSELECT * FROM "memberships" WHERE ("memberships".card_set_id = 3) [0m
+  [4;35;1mMembership Load (0.2ms)[0m   [0mSELECT "memberships".id FROM "memberships" WHERE ("memberships"."card_id" = 28 AND "memberships".card_set_id = 3) LIMIT 1[0m
+
+ActiveRecord::RecordInvalid (Validation failed: Card may only be a member of the set once):
+  app/controllers/card_sets_controller.rb:68
+  app/controllers/card_sets_controller.rb:67:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.4ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 13:47:20) [GET]
+  [4;36;1mCardSet Load (0.6ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 13:49:25) [GET]
+  [4;35;1mCard Load (3.1ms)[0m   [0mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 89ms (View: 78, DB: 3) | 200 OK [http://localhost/cards]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 13:50:35) [GET]
+  [4;36;1mCardSet Load (0.7ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 13:50:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCardSet Load (0.3ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 1) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://localhost/card_sets/1]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 13:53:45) [GET]
+  [4;36;1mCardSet Load (0.7ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardSetsController#show (for 127.0.0.1 at 2010-05-04 13:53:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCardSet Load (0.3ms)[0m   [0mSELECT * FROM "card_sets" WHERE ("card_sets"."id" = 2) [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/card_sets/2]
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-04 13:53:50) [GET]
+  [4;36;1mCardSet Load (0.7ms)[0m   [0;1mSELECT * FROM "card_sets" [0m
+Rendering template within layouts/card_sets
+Rendering card_sets/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/card_sets]
+
+
+Processing CardsController#index (for 127.0.0.1 at 2010-05-04 13:53:55) [GET]
+  [4;35;1mCard Load (3.2ms)[0m   [0mSELECT * FROM "cards" [0m
+Rendering template within layouts/cards
+Rendering cards/index
+Completed in 93ms (View: 81, DB: 3) | 200 OK [http://localhost/cards]
