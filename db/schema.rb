@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100504161012) do
+ActiveRecord::Schema.define(:version => 20100504163927) do
 
   create_table "card_sets", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(:version => 20100504161012) do
     t.string   "name"
     t.string   "list_type"
     t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "card_id"
+    t.integer  "card_set_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
