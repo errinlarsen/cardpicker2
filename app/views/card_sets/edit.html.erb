@@ -1,4 +1,4 @@
-<h1>Editing card_set</h1>
+<h1>Editing card set</h1>
 
 <% form_for(@card_set) do |f| %>
   <%= f.error_messages %>
@@ -31,5 +31,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @card_set %> |
-<%= link_to 'Back', card_sets_path %>
+<%= link_to 'Show this card', @card_set %> |
+<%= link_to 'All sets', card_sets_path %>
