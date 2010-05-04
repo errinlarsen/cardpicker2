@@ -1,0 +1,30 @@
+<h1>Listing cards</h1>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Expansion</th>
+    <th>Name</th>
+    <th>Card type</th>
+    <th>Cost</th>
+    <th>Card text</th>
+  </tr>
+
+<% @cards.each do |card| %>
+  <tr>
+    <td><%=h card.game %></td>
+    <td><%=h card.expansion %></td>
+    <td><%=h card.name %></td>
+    <td><%=h card.card_type %></td>
+    <td><%=h card.cost %></td>
+    <td><%=h card.card_text %></td>
+    <td><%= link_to 'Show', card %></td>
+    <td><%= link_to 'Edit', edit_card_path(card) %></td>
+    <td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New card', new_card_path %>

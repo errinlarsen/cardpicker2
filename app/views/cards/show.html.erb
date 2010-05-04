@@ -1,0 +1,33 @@
+<p>
+  <b>Game:</b>
+  <%=h @card.game %>
+</p>
+
+<p>
+  <b>Expansion:</b>
+  <%=h @card.expansion %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @card.name %>
+</p>
+
+<p>
+  <b>Card type:</b>
+  <%=h @card.card_type %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%=h @card.cost %>
+</p>
+
+<p>
+  <b>Card text:</b>
+  <%=h @card.card_text %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

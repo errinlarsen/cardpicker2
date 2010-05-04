@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game: MyString
+  expansion: MyString
+  name: MyString
+  card_type: MyString
+  cost: MyString
+  card_text: MyText
+
+two:
+  game: MyString
+  expansion: MyString
+  name: MyString
+  card_type: MyString
+  cost: MyString
+  card_text: MyText
