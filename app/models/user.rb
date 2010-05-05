@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation
+
+  # Roles for authorization with cancan
+  ROLES = %w[admin editor]
 end
