@@ -2,6 +2,7 @@ class Membership < ActiveRecord::Base
   belongs_to :card
   belongs_to :card_set
 
+  # FIXME: validates_uniqueness_of won't allow saves in Membership model
   # The following code is BROKEN in rails 2.3.5.  For the time being, we'll
   # have to accept duplicate entries in the Memberships model until 2.3.6 releases.
   #
