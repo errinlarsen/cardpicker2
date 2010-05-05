@@ -1,0 +1,28 @@
+<h1>Reset user's password</h1>
+
+<% form_for( @user, :url => { :action => :reset } ) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <b>Email:</b>
+    <%=h @user.email %>
+  </p>
+
+  <p>
+    <b>Role:</b>
+    <%=h @user.role %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit 'Reset' %>
+  </p>
+<% end %>
+
+<%= link_to 'All cards', cards_path %>

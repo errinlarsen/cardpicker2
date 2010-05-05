@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
 
+  map.resources :admin, :member => { :reset => [:get, :put] }
+
   map.resources :card_sets
 
   map.resources :cards

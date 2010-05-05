@@ -1,2 +1,14 @@
-<h1>Admin#show</h1>
-<p>Find me in app/views/admin/show.html.erb</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%=h @user.role %>
+</p>
+
+
+<%= link_to 'Edit this user', edit_admin_path(@user) %> |
+<%= link_to 'All users', admin_index_path %>

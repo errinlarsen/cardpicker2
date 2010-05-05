@@ -1,2 +1,20 @@
-<h1>Admin#edit</h1>
-<p>Find me in app/views/admin/edit.html.erb</p>
+<h1>Editing user</h1>
+
+<% form_for( @user, :url => { :action => :update } )do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :role %><br />
+    <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_path( @user ) %> |
+<%= link_to 'All users', admin_index_path %>
