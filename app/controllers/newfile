@@ -1,0 +1,42 @@
+commit f0f11f201aebb48aaa8f918e32456d0db19689d6
+Author: irkenInvader <errinlarsen@gmail.com>
+Date:   Wed May 5 09:50:04 2010 -0500
+
+    Add navigation for Devise user authentication views to controller layouts
+
+commit ae9aeab590823bc9b324d1f8c7987baf6a32fb99
+Author: irkenInvader <errinlarsen@gmail.com>
+Date:   Wed May 5 09:31:35 2010 -0500
+
+    Migrate the database after confirming the User model and migration.
+
+commit 143ec6a43b8b12ffc91c8bf169d64936704e0801
+Author: irkenInvader <errinlarsen@gmail.com>
+Date:   Wed May 5 09:26:11 2010 -0500
+
+    Create the devise User model
+
+    Run 'script/generate devise User'
+
+commit 679d15dc128a5f8e16f034a5a1abfedf39f9f56f
+Author: irkenInvader <errinlarsen@gmail.com>
+Date:   Wed May 5 09:11:12 2010 -0500
+
+    Setup Devise done manually:
+
+      1. Setup default url options for your specific environment.
+
+           config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+         This is a required Rails configuration. In production is must be the
+         actual host of your application
+
+      2. define root_url to *something* in your config/routes.rb:
+
+           map.root :controller => :card_sets
+
+      3. Ensure you have a default layout in app/views/layouts and it shows
+         flash messages. For example:
+
+           <p class="notice"><%= flash[:notice] %></p>
+           <p class="alert"><%= flash[:alert] %></p>
