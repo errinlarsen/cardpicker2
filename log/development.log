@@ -3230,3 +3230,47 @@ Processing CardsController#new (for 127.0.0.1 at 2010-05-04 18:09:12) [GET]
 Rendering template within layouts/cards
 Rendering cards/new
 Completed in 18ms (View: 9, DB: 0) | 200 OK [http://localhost/cards/new]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCards (20100504142030)
+Migrating to CreateCardSets (20100504161012)
+Migrating to CreateMemberships (20100504163927)
+Migrating to DeviseCreateUsers (20100505151754)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "users" already exists: CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCards (20100504142030)
+Migrating to CreateCardSets (20100504161012)
+Migrating to CreateMemberships (20100504163927)
+Migrating to DeviseCreateUsers (20100505151754)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "password_salt" varchar(255) DEFAULT '' NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "reset_password_token" varchar(255), "remember_token" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100505151754')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("card_sets")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("cards")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("lists")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("memberships")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sets")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_confirmation_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
