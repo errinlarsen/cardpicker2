@@ -1,4 +1,6 @@
 class CardSetsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
+  
   # GET /card_sets
   # GET /card_sets.xml
   def index
