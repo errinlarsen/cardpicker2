@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
+  # Capture CanCan access problems
+  rescue_from CanCan::AccessDenied do |exception|
+      flash[:alert] = "Access Denied"
+      redirect_to root_path
+  end
+
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end
