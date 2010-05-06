@@ -9,4 +9,16 @@ class User < ActiveRecord::Base
 
   # Roles for authorization with cancan
   ROLES = %w[admin editor consumer]
+
+  def admin?
+    role == 'admin'
+  end
+
+  def editor?
+    role == 'editor'
+  end
+
+  def guest?
+    role.nil?
+  end
 end
