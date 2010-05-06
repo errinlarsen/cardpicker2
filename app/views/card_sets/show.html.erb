@@ -23,5 +23,7 @@
   </table>
 </p>
 
-<%= link_to 'Edit this set', edit_card_set_path(@card_set) %> |
-<%= link_to 'All sets', card_sets_path %>
+<% if can? :edit, @card_set %>
+  <%= link_to 'Edit this set', edit_card_set_path(@card_set) %> |
+<% end %>
+<%= link_to 'Back to sets', card_sets_path %>

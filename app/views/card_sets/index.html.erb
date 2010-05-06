@@ -1,4 +1,4 @@
-<h1>Listing card sets</h1>
+<h1>Listing sets</h1>
 
 <table>
   <tr>
@@ -13,12 +13,20 @@
     <td><%=h card_set.set_type %></td>
     <td><%=h card_set.comments %></td>
     <td><%= link_to 'Show', card_set %></td>
-    <td><%= link_to 'Edit', edit_card_set_path(card_set) %></td>
-    <td><%= link_to 'Destroy', card_set, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <% if can? :edit, card_set %>
+      <td><%= link_to 'Edit', edit_card_set_path(card_set) %></td>
+    <% end %>
+
+    <% if can? :destroy, card_set %>
+      <td><%= link_to 'Destroy', card_set, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New card set', new_card_set_path %>
+<% if can? :create, CardSet %>
+  <%= link_to 'New set', new_card_set_path %>
+<% end %>

@@ -19,12 +19,20 @@
     <td><%=h card.cost %></td>
     <td><%=h card.card_text %></td>
     <td><%= link_to 'Show', card %></td>
-    <td><%= link_to 'Edit', edit_card_path(card) %></td>
-    <td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <% if can? :edit, card %>
+      <td><%= link_to 'Edit', edit_card_path(card) %></td>
+    <% end %>
+
+    <% if can? :destroy, card %>
+      <td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New card', new_card_path %>
+<% if can? :create, Card %>
+  <%= link_to 'New card', new_card_path %>
+<% end %>
