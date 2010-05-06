@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
+  authorize_resource
   
   # GET /cards
   # GET /cards.xml

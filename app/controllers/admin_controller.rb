@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   before_filter :authenticate_user!
+  authorize_resource :resource => :user
 
   # GET /admin
   # GET /admin.xml
