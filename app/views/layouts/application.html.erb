@@ -16,7 +16,7 @@
         <%= link_to "Sign out", destroy_user_session_path %>
         
         <% if current_user.admin? %>
-          <%= link_to admin_index_path %>
+          | <%= link_to 'Administer users', admin_index_path %>
         <% end %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
