@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th>Username</th>
     <th>Email</th>
     <th>Role</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
+    <td><%=h user.username %></td>
     <td><%=h user.email %></td>
     <td><%=h user.role %></td>
     <td><%= link_to 'Show', admin_path(user) %></td>

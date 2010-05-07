@@ -12,7 +12,7 @@
   <div id="container">
     <div id="user_nav">
       <% if user_signed_in? %>
-        Signed in as <%=h current_user.email %>.  Not you?
+        Signed in as <%=h current_user.username %>.  Not you?
         <%= link_to "Sign out", destroy_user_session_path %>
         
         <% if current_user.admin? %>

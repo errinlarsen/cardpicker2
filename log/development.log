@@ -9709,3 +9709,125 @@ Migrating to AddUsernameToUsers (20100507135545)
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_reset_password_token')[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_confirmation_token')[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-05-07 13:58:06', "username" = 'elarsen' WHERE "id" = 1[0m
+
+
+Processing CardSetsController#index (for 127.0.0.1 at 2010-05-07 09:27:27) [GET]
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-05-07 14:27:28', "sign_in_count" = 10, "current_sign_in_at" = '2010-05-07 14:27:28', "last_sign_in_at" = '2010-05-06 21:38:59' WHERE "id" = 1[0m
+  [4;36;1mCardSet Load (2.5ms)[0m   [0;1mSELECT * FROM "card_sets" ORDER BY name[0m
+Rendering template within layouts/application
+Rendering card_sets/index
+Completed in 369ms (View: 73, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-05-07 09:27:39) [GET]
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 37ms (View: 19, DB: 2) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2010-05-07 09:27:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 26ms (View: 8, DB: 1) | 200 OK [http://localhost/admin/2/edit]
+
+
+Processing AdminController#update (for 127.0.0.1 at 2010-05-07 09:27:49) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"XryN2IJvzpoSeSUQtVKMnqjBwEhyoD7tyn2XcqYOtwM=", "id"=>"2", "user"=>{"role"=>"consumer", "username"=>"testtest", "email"=>"testtest@gmail.com"}}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+WARNING: Can't mass-assign these protected attributes: username
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'testtest@gmail.com' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" IS NULL AND "users".id <> 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 36ms (View: 16, DB: 2) | 200 OK [http://localhost/admin/2]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-05-07 09:27:59) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 30ms (View: 10, DB: 2) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2010-05-07 09:29:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 23ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/2/edit]
+
+
+Processing AdminController#update (for 127.0.0.1 at 2010-05-07 09:29:45) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"XryN2IJvzpoSeSUQtVKMnqjBwEhyoD7tyn2XcqYOtwM=", "id"=>"2", "user"=>{"role"=>"consumer", "username"=>"testtest", "email"=>"testtest@gmail.com"}}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'testtest@gmail.com' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'testtest' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-05-07 14:29:45', "username" = 'testtest' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/admin/2
+Completed in 146ms (DB: 2) | 302 Found [http://localhost/admin/2]
+
+
+Processing AdminController#show (for 127.0.0.1 at 2010-05-07 09:29:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering admin/show
+Completed in 24ms (View: 6, DB: 1) | 200 OK [http://localhost/admin/2]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-05-07 09:29:48) [GET]
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 33ms (View: 12, DB: 2) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#edit (for 127.0.0.1 at 2010-05-07 09:29:49) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering admin/edit
+Completed in 21ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/4/edit]
+
+
+Processing AdminController#update (for 127.0.0.1 at 2010-05-07 09:29:53) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"XryN2IJvzpoSeSUQtVKMnqjBwEhyoD7tyn2XcqYOtwM=", "id"=>"4", "user"=>{"role"=>"editor", "username"=>"test3", "email"=>"test3@test.com"}}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'test3@test.com' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test3' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-05-07 14:29:53', "username" = 'test3' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/admin/4
+Completed in 178ms (DB: 2) | 302 Found [http://localhost/admin/4]
+
+
+Processing AdminController#show (for 127.0.0.1 at 2010-05-07 09:29:53) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering admin/show
+Completed in 22ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/4]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-05-07 09:29:55) [GET]
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 30ms (View: 11, DB: 2) | 200 OK [http://localhost/admin]
