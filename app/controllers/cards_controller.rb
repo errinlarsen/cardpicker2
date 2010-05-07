@@ -5,6 +5,7 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.xml
   def index
+    @game = params[:game] ||= ""
     @cards = Card.all( :order => "game, expansion, name" )
 
     respond_to do |format|
@@ -16,6 +17,7 @@ class CardsController < ApplicationController
   # GET /cards/1
   # GET /cards/1.xml
   def show
+    @game = params[:game] ||= ""
     @card = Card.find(params[:id])
 
     respond_to do |format|
@@ -27,6 +29,7 @@ class CardsController < ApplicationController
   # GET /cards/new
   # GET /cards/new.xml
   def new
+    @game = params[:game] ||= ""
     unless request.format.xml?
       @card = Card.new
 
@@ -50,17 +53,20 @@ class CardsController < ApplicationController
 
   # GET /cards/1/edit
   def edit
+    @game = params[:game] ||= ""
     @card = Card.find(params[:id])
   end
 
   # POST /cards
   # POST /cards.xml
   def create
+    @game = params[:game] ||= ""
     @card = Card.new(params[:card])
 
     respond_to do |format|
       if @card.save
         flash[:notice] = 'Card was successfully created.'
+        # FIXME The following redirect_to does not pick up the :game parameter in the URI
         format.html { redirect_to(@card) }
         format.xml  { render :xml => @card, :status => :created, :location => @card }
       else
@@ -73,11 +79,13 @@ class CardsController < ApplicationController
   # PUT /cards/1
   # PUT /cards/1.xml
   def update
+    @game = params[:game] ||= ""
     @card = Card.find(params[:id])
 
     respond_to do |format|
       if @card.update_attributes(params[:card])
         flash[:notice] = 'Card was successfully updated.'
+        # FIXME The following redirect_to does not pick up the :game parameter in the URI
         format.html { redirect_to(@card) }
         format.xml  { head :ok }
       else
@@ -90,10 +98,12 @@ class CardsController < ApplicationController
   # DELETE /cards/1
   # DELETE /cards/1.xml
   def destroy
+    @game = params[:game] ||= ""
     @card = Card.find(params[:id])
     @card.destroy
 
     respond_to do |format|
+        # FIXME The following redirect_to does not pick up the :game parameter in the URI
       format.html { redirect_to(cards_url) }
       format.xml  { head :ok }
     end

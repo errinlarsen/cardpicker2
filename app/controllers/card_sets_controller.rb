@@ -5,6 +5,7 @@ class CardSetsController < ApplicationController
   # GET /card_sets
   # GET /card_sets.xml
   def index
+    @game = params[:game] ||= ""
     @card_sets = CardSet.all( :order => "name" )
 
     respond_to do |format|
@@ -16,6 +17,7 @@ class CardSetsController < ApplicationController
   # GET /card_sets/1
   # GET /card_sets/1.xml
   def show
+    @game = params[:game] ||= ""
     @card_set = CardSet.find(params[:id])
 
     respond_to do |format|
@@ -27,6 +29,7 @@ class CardSetsController < ApplicationController
   # GET /card_sets/new
   # GET /card_sets/new.xml
   def new
+    @game = params[:game] ||= ""
     unless request.format.xml?
       @card_set = CardSet.new
 
@@ -65,18 +68,22 @@ class CardSetsController < ApplicationController
 
   # GET /card_sets/1/edit
   def edit
+    @game = params[:game] ||= ""
     @card_set = CardSet.find(params[:id])
   end
 
   # POST /card_sets
   # POST /card_sets.xml
   def create
+    @game = params[:game] ||= ""
+
     @card_set = CardSet.new(params[:card_set])
 
     respond_to do |format|
       if @card_set.save
         flash[:notice] = 'CardSet was successfully created.'
-        format.html { redirect_to(@card_set) }
+        # FIXME The following redirect_to does not pick up the :game parameter in the URI
+        format.html { redirect_to @card_set }
         format.xml  { render :xml => @card_set, :status => :created, :location => @card_set }
       else
         format.html { render :action => "new" }
@@ -88,12 +95,14 @@ class CardSetsController < ApplicationController
   # PUT /card_sets/1
   # PUT /card_sets/1.xml
   def update
+    @game = params[:game] ||= ""
     params[:card_set][:card_ids] ||= []
     @card_set = CardSet.find(params[:id])
 
     respond_to do |format|
       if @card_set.update_attributes(params[:card_set])
         flash[:notice] = 'CardSet was successfully updated.'
+        # FIXME The following redirect_to does not pick up the :game parameter in the URI
         format.html { redirect_to(@card_set) }
         format.xml  { head :ok }
       else
@@ -106,10 +115,12 @@ class CardSetsController < ApplicationController
   # DELETE /card_sets/1
   # DELETE /card_sets/1.xml
   def destroy
+    @game = params[:game] ||= ""
     @card_set = CardSet.find(params[:id])
     @card_set.destroy
 
     respond_to do |format|
+        # FIXME The following redirect_to does not pick up the :game parameter in the URI
       format.html { redirect_to(card_sets_url) }
       format.xml  { head :ok }
     end
