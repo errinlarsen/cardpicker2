@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates_length_of :username, :maximum => 25
 
   # Roles for authorization with cancan
-  ROLES = %w[admin editor consumer]
+  ROLES = ['', 'admin', 'editor', 'consumer']
 
   def admin?
     role == 'admin'
