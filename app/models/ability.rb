@@ -14,19 +14,18 @@ class Ability
       can :read, [Card, CardSet]
 
       # All users, except guests:
-      can :create, CardSet unless user.guest?
-      can :edit, CardSet do |card_set|
-        # All users (except guests)  can edit the CardSets
-        # they've created and Editors can edit any CardSet
-        #
-        # TODO: implement the next line in the CardSet model:
-        # card_set.try( :user ) == user ||
-        user.editor?
+      can :create, [Card] unless user.guest?
+      can :update, [Card] do |c|
+        # All users (except guests)  can edit the Cards and
+        # CardSets they've created and Editors can edit any
+        # Cards or CardSet
+         
+        c.try( :creator ) == user || user.editor?
       end
 
       if user.editor?
         # Editors only:
-        can [:create, :edit], Card
+        can [:create, :update], Card
       end
     end
   end
