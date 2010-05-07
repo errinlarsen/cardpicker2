@@ -5,7 +5,13 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :role, :password, :password_confirmation
+  attr_accessible :username, :email, :role, :password, :password_confirmation
+
+  # Validations for the new username column
+  validates_presence_of :username
+  validates_uniqueness_of :username
+  validates_length_of :username, :minimum => 3
+  validates_length_of :username, :maximum => 25
 
   # Roles for authorization with cancan
   ROLES = %w[admin editor consumer]
