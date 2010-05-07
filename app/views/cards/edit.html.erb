@@ -28,6 +28,10 @@
     <%= f.text_area :card_text %>
   </p>
   <p>
+    <b>Creator:</b>
+    <%=h @card.creator.username %>
+  </p>
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

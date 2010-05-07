@@ -28,6 +28,11 @@
   <%=h @card.card_text %>
 </p>
 
+<p>
+  <b>Creator:</b>
+  <%=h @card.creator.username %>
+</p>
+
 <% if can? :edit, @card %>
   <%= link_to 'Edit this card', edit_card_path(@card) %> |
 <% end %>
