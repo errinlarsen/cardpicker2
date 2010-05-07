@@ -12,14 +12,14 @@
     <td><%=h card_set.name %></td>
     <td><%=h card_set.set_type %></td>
     <td><%=h card_set.comments %></td>
-    <td><%= link_to 'Show', card_set %></td>
+    <td><%= link_to 'Show', card_set_path( card_set ) %></td>
 
     <% if can? :edit, card_set %>
-      <td><%= link_to 'Edit', edit_card_set_path(card_set) %></td>
+      <td><%= link_to 'Edit', edit_card_set_path( card_set ) %></td>
     <% end %>
 
     <% if can? :destroy, card_set %>
-      <td><%= link_to 'Destroy', card_set, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Destroy', card_set_path( card_set ), :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>

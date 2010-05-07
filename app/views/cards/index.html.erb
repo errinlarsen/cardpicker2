@@ -18,10 +18,10 @@
     <td><%=h card.card_type %></td>
     <td><%=h card.cost %></td>
     <td><%=h card.card_text %></td>
-    <td><%= link_to 'Show', card %></td>
+    <td><%= link_to 'Show', card%></td>
 
     <% if can? :edit, card %>
-      <td><%= link_to 'Edit', edit_card_path(card) %></td>
+      <td><%= link_to 'Edit', edit_card_path( card ) %></td>
     <% end %>
 
     <% if can? :destroy, card %>
