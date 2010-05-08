@@ -16,6 +16,10 @@
     <%= f.text_area :comments %>
   </p>
   <p>
+    <b>Creator:</b>
+    <%=h @card_set.creator.username %>
+  </p>
+  <p>
     <b>Cards:</b>
     <table>
       <tr><th>include?</th><th>Game</th><th>Expansion</th><th>Name</th></tr>
