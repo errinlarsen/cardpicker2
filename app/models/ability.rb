@@ -14,8 +14,8 @@ class Ability
       can :read, [Card, CardSet]
 
       # All users, except guests:
-      can :create, [Card] unless user.guest?
-      can :update, [Card] do |c|
+      can :create, CardSet unless user.guest?
+      can :update, [Card, CardSet] do |c|
         # All users (except guests)  can edit the Cards and
         # CardSets they've created and Editors can edit any
         # Cards or CardSet
@@ -25,7 +25,7 @@ class Ability
 
       if user.editor?
         # Editors only:
-        can [:create, :update], Card
+        can [:create, :update], [Card, CardSet]
       end
     end
   end
