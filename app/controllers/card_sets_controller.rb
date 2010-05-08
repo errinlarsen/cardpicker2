@@ -1,6 +1,6 @@
 class CardSetsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
-  authorize_resource
+  load_and_authorize_resource
   
   # GET /card_sets
   # GET /card_sets.xml
@@ -76,8 +76,8 @@ class CardSetsController < ApplicationController
   # POST /card_sets.xml
   def create
     @game = params[:game] ||= ""
-
     @card_set = CardSet.new(params[:card_set])
+    @card_set.creator = current_user
 
     respond_to do |format|
       if @card_set.save
