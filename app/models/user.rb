@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :cards
+  has_many :card_sets
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :role, :password, :password_confirmation

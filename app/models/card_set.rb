@@ -1,4 +1,5 @@
 class CardSet < ActiveRecord::Base
+  belongs_to :creator, :class_name => "User"
   has_many :memberships
 
   # FIXME: workaround for duplicating records in CardSet model
@@ -15,5 +16,5 @@ class CardSet < ActiveRecord::Base
   accepts_nested_attributes_for :memberships, :cards
 
   validates_uniqueness_of :name
-  validates_presence_of :name, :set_type
+  validates_presence_of :creator_id, :name, :set_type
 end
