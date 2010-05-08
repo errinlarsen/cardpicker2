@@ -24,6 +24,17 @@
     </div>
   </div>
 
+  <div id="navigation">
+    <ul>
+      <li>Dominion <%= link_to "Sets", game_card_sets_path( 'dominion' ) %> |
+        <%= link_to "Cards", game_cards_path( 'dominion' ) %></li>
+      <li>Thunderstone <%= link_to "Sets", game_card_sets_path( 'thunderstone' ) %> |
+        <%= link_to "Cards", game_cards_path( 'thunderstone' ) %></li>
+      <li>Start Player <%= link_to "Sets", game_card_sets_path( 'startplayer' ) %> |
+        <%= link_to "Cards", game_cards_path( 'startplayer' ) %></li>
+    </ul>
+  </div>
+
   <p style="color: green"><%= flash[:notice] %></p>
   <p style="color: red"><%= flash[:alert] %></p>
 
