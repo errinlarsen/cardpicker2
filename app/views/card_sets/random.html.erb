@@ -1,0 +1,37 @@
+<% form_for(@card_set) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.hidden_field :set_type %>
+  </p>
+  <p>
+    <b>Cards:</b>
+    
+    <% for card in @cards %>
+      <%= hidden_field_tag "card_set[card_ids][]", card.id %>
+    <% end %>
+
+  <table>
+    <tr><th>Game</th><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th></tr>
+    <% for card in @cards %>
+      <tr>
+        <td><%=h card.game%></td>
+        <td><%=h card.expansion %></td>
+        <td><%=h card.cost %></td>
+        <td><%=h card.card_type %></td>
+        <td><%=link_to card.name, card %></td>
+      </tr>
+    <% end %>
+    </table>
+  </p>
+  <p>
+    <%= f.submit 'Save this set' %>
+  </p>
+<% end %>
+
+<%= link_to 'New random set', random_new_game_card_set_path(@game) %> |
+<%= link_to 'Back to sets', card_sets_path %>
