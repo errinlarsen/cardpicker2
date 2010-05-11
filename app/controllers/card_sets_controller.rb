@@ -26,6 +26,20 @@ class CardSetsController < ApplicationController
     end
   end
 
+  # GET /card_sets/random
+  # GET /card_sets/random.xml
+  def random
+    @game = params[:game] ||= ""
+    @card_set = CardSet.new( :name => "New Set of 10", :set_type => "Set of 10" )
+    dominion_set = DominionSet.new( :bsw_style => true )
+    @cards = dominion_set.generate.sort { |a,b| a.cost <=> b.cost }
+
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @card_set }
+    end
+  end
+
   # GET /card_sets/new
   # GET /card_sets/new.xml
   def new
