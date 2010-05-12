@@ -12,4 +12,9 @@ class Card < ActiveRecord::Base
     chars = cost.chars
     chars.inject(0) { |sum, c| c == 'p' ? sum + POTION_VALUE : sum + c.to_i }
   end
+
+  def sort_cost
+    chars = cost.chars
+    chars.inject(0) { |sum, c| c == 'p' ? sum + 0.5 : sum + c.to_i }
+  end
 end
