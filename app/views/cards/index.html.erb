@@ -1,5 +1,9 @@
 <h1>Listing cards</h1>
 
+<% if can? :create, Card %>
+  <%= link_to 'New card', new_card_path %>
+<% end %>
+
 <table>
   <tr>
     <th>Game</th>
@@ -30,9 +34,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<% if can? :create, Card %>
-  <%= link_to 'New card', new_card_path %>
-<% end %>
