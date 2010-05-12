@@ -31,7 +31,7 @@ class CardsController < ApplicationController
   def new
     @game = params[:game] ||= ""
     unless request.format.xml?
-      @card = Card.new
+      @card = Card.new( :game => @game.capitalize )
 
     # Give XML requests sample data for reference
     else
