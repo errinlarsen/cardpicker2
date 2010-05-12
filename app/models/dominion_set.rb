@@ -57,11 +57,11 @@ class DominionSet
 
   def pick_a_card
     if @bsw_style
-      case @cards.select{ |card| card.cost.to_i < 4 }.length
+      case @cards.select{ |card| card.computed_cost < 4 }.length
       when 0..3
-        @cards << @deck.reject { |card| card.cost.to_i > 3 }.shuffle.shift
+        @cards << @deck.reject { |card| card.computed_cost > 3 }.shuffle.shift
       when 4
-        @cards << @deck.reject { |card| card.cost.to_i < 4 }.shuffle.shift
+        @cards << @deck.reject { |card| card.computed_cost < 4 }.shuffle.shift
       when 5..10
         @cards.clear
         @cards = @includes ||= []
@@ -91,20 +91,20 @@ private
 
 
   def do_minimums
-    unless @cards.any? { |card| card.cost == 2 }
-      return @deck.reject { |card| card.cost != 2 }.shuffle.shift
+    unless @cards.any? { |card| card.computed_cost == 2 }
+      return @deck.reject { |card| card.computed_cost != 2 }.shuffle.shift
     end
 
-    unless @cards.any? { |card| card.cost == 3 }
-      return @deck.reject { |card| card.cost != 3 }.shuffle.shift
+    unless @cards.any? { |card| card.computed_cost == 3 }
+      return @deck.reject { |card| card.computed_cost != 3 }.shuffle.shift
     end
 
-    unless @cards.any? { |card| card.cost == 4 }
-      return @deck.reject { |card| card.cost != 4 }.shuffle.shift
+    unless @cards.any? { |card| card.computed_cost == 4 }
+      return @deck.reject { |card| card.computed_cost != 4 }.shuffle.shift
     end
 
-    unless @cards.any? { |card| card.cost == 5 }
-      return @deck.reject { |card| card.cost != 5 }.shuffle.shift
+    unless @cards.any? { |card| card.computed_cost == 5 }
+      return @deck.reject { |card| card.computed_cost != 5 }.shuffle.shift
     end
 
     return nil
