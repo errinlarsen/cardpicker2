@@ -2,7 +2,7 @@ class DominionSet
 
   def initialize( options = {} )
     # TODO validate expansions input
-    @expansions = options[:expansions] ||= [ 'Base', 'Envoy', 'Intrigue', 'Black Market', 'Seaside' ]
+    @expansions = options[:expansions] ||= [ 'Base', 'Envoy', 'Intrigue', 'Black Market', 'Seaside', 'Alchemy' ]
     # TODO validate include fileter input
     @includes = options[:include] ||= []
     # TODO validate exclude filer input
