@@ -34,25 +34,9 @@ ActiveRecord::Schema.define(:version => 20100512033712) do
     t.boolean  "custom"
   end
 
-  create_table "lists", :force => true do |t|
-    t.string   "name"
-    t.string   "list_type"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "memberships", :force => true do |t|
     t.integer  "card_id"
     t.integer  "card_set_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sets", :force => true do |t|
-    t.string   "name"
-    t.string   "set_type"
-    t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
