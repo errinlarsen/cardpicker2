@@ -6,7 +6,7 @@ class CardSetsController < ApplicationController
   # GET /card_sets.xml
   def index
     @game = params[:game] ||= ""
-    @card_sets = CardSet.all( :order => "name" )
+    @card_sets = CardSet.all( :order => 'set_type, name' )
 
     respond_to do |format|
       format.html # index.html.erb
