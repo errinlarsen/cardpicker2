@@ -68,7 +68,7 @@ class CardsController < ApplicationController
       if @card.save
         flash[:notice] = 'Card was successfully created.'
         # FIXME The following redirect_to does not pick up the :game parameter in the URI
-        format.html { redirect_to(@card) }
+        format.html { redirect_to game_card_url @game, @card }
         format.xml  { render :xml => @card, :status => :created, :location => @card }
       else
         format.html { render :action => "new" }
@@ -86,8 +86,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.update_attributes(params[:card])
         flash[:notice] = 'Card was successfully updated.'
-        # FIXME The following redirect_to does not pick up the :game parameter in the URI
-        format.html { redirect_to(@card) }
+        format.html { redirect_to game_card_url @game, @card }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -104,8 +103,7 @@ class CardsController < ApplicationController
     @card.destroy
 
     respond_to do |format|
-        # FIXME The following redirect_to does not pick up the :game parameter in the URI
-      format.html { redirect_to(cards_url) }
+      format.html { redirect_to game_card_url @game }
       format.xml  { head :ok }
     end
   end
