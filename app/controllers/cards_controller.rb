@@ -67,7 +67,6 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.save
         flash[:notice] = 'Card was successfully created.'
-        # FIXME The following redirect_to does not pick up the :game parameter in the URI
         format.html { redirect_to game_card_url @game, @card }
         format.xml  { render :xml => @card, :status => :created, :location => @card }
       else
