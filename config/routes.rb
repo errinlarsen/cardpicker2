@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   # The ':game' is passed as a parameter ( params[:game] )
   map.with_options( :path_prefix => ":game", :name_prefix => "game_",
       :requirements => { :game => /dominion|startplayer|thunderstone/i }) do |m|
-    m.resources :card_sets, :new => { :random => :get }
+    m.resources :card_sets, :new => { :random => [:get, :post] }, :collection => { :random_options => :get }
     m.resources :cards
   end
 
