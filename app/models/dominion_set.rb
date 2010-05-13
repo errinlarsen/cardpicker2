@@ -1,47 +1,40 @@
 class DominionSet
-
+  attr_reader :options
+  
   def initialize( options = {} )
-    # TODO validate expansions input
-    @expansions = options[:expansions] ||= [ 'Base', 'Envoy', 'Intrigue', 'Black Market', 'Seaside', 'Alchemy' ]
-    # TODO validate include fileter input
-    @includes = options[:include] ||= []
-    # TODO validate exclude filer input
-    @excludes = options[:exclude] ||= []
-    # TODO validate max_attack_cards input
-    @max_attacks = options[:max_attacks] ||= nil
-    # TODO validate minimums input
-    @minimums = options[:minimums] ||= false
-    #TODO validate defense_required input
-    @defense_required = options[:defense_required] ||= false
-    # TODO validate allchemy_reqs bookean input
-    @alchemy_requirements = options[:alchemy_requirments] ||= true
-    # TODO validate bsw boolean  input
-    @bsw_style = options[:bsw_style] ||= false
-
-    @deck = Card.find_all_by_game_and_expansion( 'Dominion', @expansions )
-    @cards = @includes ||= []
+    @options = options.is_a?( DominionSetOptions ) ? options : DominionSetOptions.new( options )    
+    @deck = Card.find_all_by_game_and_expansion( 'Dominion', @options.expansions )
+    @deck = @deck - @options.excludes
+    @cards = @options.includes ? Array.new( @options.includes ) : []
   end
   
   def generate
-    until @cards.length == 10
+    # if it is impossible to draw 10 cards, throw the Base set into the deck
+    # TODO This should throw an error instead of overwriting the user's intentions
+    puts "LENGTH: @deck.length(#{@deck.length} + @cards.length(#{@cards.length}) = #{@deck.length + @cards.length})"
+    if @deck.length + @cards.length < 10
+      @deck.concat Card.find_all_by_game_and_expansion( 'Dominion', 'Base' )
+    end
+    
+    until @cards.length >= 10
       @deck = @deck - @cards
-      check_max_attacks if @max_attacks
+      check_max_attacks unless @options.max_attacks.nil?
 
-      if @minimums
+      if @options.minimums?
         if card = do_minimums
           @cards << card
           next
         end
       end
 
-      if @defense_required
+      if @options.defense_required?
         if card = do_defense_required
           @cards << card
           next
         end
       end
 
-      if @alchemy_requirements
+      if @options.alchemy_requirements?
         if card = do_alchemy_requirements
           @cards << card
           next
@@ -56,7 +49,7 @@ class DominionSet
 
 
   def pick_a_card
-    if @bsw_style
+    if @options.bsw_style?
       case @cards.select{ |card| card.computed_cost < 4 }.length
       when 0..3
         @cards << @deck.reject { |card| card.computed_cost > 3 }.shuffle.shift
@@ -64,7 +57,7 @@ class DominionSet
         @cards << @deck.reject { |card| card.computed_cost < 4 }.shuffle.shift
       when 5..10
         @cards.clear
-        @cards = @includes ||= []
+        @cards = Array.new( @options.includes || [] )
       end
     else
       @cards << @deck.shuffle.shift
@@ -73,17 +66,9 @@ class DominionSet
 
 
 private
-  def alchemy_min( reroll = false )
-    if @alchemy_min.nil? || reroll
-      @alchemy_min = (Array.new( 10, 3) + Array.new( 16, 4) + Array.new( 10, 5)).shuffle.shift
-    else
-      @alchemy_min
-    end
-  end
-
   def check_max_attacks
-    unless @max_attacks.nil?
-      if @cards.select { |card| card.card_type =~ /Attack/ }.length >= @max_attacks
+    unless @options.max_attacks.nil?
+      if @cards.select { |card| card.card_type =~ /Attack/ }.length >= @options.max_attacks.to_i
         @deck.reject! { |card| card.card_type =~ /Attack/ }
       end
     end
