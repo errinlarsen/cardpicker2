@@ -28,10 +28,18 @@
     <% end %>
     </table>
   </p>
+
+  <p>
+    <b>Options used:</b>
+    <%= list_for @dsoptions.to_hash %>
+  </p>
+  
   <p>
     <%= f.submit 'Save this set' %>
+    <%= link_to 'Change options', random_options_game_card_sets_path %>
   </p>
 <% end %>
 
 <%= link_to 'New random set', random_new_game_card_set_path(@game) %> |
-<%= link_to 'Back to sets', card_sets_path %>
+<%= link_to 'Back to sets', card_sets_path %><br />
+

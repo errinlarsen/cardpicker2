@@ -1,0 +1,34 @@
+<% form_tag random_new_game_card_set_path do %>
+
+<p>
+  <b>Expansions:</b><br />
+
+  <% for exp in @all_expansions %>
+    <%= check_box_tag "dominion_set_options[expansions][]", exp, @dsoptions.expansions.include?(exp) %>
+    <%=h exp %><br />
+  <% end %>
+</p>
+
+<p>
+  <b>Options:</b><br />
+  
+  <%= check_box_tag "dominion_set_options[bsw_style]", 'yes', @dsoptions.bsw_style? %>
+  BSW-style Randomization<br />
+
+  <%= check_box_tag "dominion_set_options[max_attacks_toggle]", 'yes', @dsoptions.max_attacks? %>
+  Maximum Attack cards: <%= text_field_tag "dominion_set_options[max_attacks]", @dsoptions.max_attacks, :size => 3 %><br />
+
+  <%= check_box_tag "dominion_set_options[minimums]", 'yes', @dsoptions.minimums? %>
+  Guarantee a minimum of one 2, 3, 4 and 5 cost cards.<br />
+
+  <%= check_box_tag "dominion_set_options[defense_required]", 'yes', @dsoptions.defense_required? %>
+  Guarantee at least one Reaction card for any Attack cards.<br />
+
+  <%= check_box_tag "dominion_set_options[alchemy_requirements]", 'yes', @dsoptions.alchemy_requirements? %>
+  Guarantee at least three and no more than five Alchemy cards if there are any Alchemy cards.<br />
+  
+</p>
+
+  <br />
+  <%= submit_tag 'Save' %>
+<% end %>
