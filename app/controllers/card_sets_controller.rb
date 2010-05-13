@@ -31,14 +31,27 @@ class CardSetsController < ApplicationController
   def random
     @game = params[:game] ||= ""
     @card_set = CardSet.new( :name => "New Set of 10", :set_type => "Set of 10" )
-    dominion_set = DominionSet.new( :bsw_style => true )
-    @cards = dominion_set.generate.sort { |a,b| a.sort_cost <=> b.sort_cost }
+    @dsoptions = DominionSetOptions.new( params[:dominion_set_options] || session[:dominion_set_options] || {} )
+    session[:dominion_set_options] = @dsoptions.to_hash
+    dominion_set = DominionSet.new( @dsoptions )
+    @cards = dominion_set.generate
+    @cards.sort! { |a,b| a.sort_cost <=> b.sort_cost }
 
     respond_to do |format|
       format.html
+      # TODO create sample data for xml rendering above
       format.xml  { render :xml => @card_set }
     end
   end
+
+  def random_options
+    puts "SESSION: #{session.inspect}"
+    @game = params[:game] ||= ""
+    @all_expansions = Card.find_all_by_custom( false ).collect { |card| card.expansion }.uniq
+    @dsoptions = DominionSetOptions.new( session[:dominion_set_options] || {} )
+  end
+
+
 
   # GET /card_sets/new
   # GET /card_sets/new.xml
