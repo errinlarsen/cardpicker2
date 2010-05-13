@@ -29,7 +29,8 @@
 
 <% if can? :create, CardSet %>
   <%= link_to 'New set', new_card_set_path %>
-  <% unless @game.empty? %>
-    | <%= link_to 'New random set', random_new_game_card_set_path(@game) %>
-  <% end %>
+<% end %>
+<br />
+<% unless @game.empty? %>
+  <%= link_to 'New random set', random_new_game_card_set_path(@game) %>
 <% end %>
