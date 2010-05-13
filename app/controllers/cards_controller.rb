@@ -18,7 +18,6 @@ class CardsController < ApplicationController
   # GET /cards/1.xml
   def show
     @game = params[:game] ||= ""
-    @card = Card.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,11 +29,8 @@ class CardsController < ApplicationController
   # GET /cards/new.xml
   def new
     @game = params[:game] ||= ""
-    unless request.format.xml?
-      @card = Card.new( :game => @game.capitalize )
-
-    # Give XML requests sample data for reference
-    else
+    if request.format.xml?
+      # Give XML requests sample data for reference
       @card = Card.new(
         :game => "Sample: the Game",
         :expansion => "Base",
@@ -54,20 +50,24 @@ class CardsController < ApplicationController
   # GET /cards/1/edit
   def edit
     @game = params[:game] ||= ""
-    @card = Card.find(params[:id])
   end
 
   # POST /cards
   # POST /cards.xml
   def create
     @game = params[:game] ||= ""
-    @card = Card.new(params[:card])
     @card.creator = current_user
 
     respond_to do |format|
       if @card.save
         flash[:notice] = 'Card was successfully created.'
-        format.html { redirect_to game_card_url @game, @card }
+        format.html do
+          if @game.blank?
+            redirect_to(@card)
+          else
+            redirect_to game_card_url @game, @card
+          end
+        end
         format.xml  { render :xml => @card, :status => :created, :location => @card }
       else
         format.html { render :action => "new" }
@@ -80,12 +80,17 @@ class CardsController < ApplicationController
   # PUT /cards/1.xml
   def update
     @game = params[:game] ||= ""
-    @card = Card.find(params[:id])
 
     respond_to do |format|
       if @card.update_attributes(params[:card])
         flash[:notice] = 'Card was successfully updated.'
-        format.html { redirect_to game_card_url @game, @card }
+        format.html do
+          if @game.blank?
+            redirect_to(@card)
+          else
+            redirect_to game_card_url @game, @card
+          end
+        end
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -98,11 +103,16 @@ class CardsController < ApplicationController
   # DELETE /cards/1.xml
   def destroy
     @game = params[:game] ||= ""
-    @card = Card.find(params[:id])
     @card.destroy
 
     respond_to do |format|
-      format.html { redirect_to game_card_url @game }
+      format.html do
+        if @game.blank?
+          redirect_to(cards_url)
+        else
+          redirect_to game_cards_url @game
+        end
+      end
       format.xml  { head :ok }
     end
   end

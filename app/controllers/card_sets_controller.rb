@@ -18,7 +18,6 @@ class CardSetsController < ApplicationController
   # GET /card_sets/1.xml
   def show
     @game = params[:game] ||= ""
-    @card_set = CardSet.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -45,23 +44,24 @@ class CardSetsController < ApplicationController
   end
 
   def random_options
-    puts "SESSION: #{session.inspect}"
     @game = params[:game] ||= ""
     @all_expansions = Card.find_all_by_custom( false ).collect { |card| card.expansion }.uniq
     @dsoptions = DominionSetOptions.new( session[:dominion_set_options] || {} )
-  end
 
+    respond_to do |format|
+      format.html #random_options.html.erb
+      # TODO confirm that the following code works as intended
+      format.xml  { render :xml => @dsoptions.to_hash }
+    end
+  end
 
 
   # GET /card_sets/new
   # GET /card_sets/new.xml
   def new
     @game = params[:game] ||= ""
-    unless request.format.xml?
-      @card_set = CardSet.new
-
-    # Give XML requests sample data for reference
-    else
+    if request.format.xml?
+      # Give XML requests sample data for reference
       @card_set = CardSet.new(
         :name => "Sample Set",
         :set_type => "Sample",
@@ -96,20 +96,24 @@ class CardSetsController < ApplicationController
   # GET /card_sets/1/edit
   def edit
     @game = params[:game] ||= ""
-    @card_set = CardSet.find(params[:id])
   end
 
   # POST /card_sets
   # POST /card_sets.xml
   def create
     @game = params[:game] ||= ""
-    @card_set = CardSet.new(params[:card_set])
     @card_set.creator = current_user
 
     respond_to do |format|
       if @card_set.save
         flash[:notice] = 'CardSet was successfully created.'
-        format.html { redirect_to game_card_set_url @game, @card_set }
+        format.html do
+          if @game.blank?
+            redirect_to(@card_set)
+          else
+            redirect_to game_card_set_url @game, @card_set
+          end
+        end
         format.xml  { render :xml => @card_set, :status => :created, :location => @card_set }
       else
         format.html { render :action => "new" }
@@ -122,13 +126,19 @@ class CardSetsController < ApplicationController
   # PUT /card_sets/1.xml
   def update
     @game = params[:game] ||= ""
-    params[:card_set][:card_ids] ||= []
-    @card_set = CardSet.find(params[:id])
+    # Why is the following necessary?
+#    params[:card_set][:card_ids] ||= []
 
     respond_to do |format|
       if @card_set.update_attributes(params[:card_set])
         flash[:notice] = 'CardSet was successfully updated.'
-        format.html { redirect_to game_card_set_url @game, @card_set }
+        format.html do
+          if @game.blank?
+            redirect_to(@card_set)
+          else
+            redirect_to game_card_set_url @game, @card_set
+          end
+        end
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -141,11 +151,16 @@ class CardSetsController < ApplicationController
   # DELETE /card_sets/1.xml
   def destroy
     @game = params[:game] ||= ""
-    @card_set = CardSet.find(params[:id])
     @card_set.destroy
 
     respond_to do |format|
-      format.html { redirect_to game_card_sets_url @game }
+      format.html do
+        if @game.blank?
+          redirect_to(card_sets_url)
+        else
+          redirect_to game_card_sets_url @game
+        end
+      end
       format.xml  { head :ok }
     end
   end
