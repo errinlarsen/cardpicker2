@@ -3,7 +3,7 @@ class DominionSet
   
   def initialize( options = {} )
     @options = options.is_a?( DominionSetOptions ) ? options : DominionSetOptions.new( options )    
-    @deck = Card.find_all_by_game_and_expansion( 'Dominion', @options.expansions )
+    @deck = Card.find_all_by_game_and_expansion( 'dominion', @options.expansions )
     @deck = @deck - @options.excludes
     @cards = @options.includes ? Array.new( @options.includes ) : []
   end
@@ -11,7 +11,6 @@ class DominionSet
   def generate
     # if it is impossible to draw 10 cards, throw the Base set into the deck
     # TODO This should throw an error instead of overwriting the user's intentions
-    puts "LENGTH: @deck.length(#{@deck.length} + @cards.length(#{@cards.length}) = #{@deck.length + @cards.length})"
     if @deck.length + @cards.length < 10
       @deck.concat Card.find_all_by_game_and_expansion( 'Dominion', 'Base' )
     end

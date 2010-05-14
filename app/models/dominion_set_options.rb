@@ -2,7 +2,6 @@ class DominionSetOptions
   attr_reader :excludes, :includes, :max_attacks, :expansions
 
   def initialize( options = {} )
-    puts "IN DSO.initialize: options"
     # TODO validate expansions input
     @expansions = options[:expansions] || Card.find_all_by_custom( false ).collect { |card| card.expansion }.uniq
     # TODO validate include fileter input
