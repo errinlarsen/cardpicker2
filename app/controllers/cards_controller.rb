@@ -6,7 +6,11 @@ class CardsController < ApplicationController
   # GET /cards.xml
   def index
     @game = params[:game] ||= ""
-    @cards = Card.all( :order => "game, expansion, name" )
+    if @game.empty?
+      @cards = Card.all( :order => "game, expansion, name" )
+    else
+      @cards = Card.find_all_by_game( @game, :order => "expansion, name" )
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,6 +25,24 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.xml  { render :xml => @card }
+    end
+  end
+
+  # GET /cards/random
+  # GET /cards/random.xml
+  def random
+    @game = params[:game] ||= ""
+    @card = Card.find_all_by_game( @game ).shuffle.shift
+
+    respond_to do |format|
+      format.html do
+        if @game.blank?
+          redirect_to(@card)
+        else
+          redirect_to game_card_url( @game, @card )
+        end
+      end
       format.xml  { render :xml => @card }
     end
   end
@@ -57,6 +79,7 @@ class CardsController < ApplicationController
   def create
     @game = params[:game] ||= ""
     @card.creator = current_user
+    @card.game = @card.game.dehumanize
 
     respond_to do |format|
       if @card.save
