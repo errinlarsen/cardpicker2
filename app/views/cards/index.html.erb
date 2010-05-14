@@ -16,7 +16,7 @@
 
 <% @cards.each do |card| %>
   <tr>
-    <td><%=h card.game %></td>
+    <td><%=h card.game.humanize %></td>
     <td><%=h card.expansion %></td>
     <td><%=h card.name %></td>
     <td><%=h card.card_type %></td>
