@@ -1,5 +1,5 @@
 class CardSetsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :random, :random_options]
   load_and_authorize_resource
   
   # GET /card_sets
