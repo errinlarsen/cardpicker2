@@ -6,9 +6,9 @@ ActionController::Routing::Routes.draw do |map|
   # The URI's are different, but they still use the underlining Cards and CardSets controllers
   # The ':game' is passed as a parameter ( params[:game] )
   map.with_options( :path_prefix => ":game", :name_prefix => "game_",
-      :requirements => { :game => /dominion|startplayer|thunderstone/i }) do |m|
+      :requirements => { :game => /dominion|start_player|thunderstone/i }) do |m|
     m.resources :card_sets, :collection => { :random => [:get, :post], :random_options => :get }
-    m.resources :cards
+    m.resources :cards, :collection => { :random => :get }
   end
 
   # The following map calls provide routes to cards/ and cards_sets/1/edit, etc.
