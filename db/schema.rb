@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100512150402) do
+ActiveRecord::Schema.define(:version => 20100514155548) do
 
   create_table "card_sets", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20100512150402) do
     t.datetime "updated_at"
     t.integer  "creator_id"
     t.boolean  "custom"
+    t.string   "game"
   end
 
   create_table "cards", :force => true do |t|
