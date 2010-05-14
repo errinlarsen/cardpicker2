@@ -6,7 +6,11 @@ class CardSetsController < ApplicationController
   # GET /card_sets.xml
   def index
     @game = params[:game] ||= ""
-    @card_sets = CardSet.all( :order => 'set_type, name' )
+    if @game.empty?
+      @card_sets = CardSet.all( :order => 'game, set_type, name' )
+    else
+      @card_sets = CardSet.find_all_by_game( @game, :order => 'set_type, name' )
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,12 +33,16 @@ class CardSetsController < ApplicationController
   # GET /card_sets/random.xml
   def random
     @game = params[:game] ||= ""
-    @card_set = CardSet.new( :name => "New Set of 10", :set_type => "Set of 10" )
-    @dsoptions = DominionSetOptions.new( params[:dominion_set_options] || session[:dominion_set_options] || {} )
-    session[:dominion_set_options] = @dsoptions.to_hash
-    dominion_set = DominionSet.new( @dsoptions )
-    @cards = dominion_set.generate
-    @cards.sort! { |a,b| a.sort_cost <=> b.sort_cost }
+    case @game
+    when 'dominion'
+      @card_set = CardSet.new( :game => @game, :name => "New Set of 10", :set_type => "Set of 10" )
+      @dsoptions = DominionSetOptions.new( params[:dominion_set_options] || session[:dominion_set_options] || {} )
+      session[:dominion_set_options] = @dsoptions.to_hash
+      dominion_set = DominionSet.new( @dsoptions )
+      @cards = dominion_set.generate
+      @cards.sort! { |a,b| a.sort_cost <=> b.sort_cost }
+    end
+
 
     respond_to do |format|
       format.html
