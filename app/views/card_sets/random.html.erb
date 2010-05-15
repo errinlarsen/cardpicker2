@@ -1,45 +1,25 @@
-<% form_for(@card_set) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.hidden_field :set_type %>
-  </p>
-  <p>
-    <b>Cards:</b>
-    
-    <% for card in @cards %>
-      <%= hidden_field_tag "card_set[card_ids][]", card.id %>
-    <% end %>
-
-  <table>
-    <tr><th>Game</th><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th></tr>
-    <% for card in @cards %>
-      <tr>
-        <td><%=h card.game%></td>
-        <td><%=h card.expansion %></td>
-        <td><%=h card.cost %></td>
-        <td><%=h card.card_type %></td>
-        <td><%=link_to card.name, card %></td>
-      </tr>
-    <% end %>
-    </table>
-  </p>
-
-  <p>
-    <b>Options used:</b>
-    <%= list_for @dsoptions.to_hash %>
-  </p>
-  
-  <p>
-    <%= f.submit 'Save this set' %>
-    <%= link_to 'Change options', random_options_game_card_sets_path %>
-  </p>
-<% end %>
+<p>
+  <h2>Random <%=h @game.humanize %> set</h2>
+</p>
 
 <%= link_to 'New random set', random_game_card_sets_path(@game) %> |
-<%= link_to 'Back to sets', card_sets_path %><br />
+<%= link_to 'Save this set', new_game_card_set_path( @game ) %>
 
+<p>
+<table>
+  <tr><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th></tr>
+  <% for card in @random_set.cards %>
+    <tr>
+      <td><%=h card.expansion %></td>
+      <td><%=h card.cost %></td>
+      <td><%=h card.card_type %></td>
+      <td><%=link_to card.name, card %></td>
+    </tr>
+  <% end %>
+  </table>
+</p>
+
+<p>
+  <b>Options used</b> (<%= link_to 'Change options', random_options_game_card_sets_path %>)<b>:</b>
+  <%= list_for @random_set.options %>
+</p>
