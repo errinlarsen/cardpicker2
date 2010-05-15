@@ -1,3 +1,6 @@
+<p>
+  <h2>Change <%=h @game.humanize %> options</h2>
+</p>
 <% form_tag random_game_card_sets_path do %>
 
 <p>
@@ -10,7 +13,7 @@
 </p>
 
 <p>
-  <b>Options:</b><br />
+  <b>Toggles:</b><br />
   
   <%= check_box_tag "dominion_set_options[bsw_style]", 'yes', @dsoptions.bsw_style? %>
   BSW-style Randomization<br />
