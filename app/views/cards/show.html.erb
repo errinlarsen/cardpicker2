@@ -1,6 +1,9 @@
 <% case @game when 'start_player' %>
   <%= render :partial => @game %>
 
+<% when 'dominion' %>
+  <%= render :partial => @game %>
+
 <% else %>
   <p>
     <b>Game:</b>

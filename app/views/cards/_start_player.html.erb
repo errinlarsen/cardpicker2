@@ -1,18 +1,16 @@
-<%= link_to 'Pick again', random_game_cards_path(@game) %>
+<h2><%=h @card.name %></h2>
 
-  <p>
-    <b>Arrow:</b>
-    <%=h @card.card_type %>&deg;
-  </p>
-
-  <p>
-    <b>Number:</b>
-    <%=h @card.cost %>
-  </p>
+<%= link_to 'Pick again', random_game_cards_path(@game) %> |
+<%= link_to 'Create a new card', new_game_card_path( @game ) %>
 
 <p>
-  <b>Name:</b>
-  <%=h @card.name %>
+  <b>Arrow:</b>
+  <%=h @card.card_type %>&deg;
+</p>
+
+<p>
+  <b>Number:</b>
+  <%=h @card.cost %>
 </p>
 
 <p>

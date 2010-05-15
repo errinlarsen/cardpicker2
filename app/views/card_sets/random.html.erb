@@ -1,6 +1,4 @@
-<p>
-  <h2>Random <%=h @game.humanize %> set</h2>
-</p>
+<h2>Random <%=h @game.humanize %> set</h2>
 
 <%= link_to 'New random set', random_game_card_sets_path(@game) %> |
 <%= link_to 'Save this set', new_game_card_set_path( @game ) %>
@@ -20,6 +18,6 @@
 </p>
 
 <p>
-  <b>Options used</b> (<%= link_to 'Change options', random_options_game_card_sets_path %>)<b>:</b>
+  <b>Options used</b> <sub>(<%= link_to 'Change options', random_options_game_card_sets_path %>)</sub><b>:</b>
   <%= list_for @random_set.options %>
 </p>
