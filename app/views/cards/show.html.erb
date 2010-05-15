@@ -1,12 +1,43 @@
-<p>
-  <b>Game:</b>
-  <%=h @card.game %>
-</p>
+<%= link_to 'Pick again', random_game_cards_path(@game) %>
 
-<p>
-  <b>Expansion:</b>
-  <%=h @card.expansion %>
-</p>
+<% if @game.empty? %>
+  <p>
+    <b>Game:</b>
+    <%=h @card.game %>
+  </p>
+
+  <p>
+    <b>Expansion:</b>
+    <%=h @card.expansion %>
+  </p>
+
+  <p>
+    <b>Card type:</b>
+    <%=h @card.card_type %>
+  </p>
+
+  <p>
+    <b>Cost:</b>
+    <%=h @card.cost %>
+  </p>
+
+  <p>
+    <b>Creator:</b>
+    <%=h @card.creator.username %>
+  </p>
+<% end %>
+
+<% if not @game.empty? %>
+  <p>
+    <b>Arrow:</b>
+    <%=h @card.card_type %>&deg;
+  </p>
+
+  <p>
+    <b>Number:</b>
+    <%=h @card.cost %>
+  </p>
+<% end %>
 
 <p>
   <b>Name:</b>
@@ -14,26 +45,6 @@
 </p>
 
 <p>
-  <b>Card type:</b>
-  <%=h @card.card_type %>
-</p>
-
-<p>
-  <b>Cost:</b>
-  <%=h @card.cost %>
-</p>
-
-<p>
   <b>Card text:</b>
   <%=h @card.card_text %>
 </p>
-
-<p>
-  <b>Creator:</b>
-  <%=h @card.creator.username %>
-</p>
-
-<% if can? :edit, @card %>
-  <%= link_to 'Edit this card', edit_card_path(@card) %> |
-<% end %>
-<%= link_to 'Back to cards', cards_path %>
