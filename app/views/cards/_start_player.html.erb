@@ -1,0 +1,21 @@
+<%= link_to 'Pick again', random_game_cards_path(@game) %>
+
+  <p>
+    <b>Arrow:</b>
+    <%=h @card.card_type %>&deg;
+  </p>
+
+  <p>
+    <b>Number:</b>
+    <%=h @card.cost %>
+  </p>
+
+<p>
+  <b>Name:</b>
+  <%=h @card.name %>
+</p>
+
+<p>
+  <b>Card text:</b>
+  <%=h @card.card_text %>
+</p>

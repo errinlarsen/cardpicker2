@@ -1,14 +1,20 @@
-<%= link_to 'Pick again', random_game_cards_path(@game) %>
+<% case @game when 'start_player' %>
+  <%= render :partial => @game %>
 
-<% if @game.empty? %>
+<% else %>
   <p>
     <b>Game:</b>
-    <%=h @card.game %>
+    <%=h @card.game.humanize %>
   </p>
 
   <p>
     <b>Expansion:</b>
     <%=h @card.expansion %>
+  </p>
+
+  <p>
+    <b>Name:</b>
+    <%=h @card.name %>
   </p>
 
   <p>
@@ -22,29 +28,12 @@
   </p>
 
   <p>
+    <b>Card text:</b>
+    <%=h @card.card_text %>
+  </p>
+
+  <p>
     <b>Creator:</b>
     <%=h @card.creator.username %>
   </p>
 <% end %>
-
-<% if not @game.empty? %>
-  <p>
-    <b>Arrow:</b>
-    <%=h @card.card_type %>&deg;
-  </p>
-
-  <p>
-    <b>Number:</b>
-    <%=h @card.cost %>
-  </p>
-<% end %>
-
-<p>
-  <b>Name:</b>
-  <%=h @card.name %>
-</p>
-
-<p>
-  <b>Card text:</b>
-  <%=h @card.card_text %>
-</p>
