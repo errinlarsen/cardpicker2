@@ -19,19 +19,17 @@
           | <%= link_to 'Administer users', admin_index_path %>
         <% end %>
       <% else %>
+        You need to
         <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
       <% end  %>
+        if you want to create custom cards or card sets.
     </div>
   </div>
 
   <div id="navigation">
     <ul>
-      <li>Dominion <%= link_to "Sets", game_card_sets_path( 'dominion' ) %> |
-        <%= link_to "Cards", game_cards_path( 'dominion' ) %></li>
-      <li>Thunderstone <%= link_to "Sets", game_card_sets_path( 'thunderstone' ) %> |
-        <%= link_to "Cards", game_cards_path( 'thunderstone' ) %></li>
-      <li>Start Player <%= link_to "Sets", game_card_sets_path( 'start_player' ) %> |
-        <%= link_to "Cards", game_cards_path( 'start_player' ) %></li>
+      <li><%= link_to "Start Player", random_game_cards_path( 'start_player' ) %>
+      <li><%= link_to "Dominion", random_game_card_sets_path( 'dominion' ) %>
     </ul>
   </div>
 
