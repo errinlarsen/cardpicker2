@@ -13,6 +13,7 @@ class Ability
       # All users, including guests:
       can :read, [Card, CardSet]
       can [:random, :random_options], CardSet
+      can :random, Card
 
       # All users, except guests:
       can :create, CardSet unless user.guest?
