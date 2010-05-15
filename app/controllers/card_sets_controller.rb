@@ -35,14 +35,10 @@ class CardSetsController < ApplicationController
     @game = params[:game] ||= ""
     case @game
     when 'dominion'
-      @card_set = CardSet.new( :game => @game, :name => "New Set of 10", :set_type => "Set of 10" )
-      @dsoptions = DominionSetOptions.new( params[:dominion_set_options] || session[:dominion_set_options] || {} )
-      session[:dominion_set_options] = @dsoptions.to_hash
-      dominion_set = DominionSet.new( @dsoptions )
-      @cards = dominion_set.generate
-      @cards.sort! { |a,b| a.sort_cost <=> b.sort_cost }
+      @random_set = CardSet.random( @game, params[:dominion_set_options] || session[:dominion_set_options] || {} )
+      session[:dominion_set_options] = @random_set.options
+      session[:new_random_dominion_set] = @random_set.to_hash
     end
-
 
     respond_to do |format|
       format.html
@@ -68,6 +64,16 @@ class CardSetsController < ApplicationController
   # GET /card_sets/new.xml
   def new
     @game = params[:game] ||= ""
+    case @game
+    when 'dominion'      
+      if @random_set = session[:new_random_dominion_set]
+        @card_set.attributes = {
+          :game => @game,
+          :set_type => 'Set of 10',
+          :comments => "Options used:\n #{@random_set[:options].reject { |k, v| v.nil? || v.empty? }.to_yaml}" }
+        session[:new_random_dominion_set] = nil
+      end
+    end
     if request.format.xml?
       # Give XML requests sample data for reference
       @card_set = CardSet.new(

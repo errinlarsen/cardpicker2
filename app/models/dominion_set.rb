@@ -1,5 +1,5 @@
 class DominionSet
-  attr_reader :options
+  attr_reader :cards
   
   def initialize( options = {} )
     @options = options.is_a?( DominionSetOptions ) ? options : DominionSetOptions.new( options )    
@@ -8,7 +8,7 @@ class DominionSet
     @cards = @options.includes ? Array.new( @options.includes ) : []
   end
   
-  def generate
+  def generate!
     # if it is impossible to draw 10 cards, throw the Base set into the deck
     # TODO This should throw an error instead of overwriting the user's intentions
     if @deck.length + @cards.length < 10
@@ -43,7 +43,8 @@ class DominionSet
       pick_a_card
     end
 
-    return @cards
+    @cards.sort { |a,b| a.sort_cost <=> b.sort_cost }
+    return self
   end
 
 
@@ -61,6 +62,16 @@ class DominionSet
     else
       @cards << @deck.shuffle.shift
     end
+  end
+
+
+  def to_hash
+    { :cards => cards.collect { |card| card.id }, :options => @options.to_hash }
+  end
+
+
+  def options
+    @options.to_hash
   end
 
 
