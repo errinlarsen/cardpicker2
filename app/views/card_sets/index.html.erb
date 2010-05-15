@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <% if @game.empty? %><th>Game</th><% end %>
     <th>Name</th>
     <th>Set type</th>
     <th>Comments</th>
@@ -9,6 +10,7 @@
 
 <% @card_sets.each do |card_set| %>
   <tr>
+    <% if @game.empty? %><td><%=h card_set.game %></td><% end %>
     <td><%=h card_set.name %></td>
     <td><%=h card_set.set_type %></td>
     <td><%=h card_set.comments %></td>
