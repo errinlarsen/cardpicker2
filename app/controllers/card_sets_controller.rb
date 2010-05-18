@@ -36,20 +36,31 @@ class CardSetsController < ApplicationController
     case @game
     when 'dominion'
       if params[:rds_options]
+        # Fix stupid :max_attacks_toggle/:max_attacks sync-up issue
+        if params[:rds_options][:max_attacks].blank?
+          params[:rds_options].delete( 'max_attacks_toggle' )
+        elsif params[:rds_options][:max_attacks_toggle].nil?
+          params[:rds_options][:max_attacks] = ""
+        else
+          params[:rds_options][:max_attacks_toggle] = 'yes'
+        end
+
         # incoming options from params = new options; save to session
-        puts "params = #{params.inspect}"
-        # FIXME params[:max_attacks_toggle] is not being handled correctly
-        options = session[:rds_options] = symbolize_params_keys( params[:rds_options] )
+        options = session[:rds_options] = symbolize_keys( params[:rds_options] )
+        flash.now[:notice] = 'New options have been applied.'
+
       elsif session[:rds_options]
         # no incoming params and previously saved options from session; merge in replace request
         options = Hash[session[:rds_options]]
-        options.merge!( symbolize_params_keys(  params[:replace] )) unless params[:replace].nil?
+        options.merge!( symbolize_keys(  params[:replace] )) unless params[:replace].nil?
+
       else
         # Create new options from defaults and save to the session
         options = session[:rds_options] = RandomDominionSet::DEFAULT_OPTIONS
       end
-      
+
       @rds = RandomDominionSet.new( options )
+      flash.now[:notice] = @rds.replacement_message if params[:replace]
     end
 
     respond_to do |format|
@@ -196,7 +207,7 @@ class CardSetsController < ApplicationController
   end
 
   private
-  def symbolize_params_keys(hash)
+  def symbolize_keys(hash)
     hash.inject({}){|result, (key, value)|
       new_key = case key
                 when String then key.to_sym

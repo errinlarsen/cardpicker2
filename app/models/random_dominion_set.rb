@@ -18,7 +18,7 @@ class RandomDominionSet
     @deck = Card.dominion( @options[:expansions] )
     excludes = Card.dominion.find( @options[:excludes] )
     includes = Card.dominion.find( @options[:includes] )
-    unless @replace[:card].nil?
+    if @replace[:card]
       @replace[:includes].delete( @replace[:card] )
       excludes = (excludes + Card.dominion.find(@replace[:excludes]) ).uniq
       includes = (includes + Card.dominion.find(@replace[:includes]) ).uniq
@@ -84,9 +84,20 @@ class RandomDominionSet
   end
 
 
+  def replacement_message
+    replaced_card = Card.find( @replace[:card] )
+    cards_ids = @cards.collect { |card| card.id }
+    replacement_card = Card.find( (cards_ids - @replace[:includes]).first )
+    "#{replaced_card.name} was replaced by #{replacement_card.name}"
+  end
+
+  
 private
   def initialize_options!( options )
     @options = Hash[options]
+    @options[:replace_this] = @options[:replace_this].to_i if @options[:replace_this]
+    @options[:replace_includes].collect! { |cid| cid.to_i } if @options[:replace_includes]
+    @options[:replace_excludes].collect! { |cid| cid.to_i } if @options[:replace_excludes]
     @replace = {
       :card =>  @options.delete(:replace_this) || nil,
       :includes => @options.delete(:replace_includes) || [],
