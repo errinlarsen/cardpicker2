@@ -1,6 +1,7 @@
 <h2>Random <%=h @game.humanize %> set</h2>
 
 <%= link_to 'New random set', random_game_card_sets_path(@game) %> |
+<%= link_to 'Other Dominion sets', game_card_sets_path( @game ) %> |
 <%= link_to 'Save this set', new_game_card_set_path( @game ) %>
 
 <p>

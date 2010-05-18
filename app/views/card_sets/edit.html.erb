@@ -2,6 +2,17 @@
 
 <% form_for(@card_set) do |f| %>
   <%= f.error_messages %>
+  
+  <% if can? :manage, @card_set %>
+    <p>
+      <%= f.label :game %><br />
+      <%= f.text_field :game %>
+    </p>
+    <p>
+      <%= check_box_tag "card_set[custom]", 'yes', @card_set.custom %>
+      <%= f.label :custom %><br />
+    </p>
+  <% end %>
 
   <p>
     <%= f.label :name %><br />
@@ -23,7 +34,7 @@
     <b>Cards:</b>
     <table>
       <tr><th>include?</th><th>Game</th><th>Expansion</th><th>Name</th></tr>
-    <% for card in Card.all( :order => "game, expansion, name") %>
+    <% for card in @all_cards %>
       <tr>
         <td><%= check_box_tag "card_set[card_ids][]", card.id, @card_set.cards.include?(card) %></td>
         <td><%=h card.game%></td><td><%=h card.expansion %></td><td><%=link_to card.name, card %></td></tr>

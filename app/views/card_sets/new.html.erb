@@ -3,7 +3,20 @@
 <% form_for(@card_set) do |f| %>
   <%= f.error_messages %>
 
-  <%= hidden_field_tag "card_set[game]", @game %>
+  <% if can? :manage, CardSet %>
+    <p>
+      <%= f.label :game %><br />
+      <%= f.text_field :game %>
+    </p>
+    <p>
+      <%= check_box_tag "card_set[custom]", 'yes', @card_set.custom %>
+      <%= f.label :custom %><br />
+    </p>
+
+  <% else %>
+    <%= hidden_field_tag "card_set[game]", @card_set.game %>
+    <%= hidden_field_tag "card_set[custom]", @card_set.custom %>
+  <% end %>
 
   <p>
     <%= f.label :name %><br />
@@ -21,10 +34,10 @@
     <b>Cards:</b>
     <table>
       <tr><th>include?</th><th>Game</th><th>Expansion</th><th>Name</th></tr>
-    <% for card in Card.all( :order => "game, expansion, name") %>
+    <% for card in @all_cards %>
       <tr>
-        <% if @game == 'dominion' %>
-          <td><%= check_box_tag "card_set[card_ids][]", card.id, @random_set[:cards].include?(card.id) %></td>
+        <% if @rds %>
+          <td><%= check_box_tag "card_set[card_ids][]", card.id, @rds[:cards].include?(card.id) %></td>
         <% else %>
           <td><%= check_box_tag "card_set[card_ids][]", card.id, @card_set.cards.include?(card) %></td>
         <% end %>

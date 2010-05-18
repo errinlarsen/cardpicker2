@@ -16,7 +16,7 @@ class Ability
       can :random, Card
 
       # All users, except guests:
-      can :create, CardSet unless user.guest?
+      can :create, [Card, CardSet] unless user.guest?
       can :update, [Card, CardSet] do |c|
         # All users (except guests)  can edit the Cards and
         # CardSets they've created and Editors can edit any

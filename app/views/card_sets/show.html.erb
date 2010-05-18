@@ -1,4 +1,9 @@
 <p>
+  <b>Creator:</b>
+  <%=h @card_set.creator.username %>
+</p>
+
+<p>
   <b>Name:</b>
   <%=h @card_set.name %>
 </p>
@@ -10,13 +15,15 @@
 
 <p>
   <b>Comments:</b>
-  <%=h @card_set.comments %>
+  <%= simple_format( @card_set.comments ) %>
 </p>
 
-<p>
-  <b>Creator:</b>
-  <%=h @card_set.creator.username %>
-</p>
+<% if can? :manage, @card_set %>
+  <p>
+    <b>Custom?:</b>
+    <%=h @card_set.custom %>
+  </p>
+<% end %>
 
 <p>
   <b>Cards:</b>

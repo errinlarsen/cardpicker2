@@ -5,7 +5,7 @@
     <% if @game.empty? %><th>Game</th><% end %>
     <th>Name</th>
     <th>Set type</th>
-    <th>Comments</th>
+    <th>Custom?</th>
   </tr>
 
 <% @card_sets.each do |card_set| %>
@@ -13,7 +13,7 @@
     <% if @game.empty? %><td><%=h card_set.game %></td><% end %>
     <td><%=h card_set.name %></td>
     <td><%=h card_set.set_type %></td>
-    <td><%=h card_set.comments %></td>
+    <td><%=h card_set.show_custom %></td>
     <td><%= link_to 'Show', card_set_path( card_set ) %></td>
 
     <% if can? :edit, card_set %>

@@ -1,15 +1,25 @@
 class CardSetsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index, :random, :random_options]
+  before_filter :authenticate_user!, 
+    :except => [:show, :index, :random, :random_options, :welcome]
   load_and_authorize_resource
-  
+
+  # GET /
+  # GET /card_sets/welcome
+  def welcome
+  end
+
   # GET /card_sets
   # GET /card_sets.xml
   def index
     @game = params[:game] ||= ""
-    if @game.empty?
+    if @game.blank?
       @card_sets = CardSet.all( :order => 'game, set_type, name' )
     else
-      @card_sets = CardSet.find_all_by_game( @game, :order => 'set_type, name' )
+      if can? :edit, CardSet
+        @card_sets = CardSet.find_all_by_game( @game, :order => 'set_type, name' )
+      else
+        @card_sets = CardSet.dominion_sets_of_10
+      end
     end
 
     respond_to do |format|
@@ -60,6 +70,8 @@ class CardSetsController < ApplicationController
       end
 
       @rds = RandomDominionSet.new( options )
+      session[:new_rds] =
+        { :options => Hash[@rds.options], :cards => @rds.cards.collect { |card| card.id }}
       flash.now[:notice] = @rds.replacement_message if params[:replace]
     end
 
@@ -91,14 +103,17 @@ class CardSetsController < ApplicationController
   # GET /card_sets/new.xml
   def new
     @game = params[:game] ||= ""
+    @card_set.game = @game
+    @card_set.custom = can?( :edit, CardSet ) ? false : true
     case @game
-    when 'dominion'      
-      if @random_set = session[:new_random_dominion_set]
+    when 'dominion'
+      @all_cards = Card.dominion_with_customs
+      if session[:new_rds]
+        @rds = Hash[session[:new_rds]]
         @card_set.attributes = {
-          :game => @game,
           :set_type => 'Set of 10',
-          :comments => "Options used:\n #{@random_set[:options].reject { |k, v| v.nil? || v.empty? }.to_yaml}" }
-        session[:new_random_dominion_set] = nil
+          :comments => "Options used:\n #{@rds[:options].reject { |k, v| v.blank? }.to_yaml}" }
+        session.delete( :new_rds )
       end
     end
     if request.format.xml?
@@ -137,6 +152,10 @@ class CardSetsController < ApplicationController
   # GET /card_sets/1/edit
   def edit
     @game = params[:game] ||= ""
+    case @game
+    when 'dominion'
+      @all_cards = Card.dominion_with_customs
+    end
   end
 
   # POST /card_sets
@@ -144,6 +163,7 @@ class CardSetsController < ApplicationController
   def create
     @game = params[:game] ||= ""
     @card_set.creator = current_user
+    @card_set.custom = params[:card_set][:custom] == 'yes' ? true : false
 
     respond_to do |format|
       if @card_set.save
@@ -167,8 +187,7 @@ class CardSetsController < ApplicationController
   # PUT /card_sets/1.xml
   def update
     @game = params[:game] ||= ""
-    # Why is the following necessary?
-#    params[:card_set][:card_ids] ||= []
+    @card_set.custom = params[:card_set][:custom] == 'yes' ? true : false
 
     respond_to do |format|
       if @card_set.update_attributes(params[:card_set])
