@@ -35,9 +35,21 @@ class CardSetsController < ApplicationController
     @game = params[:game] ||= ""
     case @game
     when 'dominion'
-      @random_set = CardSet.random( @game, params[:dominion_set_options] || session[:dominion_set_options] || {} )
-      session[:dominion_set_options] = @random_set.options
-      session[:new_random_dominion_set] = @random_set.to_hash
+      if params[:rds_options]
+        # incoming options from params = new options; save to session
+        puts "params = #{params.inspect}"
+        # FIXME params[:max_attacks_toggle] is not being handled correctly
+        options = session[:rds_options] = symbolize_params_keys( params[:rds_options] )
+      elsif session[:rds_options]
+        # no incoming params and previously saved options from session; merge in replace request
+        options = Hash[session[:rds_options]]
+        options.merge!( symbolize_params_keys(  params[:replace] )) unless params[:replace].nil?
+      else
+        # Create new options from defaults and save to the session
+        options = session[:rds_options] = RandomDominionSet::DEFAULT_OPTIONS
+      end
+      
+      @rds = RandomDominionSet.new( options )
     end
 
     respond_to do |format|
@@ -47,15 +59,19 @@ class CardSetsController < ApplicationController
     end
   end
 
+
   def random_options
     @game = params[:game] ||= ""
-    @all_expansions = Card.find_all_by_custom( false ).collect { |card| card.expansion }.uniq
-    @dsoptions = DominionSetOptions.new( session[:dominion_set_options] || {} )
+    case @game
+    when 'dominion'
+      @all_expansions = Card.dominion.all_expansions
+      @options = Hash[session[:rds_options]] || RandomDominionSet::DEFAULT_OPTIONS
+    end
 
     respond_to do |format|
       format.html #random_options.html.erb
       # TODO confirm that the following code works as intended
-      format.xml  { render :xml => @dsoptions.to_hash }
+      format.xml  { render :xml => @options }
     end
   end
 
@@ -177,5 +193,21 @@ class CardSetsController < ApplicationController
       end
       format.xml  { head :ok }
     end
+  end
+
+  private
+  def symbolize_params_keys(hash)
+    hash.inject({}){|result, (key, value)|
+      new_key = case key
+                when String then key.to_sym
+                else key
+                end
+      new_value = case value
+                  when Hash then symbolize_keys(value)
+                  else value
+                  end
+      result[new_key] = new_value
+      result
+    }
   end
 end

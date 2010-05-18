@@ -5,13 +5,23 @@
 
 <p>
 <table>
-  <tr><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th></tr>
-  <% for card in @random_set.cards %>
+  <tr><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th><th></th></tr>
+  <% for card in @rds.cards.sort_by { |c| [c.sort_cost, c.name] }%>
     <tr>
       <td><%=h card.expansion %></td>
       <td><%=h card.cost %></td>
       <td><%=h card.card_type %></td>
       <td><%=link_to card.name, card %></td>
+      <td>
+        <% form_tag random_game_card_sets_path do %>
+          <%= hidden_field_tag "replace[replace_this]", card.id %>
+          <% for card in @rds.cards %>
+            <%= hidden_field_tag "replace[replace_includes][]", card.id %>
+            <%= hidden_field_tag "replace[replace_excludes][]", card.id %>
+          <% end %>
+        <%= submit_tag 'Replace' %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
   </table>
@@ -19,5 +29,5 @@
 
 <p>
   <b>Options used</b> <sub>(<%= link_to 'Change options', random_options_game_card_sets_path %>)</sub><b>:</b>
-  <%= list_for @random_set.options %>
+  <%= list_for @rds.options %>
 </p>

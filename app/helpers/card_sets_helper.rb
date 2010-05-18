@@ -39,6 +39,9 @@ module CardSetsHelper
       if value 
         val << tag( "li", tag_options, true, escape )
         val << "#{key.to_s.humanize}: "
+        if key == :excludes or key == :includes
+          value = value.collect { |card_id| Card.find( card_id).name }
+        end
         if value.class == Array
           val << "#{value.to_sentence}"
         else

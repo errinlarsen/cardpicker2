@@ -7,7 +7,7 @@
   <b>Expansions:</b><br />
 
   <% for exp in @all_expansions %>
-    <%= check_box_tag "dominion_set_options[expansions][]", exp, @dsoptions.expansions.include?(exp) %>
+    <%= check_box_tag "rds_options[expansions][]", exp, @options[:expansions].include?(exp) %>
     <%=h exp %><br />
   <% end %>
 </p>
@@ -15,19 +15,19 @@
 <p>
   <b>Toggles:</b><br />
   
-  <%= check_box_tag "dominion_set_options[bsw_style]", 'yes', @dsoptions.bsw_style? %>
+  <%= check_box_tag "rds_options[bsw_style]", 'yes', @options[:bsw_style] %>
   BSW-style Randomization<br />
 
-  <%= check_box_tag "dominion_set_options[max_attacks_toggle]", 'yes', @dsoptions.max_attacks? %>
-  Maximum Attack cards: <%= text_field_tag "dominion_set_options[max_attacks]", @dsoptions.max_attacks, :size => 3 %><br />
+  <%= check_box_tag "rds_options[max_attacks_toggle]", 'yes', @options[:max_attacks_toggle] %>
+  Maximum Attack cards: <%= text_field_tag "rds_options[max_attacks]", @options[:max_attacks], :size => 3 %><br />
 
-  <%= check_box_tag "dominion_set_options[minimums]", 'yes', @dsoptions.minimums? %>
+  <%= check_box_tag "rds_options[minimums]", 'yes', @options[:minimums] %>
   Guarantee a minimum of one 2, 3, 4 and 5 cost cards.<br />
 
-  <%= check_box_tag "dominion_set_options[defense_required]", 'yes', @dsoptions.defense_required? %>
+  <%= check_box_tag "rds_options[defense_required]", 'yes', @options[:defense_required] %>
   Guarantee at least one Reaction card for any Attack cards.<br />
 
-  <%= check_box_tag "dominion_set_options[alchemy_requirements]", 'yes', @dsoptions.alchemy_requirements? %>
+  <%= check_box_tag "rds_options[alchemy_requirements]", 'yes', @options[:alchemy_requirements] %>
   Guarantee at least three and no more than five Alchemy cards if there are any Alchemy cards.<br />
   
 </p>

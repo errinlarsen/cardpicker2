@@ -17,13 +17,4 @@ class CardSet < ActiveRecord::Base
 
   validates_uniqueness_of :name
   validates_presence_of :creator_id, :name, :set_type
-
-  def self.random( game, options = {} )
-    case game
-    when 'dominion'
-      options = DominionSetOptions.new( options )
-      random_set = DominionSet.new( options )
-      random_set.generate!
-    end
-  end
 end
