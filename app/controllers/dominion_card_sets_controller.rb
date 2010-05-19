@@ -1,14 +1,10 @@
 class DominionCardSetsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index, :random, :random_options]
+  before_filter :get_dominion_card_sets, :only => [:index]
   load_and_authorize_resource :resource => 'CardSet'
 
   # GET /dominion/card_sets
   def index
-    if can? edit, CardSet
-      @dominion_card_sets = CardSet.dominion
-    else
-      @dominion_card_sets = CardSet.dominion.sets_of_10
-    end
 
     respond_to do |format|
       format.html
@@ -108,6 +104,14 @@ class DominionCardSetsController < ApplicationController
 
 
   private
+
+  def get_dominion_card_sets
+    if can? edit, CardSet
+      @dominion_card_sets = CardSet.dominion
+    else
+      @dominion_card_sets = CardSet.dominion.sets_of_10
+    end
+  end
 
   def parse_params!
     if params[:rds_options]
