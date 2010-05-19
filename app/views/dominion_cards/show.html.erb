@@ -1,0 +1,46 @@
+<p>
+  <b>Game:</b>
+  <%=h @dominion_card.game.humanize %>
+</p>
+
+<% if can? :manage, @dominion_card %>
+    <p>
+      <b>Custom?:</b>
+      <%=h @dominion_card.custom %>
+    </p>
+<% end %>
+
+<p>
+  <b>Expansion:</b>
+  <%=h @dominion_card.expansion %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @dominion_card.name %>
+</p>
+
+<p>
+  <b>Card type:</b>
+  <%=h @dominion_card.card_type %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%=h @dominion_card.cost %>
+</p>
+
+<p>
+  <b>Card text:</b>
+  <%= simple_format( @dominion_card.card_text ) %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @dominion_card.creator.username %>
+</p>
+
+<% if can? :edit, @dominion_card %>
+    <%= link_to 'Edit this card', edit_dominion_card_path(@dominion_card) %> |
+<% end %>
+<%= link_to 'Back to Dominion cards', dominion_cards_path %>

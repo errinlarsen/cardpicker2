@@ -21,6 +21,7 @@ class CardSet < ActiveRecord::Base
   default_scope :order => 'set_type, name'
   named_scope :dominion, :conditions => { :game => 'dominion' }
   named_scope :sets_of_10, :conditions => { :game => 'dominion', :set_type => 'Set of 10' }
+  named_scope :start_player, :conditions => { :game => 'start_player' }
 
   def show_custom
     custom ? 'custom' : ''

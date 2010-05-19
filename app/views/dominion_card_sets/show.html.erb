@@ -28,7 +28,7 @@
 <b>Cards:</b>
 <table>
   <tr><th>Game</th><th>Expansion</th><th>Name</th></tr>
-  <% for card in @dominion_card_set.cards.dominion %>
+  <% for card in @dominion_card_set.cards %>
       <tr><td><%=h card.game%></td><td><%=h card.expansion %></td><td><%= link_to card.name, card %></td></tr>
   <% end %>
 </table>
@@ -36,4 +36,4 @@
 <% if can? :edit, @dominion_card_set %>
     <%= link_to 'Edit this set', edit_dominion_card_set_path(@dominion_card_set) %> |
 <% end %>
-<%= link_to 'Back to sets', dominion_card_sets_path %>
+<%= link_to 'Back to Dominion card sets', dominion_card_sets_path %>

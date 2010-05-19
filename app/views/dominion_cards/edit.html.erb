@@ -1,0 +1,47 @@
+<h1>Editing Dominion card</h1>
+
+<% form_for(@dominion_card) do |f| %>
+    <%= f.error_messages %>
+
+    <% if can? :manage, @dominion_card_set %>
+        <p>
+          <%= f.label :game %><br />
+          <%= f.text_field :game %>
+        </p>
+        <p>
+          <%= f.check_box :custom %>
+          <%= f.label :custom %><br />
+        </p>
+    <% end %>
+
+    <p>
+      <%= f.label :expansion %><br />
+      <%= f.text_field :expansion %>
+    </p>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :card_type %><br />
+      <%= f.text_field :card_type %>
+    </p>
+    <p>
+      <%= f.label :cost %><br />
+      <%= f.text_field :cost %>
+    </p>
+    <p>
+      <%= f.label :card_text %><br />
+      <%= f.text_area :card_text %>
+    </p>
+    <p>
+      <b>Creator:</b>
+      <%=h @dominion_card.creator.username %>
+    </p>
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+<% end %>
+
+<%= link_to 'Show', card_path( @dominion_card ) %> |
+<%= link_to 'Back to Dominion cards', dominion_cards_path %>

@@ -1,6 +1,6 @@
-<h1>New Dominion card set</h1>
+<h1>New Start Player card set</h1>
 
-<% form_for(@dominion_card_set) do |f| %>
+<% form_for(@start_player_card_set) do |f| %>
     <%= f.error_messages %>
 
     <% if can? :manage, CardSet %>
@@ -9,13 +9,13 @@
           <%= f.text_field :game %>
         </p>
         <p>
-          <%= f.check_box :custom %>
+          <%= check_box_tag "card_set[custom]", 'yes', @start_player_card_set.custom %>
           <%= f.label :custom %><br />
         </p>
 
     <% else %>
-        <%= hidden_field_tag "card_set[game]", @dominion_card_set.game %>
-        <%= hidden_field_tag "card_set[custom]", @dominion_card_set.custom %>
+        <%= hidden_field_tag "card_set[game]", @start_player_card_set.game %>
+        <%= hidden_field_tag "card_set[custom]", @start_player_card_set.custom %>
 
     <% end %>
 
@@ -36,11 +36,7 @@
       <tr><th>include?</th><th>Game</th><th>Expansion</th><th>Name</th></tr>
       <% for card in @all_cards %>
           <tr>
-            <% if @rds %>
-                <td><%= check_box_tag "card_set[card_ids][]", card.id, @rds[:cards].include?(card.id) %></td>
-            <% else %>
-                <td><%= check_box_tag "card_set[card_ids][]", card.id, @dominion_card_set.cards.include?(card) %></td>
-            <% end %>
+                <td><%= check_box_tag "card_set[card_ids][]", card.id, @start_player_card_set.cards.include?(card) %></td>
             <td><%=h card.game%></td><td><%=h card.expansion %></td><td><%=link_to card.name, card %></td>
           </tr>
       <% end %>
@@ -50,4 +46,4 @@
     </p>
 <% end %>
 
-<%= link_to 'Back to Dominion card sets', dominion_card_sets_path %>
+<%= link_to 'Back to Start Player card sets', start_player_card_sets_path %>

@@ -1,0 +1,28 @@
+<h1>Listing Start Player card sets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Set type</th>
+    <th>Custom?</th>
+  </tr>
+
+  <% @start_player_card_sets.each do |card_set| %>
+      <tr>
+        <td><%=h card_set.name %></td>
+        <td><%=h card_set.set_type %></td>
+        <td><%=h card_set.show_custom %></td>
+        <td><%= link_to 'Show', start_player_card_set_path( card_set ) %></td>
+
+        <% if can? :edit, card_set %>
+            <td><%= link_to 'Edit', edit_start_player_card_set_path( card_set ) %></td>
+        <% end %>
+
+        <% if can? :destroy, card_set %>
+            <td><%= link_to 'Destroy', start_player_card_set_path( card_set ), :confirm => 'Are you sure?', :method => :delete %></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Start Player card set', new_start_player_card_set_path %>
