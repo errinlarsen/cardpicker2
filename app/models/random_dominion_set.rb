@@ -63,17 +63,18 @@ class RandomDominionSet
       pick_a_card
     end
 
+    @cards = sort_cards
     return self
   end
 
 
   def pick_a_card
     if @options[:bsw_style]
-      case @cards.select{ |card| card.computed_cost < 4 }.length
+      case @cards.select{ |card| card.dominion_cost_for_randomization < 4 }.length
       when 0..3
-        @cards << @deck.reject { |card| card.computed_cost > 3 }.shuffle.shift
+        @cards << @deck.reject { |card| card.dominion_cost_for_randomization > 3 }.shuffle.shift
       when 4
-        @cards << @deck.reject { |card| card.computed_cost < 4 }.shuffle.shift
+        @cards << @deck.reject { |card| card.dominion_cost_for_randomization < 4 }.shuffle.shift
       when 5..10
         @cards.clear
         @cards = Array.new( @options[:includes] )
@@ -165,5 +166,10 @@ private
       end
     
     return nil
+  end
+  
+
+  def sort_cards
+    @cards.sort_by { |c| [c.dominion_cost_for_sort, c.name] }
   end
 end

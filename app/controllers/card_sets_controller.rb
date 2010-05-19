@@ -1,38 +1,42 @@
 class CardSetsController < ApplicationController
-  before_filter :authenticate_user!, 
-    :except => [:show, :index, :random, :random_options, :welcome]
+  before_filter :authenticate_user!, :except => [:show, :index, :random, :random_options]
+  before_filter :get_game_param
   load_and_authorize_resource
-
-  # GET /
-  # GET /card_sets/welcome
-  def welcome
-  end
 
   # GET /card_sets
   # GET /card_sets.xml
+  # GET /<game>/card_sets
+  # GET /<game>/card_sets.xml
   def index
-    @game = params[:game] ||= ""
-    if @game.blank?
-      @card_sets = CardSet.all( :order => 'game, set_type, name' )
-    else
-      if can? :edit, CardSet
-        @card_sets = CardSet.find_all_by_game( @game, :order => 'set_type, name' )
-      else
+    case @game
+      when 'dominion'
         @card_sets = CardSet.dominion_sets_of_10
-      end
-    end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @card_sets }
+        respond_to do |format|
+          format.html # index.html.erb
+          format.xml { render :xml => @card_sets }
+        end
+
+      else
+        if can? edit, CardSet
+          @card_sets = CardSet.game( @game )
+
+        else
+          raise CanCan::AccessDenied.new
+        end
+
+        respond_to do |format|
+          format.html # index.html.erb
+          format.xml { render :xml => @card_sets }
+        end
     end
   end
 
   # GET /card_sets/1
   # GET /card_sets/1.xml
+  # GET /<game>/card_sets/1
+  # GET /<game>/card_sets/1.xml
   def show
-    @game = params[:game] ||= ""
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @card_set }
@@ -42,7 +46,6 @@ class CardSetsController < ApplicationController
   # GET /card_sets/random
   # GET /card_sets/random.xml
   def random
-    @game = params[:game] ||= ""
     case @game
     when 'dominion'
       if params[:rds_options]
@@ -84,7 +87,6 @@ class CardSetsController < ApplicationController
 
 
   def random_options
-    @game = params[:game] ||= ""
     case @game
     when 'dominion'
       @all_expansions = Card.dominion.all_expansions
@@ -102,7 +104,6 @@ class CardSetsController < ApplicationController
   # GET /card_sets/new
   # GET /card_sets/new.xml
   def new
-    @game = params[:game] ||= ""
     @card_set.game = @game
     @card_set.custom = can?( :edit, CardSet ) ? false : true
     case @game
@@ -151,7 +152,6 @@ class CardSetsController < ApplicationController
 
   # GET /card_sets/1/edit
   def edit
-    @game = params[:game] ||= ""
     case @game
     when 'dominion'
       @all_cards = Card.dominion_with_customs
@@ -161,7 +161,6 @@ class CardSetsController < ApplicationController
   # POST /card_sets
   # POST /card_sets.xml
   def create
-    @game = params[:game] ||= ""
     @card_set.creator = current_user
     @card_set.custom = params[:card_set][:custom] == 'yes' ? true : false
 
@@ -186,7 +185,6 @@ class CardSetsController < ApplicationController
   # PUT /card_sets/1
   # PUT /card_sets/1.xml
   def update
-    @game = params[:game] ||= ""
     @card_set.custom = params[:card_set][:custom] == 'yes' ? true : false
 
     respond_to do |format|
@@ -210,7 +208,6 @@ class CardSetsController < ApplicationController
   # DELETE /card_sets/1
   # DELETE /card_sets/1.xml
   def destroy
-    @game = params[:game] ||= ""
     @card_set.destroy
 
     respond_to do |format|
@@ -226,6 +223,10 @@ class CardSetsController < ApplicationController
   end
 
   private
+  def get_game_param
+    @game = params[:game] ||= ""
+  end
+
   def symbolize_keys(hash)
     hash.inject({}){|result, (key, value)|
       new_key = case key

@@ -2,19 +2,15 @@ ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
   map.resources :admin, :member => { :reset => [:get, :put] }
 
-  # The following routes allow <game_name>/cards and <game_name>/card_sets/1/edit, etc.
-  # The URI's are different, but they still use the underlining Cards and CardSets controllers
-  # The ':game' is passed as a parameter ( params[:game] )
-  map.with_options( :path_prefix => ":game", :name_prefix => "game_",
-      :requirements => { :game => /dominion|start_player|thunderstone/i }) do |m|
-    m.resources :card_sets, :collection => { :random => [:get, :post], :random_options => :get }
-    m.resources :cards, :collection => { :random => :get }
-  end
-
-  # The following map calls provide routes to cards/ and cards_sets/1/edit, etc.
-  #   in other words, if you leave the game name off of the front of the URI, you get here
-  map.resources :cards
-  map.resources :card_sets
+  map.resources :cards, :card_sets
+  map.resources :start_player_cards,
+                :as => 'start_player/cards',
+                :collection => { :random => :get }
+  map.resources :dominion_cards, :as => 'dominion/cards'
+  map.resources :start_player_card_sets, :as => 'start_player/card_sets'
+  map.resources :dominion_card_sets,
+                :as => 'dominion/card_sets',
+                :collection => { :random => [:get, :post], :random_options => :get }
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -8,36 +8,21 @@ class Card < ActiveRecord::Base
 
   POTION_VALUE = 3
 
-  named_scope :dominion, lambda { |*args|
-    expansions = args.first || all.collect { |card| card.expansion }.uniq
-    { :conditions => { :game => 'dominion', :custom =>false, :expansion => expansions },
-      :order => 'expansion, name'
-    }
-  } do
+  default_scope :order => 'expansion, name'
+  named_scope :dominion, :conditions => { :game => 'dominion' } do
     def all_expansions
       all( :select => 'DISTINCT expansion').collect { |card| card.expansion }
     end
   end
-
-  named_scope :dominion_with_customs, lambda { |*expansions|
-    expansions = expansions.first || all.collect { |card| card.expansion }.uniq
-    { :conditions => { :game => 'dominion', :expansion => expansions },
-      :order => 'expansion, name'}
-  } do
-    def all_expansions
-      all( :select => 'DISTINCT expansion').collect { |card| card.expansion }
-    end
-  end
-
-  named_scope :start_player, :conditions => { :game => 'start_player', :custom => false }
-  named_scope :start_player_with_custom, :conditions => { :game => 'start_player' }
+  named_scope :start_player, :conditions => { :game => 'start_player' }
+  named_scope :without_customs, :conditions => { :custom => false }
   
-  def computed_cost
+  def dominion_cost_for_randomization
     chars = cost.chars
     chars.inject(0) { |sum, c| c == 'p' ? sum + POTION_VALUE : sum + c.to_i }
   end
 
-  def sort_cost
+  def dominion_cost_for_sort
     chars = cost.chars
     chars.inject(0) { |sum, c| c == 'p' ? sum + 0.5 : sum + c.to_i }
   end

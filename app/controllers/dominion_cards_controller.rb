@@ -1,0 +1,2 @@
+class DominionCardsController < ApplicationController
+end

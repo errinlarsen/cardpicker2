@@ -1,0 +1,2 @@
+class StartPlayerCardsController < ApplicationController
+end

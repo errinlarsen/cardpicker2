@@ -18,7 +18,9 @@ class CardSet < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_presence_of :creator_id, :name, :set_type
 
-  named_scope :dominion_sets_of_10, :conditions => { :game => 'dominion', :set_type => 'Set of 10' }
+  default_scope :order => 'set_type, name'
+  named_scope :dominion, :conditions => { :game => 'dominion' }
+  named_scope :sets_of_10, :conditions => { :game => 'dominion', :set_type => 'Set of 10' }
 
   def show_custom
     custom ? 'custom' : ''

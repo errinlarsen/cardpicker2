@@ -1,0 +1,32 @@
+<h2>Random Dominion set</h2>
+
+<%= link_to 'New random set', random_dominion_card_sets_path %> |
+<%= link_to 'Other Dominion sets', dominion_card_sets_path %> |
+<%= link_to 'Save this set', new_dominion_card_set_path %>
+
+<table>
+  <tr><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th><th></th></tr>
+  <% for card in @rds.cards %>
+      <tr>
+        <td><%=h card.expansion %></td>
+        <td><%=h card.cost %></td>
+        <td><%=h card.card_type %></td>
+        <td><%=link_to card.name, card %></td>
+        <td>
+          <% form_tag random_dominion_card_sets_path do %>
+              <%= hidden_field_tag "replace[replace_this]", card.id %>
+              <% for rep_card in @rds.cards %>
+                  <%= hidden_field_tag "replace[replace_includes][]", rep_card.id %>
+                  <%= hidden_field_tag "replace[replace_excludes][]", rep_card.id %>
+              <% end %>
+              <%= submit_tag 'Replace' %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<p>
+  <b>Options used</b> <sub>(<%= link_to 'Change options', random_options_dominion_card_sets_path %>)</sub><b>:</b>
+  <%= list_for @rds.options %>
+</p>
