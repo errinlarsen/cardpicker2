@@ -11,7 +11,7 @@ class Card < ActiveRecord::Base
   default_scope :order => 'game, expansion, name'
   named_scope :dominion, :conditions => { :game => 'dominion' } do
     def all_expansions
-      all( :select => 'DISTINCT expansion').collect { |card| card.expansion }
+      all( :select => 'DISTINCT expansion', :order => 'expansion' ).collect { |card| card.expansion }
     end
   end
   named_scope :start_player, :conditions => { :game => 'start_player' }
