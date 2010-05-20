@@ -1,6 +1,6 @@
 <h1>New Dominion card set</h1>
 
-<% form_for(@dominion_card_set) do |f| %>
+<% form_for([:dominion, @dominion_card_set]) do |f| %>
     <%= f.error_messages %>
     <%= f.error_messages %>
     <% if @rds %>

@@ -1,6 +1,6 @@
 <h1>New Start Player card</h1>
 
-<% form_for(@start_player_card) do |f| %>
+<% form_for([:start_player, @start_player_card]) do |f| %>
   <%= f.error_messages %>
 
     <% if can? :manage, Card %>
@@ -11,18 +11,17 @@
         <p>
           <%= f.check_box :custom %>
           <%= f.label :custom %><br />
-        </p>
-
-    <% else %>
-        <%= hidden_field_tag "card[game]", @start_player_card.game %>
-        <%= hidden_field_tag "card[custom]", @start_player_card.custom %>
-
-    <% end %>
-
   <p>
     <%= f.label :expansion %><br />
     <%= f.text_field :expansion %>
   </p>
+
+    <% else %>
+        <%= hidden_field_tag "card[game]", @start_player_card.game %>
+        <%= hidden_field_tag "card[custom]", @start_player_card.custom %>
+        <%= hidden_field_tag "card[expansion]", @start_player_card.expansion %>
+
+    <% end %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>

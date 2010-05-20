@@ -42,6 +42,7 @@ class DominionCardsController < ApplicationController
 
   # POST /dominion/cards
   def create
+    @dominion_card.attributes = params[:card]
     @dominion_card.creator = current_user
     @dominion_card.game = @dominion_card.game.dehumanize
 
@@ -50,7 +51,7 @@ class DominionCardsController < ApplicationController
         flash[:notice] = 'Card was successfully created.'
         format.html { redirect_to(dominion_card_path(@dominion_card)) }
       else
-        format.html { render :action => "new" }
+        format.html { render :template => "dominion_cards/new" }
       end
     end
   end
@@ -58,13 +59,14 @@ class DominionCardsController < ApplicationController
 
   # PUT /dominion/cards/1
   def update
+    @dominion_card.attributes = params[:card]
 
     respond_to do |format|
       if @dominion_card.update_attributes(params[:card])
         flash[:notice] = 'Card was successfully updated.'
         format.html { redirect_to(dominion_card_path(@dominion_card)) }
       else
-        format.html { render :action => "edit" }
+        format.html { render :template => "dominion_cards/edit" }
       end
     end
   end

@@ -42,6 +42,7 @@ class StartPlayerCardSetsController < ApplicationController
 
   # POST /start_player/card_sets
   def create
+    @start_player_card_set.attributes = params[:card_set]
     @start_player_card_set.creator = current_user
 
     respond_to do |format|
@@ -49,7 +50,7 @@ class StartPlayerCardSetsController < ApplicationController
         flash[:notice] = 'CardSet was successfully created.'
         format.html { redirect_to( start_player_card_set_url(@start_player_card_set) )}
       else
-        format.html { render :action => "new" }
+        format.html { render :template => "start_player_card_sets/new" }
       end
     end
   end
@@ -57,6 +58,7 @@ class StartPlayerCardSetsController < ApplicationController
 
   # PUT /start_player/card_sets/1
   def update
+    @start_player_card_set.attributes = params[:card_set]
     params[:card_set][:card_ids] ||= []
 
     respond_to do |format|
@@ -64,7 +66,7 @@ class StartPlayerCardSetsController < ApplicationController
         flash[:notice] = 'CardSet was successfully updated.'
         format.html { redirect_to( start_player_card_set_url(@start_player_card_set) )}
       else
-        format.html { render :action => "edit" }
+        format.html { render :template => "start_player_card_sets/edit" }
       end
     end
   end

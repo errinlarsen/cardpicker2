@@ -4,6 +4,7 @@ class Card < ActiveRecord::Base
   has_many :card_sets, :through => :memberships
 
   validates_uniqueness_of :name, :scope => [:game, :expansion]
+  validate :uniqueness_of_start_player_cost
   validates_presence_of :creator_id, :name, :game, :expansion, :card_type, :cost
 
   POTION_VALUE = 3
@@ -19,6 +20,21 @@ class Card < ActiveRecord::Base
 
   def self.all_dominion_expansions
     dominion.collect { |card| card.expansion }.uniq
+  end
+
+  def self.next_available_start_player_number
+    numbers = (start_player).collect { |c| c.cost.to_i }
+    n = 1001
+    while numbers.include?( n )
+      n += 1
+    end
+
+    return n
+  end
+
+  def uniqueness_of_start_player_cost
+    numbers = Card.start_player.collect { |c| c.cost }
+    errors.add_to_base( "Number must be unique.  The next available number is #{Card.next_available_start_player_number}." ) if numbers.include?(  self.cost )
   end
 
   def dominion_cost_for_randomization

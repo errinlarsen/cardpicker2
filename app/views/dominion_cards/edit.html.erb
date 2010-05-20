@@ -1,6 +1,6 @@
 <h1>Editing Dominion card</h1>
 
-<% form_for(@dominion_card) do |f| %>
+<% form_for([:dominion, @dominion_card]) do |f| %>
     <%= f.error_messages %>
 
     <% if can? :manage, @dominion_card_set %>

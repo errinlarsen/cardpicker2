@@ -27,13 +27,18 @@ class StartPlayerCardsController < ApplicationController
     @start_player_card = Card.random_start_player_card
 
     respond_to do |format|
-      format.html { redirect_to(start_player_card_path(@start_player_card)) }
+      format.html { redirect_to( start_player_card_path(@start_player_card) ) }
     end
   end
 
 
   # GET /start_player/cards/new
   def new
+    @start_player_card.attributes = {
+            :game => 'start_player',
+            :custom => true,
+            :expansion => 'Custom Cards'
+            }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -52,6 +57,7 @@ class StartPlayerCardsController < ApplicationController
 
   # POST /start_player/cards
   def create
+    @start_player_card.attributes = params[:card]
     @start_player_card.creator = current_user
     @start_player_card.game = @start_player_card.game.dehumanize
 
@@ -60,7 +66,7 @@ class StartPlayerCardsController < ApplicationController
         flash[:notice] = 'Card was successfully created.'
         format.html { redirect_to(start_player_card_path(@start_player_card)) }
       else
-        format.html { render :action => "new" }
+        format.html { render :template => "start_player_cards/new" }
       end
     end
   end
@@ -74,7 +80,7 @@ class StartPlayerCardsController < ApplicationController
         flash[:notice] = 'Card was successfully updated.'
         format.html { redirect_to(start_player_card_path(@start_player_card)) }
       else
-        format.html { render :action => "edit" }
+        format.html { render :template => "start_player_cards/edit" }
       end
     end
   end

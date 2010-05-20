@@ -1,6 +1,6 @@
 <h1>Editing Start Player card set</h1>
 
-<% form_for(@start_player_card_set, :url => start_player_card_set_url ) do |f| %>
+<% form_for([:start_player, @start_player_card_set]) do |f| %>
     <%= f.error_messages %>
 
     <% if can? :manage, @start_player_card_set %>

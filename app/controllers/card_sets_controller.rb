@@ -43,6 +43,7 @@ class CardSetsController < ApplicationController
 
   # POST /card_sets
   def create
+    @card_set.attributes = params[:card_set]
     @card_set.creator = current_user
 
     respond_to do |format|
@@ -57,6 +58,7 @@ class CardSetsController < ApplicationController
 
   # PUT /card_sets/1
   def update
+    @card_set.attributes = params[:card_set]
 
     respond_to do |format|
       if @card_set.update_attributes(params[:card_set])

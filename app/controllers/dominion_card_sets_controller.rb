@@ -76,6 +76,7 @@ class DominionCardSetsController < ApplicationController
 
   # POST /dominion/card_sets
   def create
+    @dominion_card_set.attributes = params[:card_set]
     @dominion_card_set.creator = current_user
 
     respond_to do |format|
@@ -83,7 +84,7 @@ class DominionCardSetsController < ApplicationController
         flash[:notice] = 'CardSet was successfully created.'
         format.html { redirect_to( dominion_card_set_url(@dominion_card_set) )}
       else
-        format.html { render :action => "new" }
+        format.html { render :template => "dominion_card_sets/new" }
       end
     end
   end
@@ -91,6 +92,7 @@ class DominionCardSetsController < ApplicationController
 
   # PUT /dominion/card_sets/1
   def update
+    @dominion_card_set.attributes = params[:card_set]
     params[:card_set][:card_ids] ||= []
 
     respond_to do |format|
@@ -98,7 +100,7 @@ class DominionCardSetsController < ApplicationController
         flash[:notice] = 'CardSet was successfully updated.'
         format.html { redirect_to( dominion_card_set_url(@dominion_card_set) )}
       else
-        format.html { render :action => "edit" }
+        format.html { render :template => "dominion_card_sets/edit" }
       end
     end
   end
