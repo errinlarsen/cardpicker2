@@ -14,7 +14,7 @@ class Card < ActiveRecord::Base
   named_scope :without_customs, :conditions => { :custom => false }
 
   def self.random_start_player_card
-    start_player.shuffle.shift
+    Array.new( start_player ).shuffle.shift
   end
 
   def self.all_dominion_expansions
