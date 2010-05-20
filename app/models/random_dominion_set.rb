@@ -128,20 +128,20 @@ private
 
 
   def do_minimums
-    unless @cards.any? { |card| card.computed_cost == 2 }
-      return @deck.reject { |card| card.computed_cost != 2 }.shuffle.shift
+    unless @cards.any? { |card| card.dominion_cost_for_randomization == 2 }
+      return @deck.reject { |card| card.dominion_cost_for_randomization != 2 }.shuffle.shift
     end
 
-    unless @cards.any? { |card| card.computed_cost == 3 }
-      return @deck.reject { |card| card.computed_cost != 3 }.shuffle.shift
+    unless @cards.any? { |card| card.dominion_cost_for_randomization == 3 }
+      return @deck.reject { |card| card.dominion_cost_for_randomization != 3 }.shuffle.shift
     end
 
-    unless @cards.any? { |card| card.computed_cost == 4 }
-      return @deck.reject { |card| card.computed_cost != 4 }.shuffle.shift
+    unless @cards.any? { |card| card.dominion_cost_for_randomization == 4 }
+      return @deck.reject { |card| card.dominion_cost_for_randomization != 4 }.shuffle.shift
     end
 
-    unless @cards.any? { |card| card.computed_cost == 5 }
-      return @deck.reject { |card| card.computed_cost != 5 }.shuffle.shift
+    unless @cards.any? { |card| card.dominion_cost_for_randomization == 5 }
+      return @deck.reject { |card| card.dominion_cost_for_randomization != 5 }.shuffle.shift
     end
 
     return nil
