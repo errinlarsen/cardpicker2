@@ -19,13 +19,12 @@
             | <%= link_to 'Administer users', admin_index_path %>
         <% end %>
     <% else %>
-        You need to
-        <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-        if you want to create custom cards or card sets.
+        To create custom cards or save card sets,<br />
+        you need to <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
     <% end  %>
   </div>
 </div>
-
+<hr />
 <div id="navigation">
   Start Player: <%= link_to "random", random_start_player_cards_path %>
   <% if user_signed_in? %><sub>(
