@@ -9,16 +9,16 @@ class Card < ActiveRecord::Base
   POTION_VALUE = 3
 
   default_scope :order => 'game, expansion, name'
-  named_scope :dominion, :conditions => { :game => 'dominion' } do
-    def all_expansions
-      all( :select => 'DISTINCT expansion', :order => 'expansion' ).collect { |card| card.expansion }
-    end
-  end
+  named_scope :dominion, :conditions => { :game => 'dominion' }
   named_scope :start_player, :conditions => { :game => 'start_player' }
   named_scope :without_customs, :conditions => { :custom => false }
 
   def self.random_start_player_card
     start_player.shuffle.shift
+  end
+
+  def self.all_dominion_expansions
+    dominion.collect { |card| card.expansion }.uniq
   end
 
   def dominion_cost_for_randomization

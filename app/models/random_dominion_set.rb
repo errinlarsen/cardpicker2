@@ -2,7 +2,7 @@ class RandomDominionSet
   attr_reader :cards, :options
 
   DEFAULT_OPTIONS = {
-    :expansions => Card.dominion.all_expansions,
+    :expansions => Card.all_dominion_expansions,
     :includes => [],
     :excludes => [],
     :max_attacks_toggle => false,
@@ -109,7 +109,7 @@ private
       :includes => @options.delete(:replace_includes) || [],
       :excludes => @options.delete(:replace_excludes) || [],
     }
-    @options[:expansions] ||= Card.dominion.all_expansions
+    @options[:expansions] ||= Card.all_dominion_expansions
     @options[:includes] ||= []
     @options[:excludes] ||= []
     if @options[:max_attacks].nil? || @options[:max_attacks].empty?

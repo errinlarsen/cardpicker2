@@ -37,7 +37,7 @@ class DominionCardSetsController < ApplicationController
 
   # GET /dominion/card_sets/random
   def random_options
-    @all_expansions = Card.dominion.all_expansions
+    @all_expansions = Card.all_dominion_expansions
     @options = Hash[session[:rds_options]] || RandomDominionSet::DEFAULT_OPTIONS
 
     respond_to do |format|
