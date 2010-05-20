@@ -47,7 +47,7 @@ class StartPlayerCardSetsController < ApplicationController
     respond_to do |format|
       if @start_player_card_set.save
         flash[:notice] = 'CardSet was successfully created.'
-        format.html { redirect_to start_player_card_set_url @start_player_card_set }
+        format.html { redirect_to( start_player_card_set_url(@start_player_card_set) )}
       else
         format.html { render :action => "new" }
       end
@@ -62,7 +62,7 @@ class StartPlayerCardSetsController < ApplicationController
     respond_to do |format|
       if @start_player_card_set.update_attributes(params[:card_set])
         flash[:notice] = 'CardSet was successfully updated.'
-        format.html { redirect_to start_player_card_set_url @start_player_card_set }
+        format.html { redirect_to( start_player_card_set_url(@start_player_card_set) )}
       else
         format.html { render :action => "edit" }
       end

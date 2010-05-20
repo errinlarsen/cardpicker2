@@ -81,7 +81,7 @@ class DominionCardSetsController < ApplicationController
     respond_to do |format|
       if @dominion_card_set.save
         flash[:notice] = 'CardSet was successfully created.'
-        format.html { redirect_to dominion_card_set_url @dominion_card_set }
+        format.html { redirect_to( dominion_card_set_url(@dominion_card_set) )}
       else
         format.html { render :action => "new" }
       end
@@ -96,7 +96,7 @@ class DominionCardSetsController < ApplicationController
     respond_to do |format|
       if @dominion_card_set.update_attributes(params[:card_set])
         flash[:notice] = 'CardSet was successfully updated.'
-        format.html { redirect_to dominion_card_set_url @dominion_card_set }
+        format.html { redirect_to( dominion_card_set_url(@dominion_card_set) )}
       else
         format.html { render :action => "edit" }
       end

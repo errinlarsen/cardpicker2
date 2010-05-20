@@ -85,7 +85,7 @@ class StartPlayerCardsController < ApplicationController
     @start_player_card.destroy
 
     respond_to do |format|
-      format.html { redirect_to game_cards_url @game }
+      format.html { redirect_to start_player_cards_path }
     end
   end
 end
