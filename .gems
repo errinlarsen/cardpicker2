@@ -1,0 +1,4 @@
+cancan --version 1.1.1
+devise --version '>= 1.0.7'
+warden --version '>= 0.10.3'
+
