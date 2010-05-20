@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -9,34 +9,44 @@
 </head>
 <body>
 
-  <div id="container">
-    <div id="user_nav">
-      <% if user_signed_in? %>
+<div id="container">
+  <div id="user_nav">
+    <% if user_signed_in? %>
         Signed in as <%=h current_user.username %>.  Not you?
         <%= link_to "Sign out", destroy_user_session_path %>
-        
+
         <% if current_user.admin? %>
-          | <%= link_to 'Administer users', admin_index_path %>
+            | <%= link_to 'Administer users', admin_index_path %>
         <% end %>
-      <% else %>
+    <% else %>
         You need to
         <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
         if you want to create custom cards or card sets.
-      <% end  %>
-    </div>
+    <% end  %>
   </div>
+</div>
 
-  <div id="navigation">
-    <ul>
-      <li><%= link_to "Start Player", random_start_player_cards_path %>
-      <li><%= link_to "Dominion", random_dominion_card_sets_path %>
-    </ul>
-  </div>
+<div id="navigation">
+  Start Player: <%= link_to "random", random_start_player_cards_path %>
+  <% if user_signed_in? %><sub>(
+      <% if can?( :edit, CardSet ) %><%= link_to "card sets", start_player_card_sets_path %><% end %>
+      <% if can?( :edit, [Card, CardSet] ) %> | <% end %>
+      <% if can?( :edit, Card ) %><%= link_to "cards", start_player_cards_path %><% end %>
+      )</sub><% end %><br />
 
-  <p style="color: green"><%= flash[:notice] %></p>
-  <p style="color: red"><%= flash[:alert] %></p>
+  Dominion: <%= link_to "random", random_dominion_card_sets_path %>
+  | <%= link_to "card sets", dominion_card_sets_path %>
+  <% if can?( :edit, Card ) %> <sub>( <%= link_to "cards", dominion_cards_path %> )</sub><% end %><br />
 
-  <%= yield %>
+  <% if can?( :manage, Card ) && can?( :manage, CardSet ) %>
+      All: <%= link_to "all card sets", card_sets_path %> | <%= link_to "all cards", cards_path %><br />
+  <% end %>
+</div>
 
-</body>
+<p style="color: green"><%= flash[:notice] %></p>
+<p style="color: red"><%= flash[:alert] %></p>
+
+<%= yield %>
+
+</body>                                                                                
 </html>

@@ -3,29 +3,35 @@ class DominionCardSetsController < ApplicationController
   before_filter :get_dominion_card_sets, :only => [:index]
   load_and_authorize_resource :resource => 'CardSet'
 
+
   # GET /dominion/card_sets
   def index
 
     respond_to do |format|
-      format.html
+      format.html # index.html.erb
     end
   end
 
+
   # GET /dominion/card_sets/1
   def show
+
     respond_to do |format|
-      format.html
+      format.html # show.html.erb
     end
   end
+
 
   # GET /dominion/card_sets/random
   def random
     options = parse_params!
     @rds = RandomDominionSet.new( options )
     flash.now[:notice] = @rds.replacement_message if params[:replace]
-    session[:new_rds] = { :options => Hash[@rds.options], :cards => @rds.cards.collect { |card| card.id }}
+    session[:new_rds] = Hash[@rds.options].update( { :replace_includes => @rds.card_ids} )
 
-    respond_to { |format| format.html }
+    respond_to do |format|
+      format.html # random.html.erb
+    end
   end
 
 
@@ -44,13 +50,13 @@ class DominionCardSetsController < ApplicationController
   def new
     @dominion_card_set.game = 'dominion'
     @dominion_card_set.custom = can?( :edit, CardSet ) ? false : true
-    @all_cards = Card.dominion
 
     if session[:new_rds]
-      @rds = Hash[session[:new_rds]]
+      @rds = RandomDominionSet.new( session[:new_rds] )
       @dominion_card_set.attributes = {
               :set_type => 'Set of 10',
-              :comments => "Options used:\n #{@rds[:options].reject { |k, v| v.blank? }.to_yaml}" }
+              :custom => true,
+              :comments => "Options used:\n #{@rds.options.reject { |k, v| v.blank? }.to_yaml}" }
       session.delete( :new_rds )
     end
 
@@ -62,7 +68,10 @@ class DominionCardSetsController < ApplicationController
 
   # GET /dominion/card_sets/1/edit
   def edit
-    @all_cards = Card.dominion
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   # POST /dominion/card_sets
@@ -79,8 +88,10 @@ class DominionCardSetsController < ApplicationController
     end
   end
 
+
   # PUT /dominion/card_sets/1
   def update
+    params[:card_set][:card_ids] ||= []
 
     respond_to do |format|
       if @dominion_card_set.update_attributes(params[:card_set])
@@ -92,6 +103,7 @@ class DominionCardSetsController < ApplicationController
     end
   end
 
+  
   # DELETE /card_sets/1
   # DELETE /card_sets/1.xml
   def destroy
@@ -106,7 +118,7 @@ class DominionCardSetsController < ApplicationController
   private
 
   def get_dominion_card_sets
-    if can? edit, CardSet
+    if can? :edit, CardSet
       @dominion_card_sets = CardSet.dominion
     else
       @dominion_card_sets = CardSet.dominion.sets_of_10

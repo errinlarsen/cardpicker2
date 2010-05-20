@@ -33,8 +33,12 @@ class StartPlayerCardSetsController < ApplicationController
 
   # GET /start_player/card_sets/1/edit
   def edit
-    @all_cards = Card.start_player
+
+    respond_to do |format|
+      format.html
+    end
   end
+
 
   # POST /start_player/card_sets
   def create
@@ -50,8 +54,10 @@ class StartPlayerCardSetsController < ApplicationController
     end
   end
 
+
   # PUT /start_player/card_sets/1
   def update
+    params[:card_set][:card_ids] ||= []
 
     respond_to do |format|
       if @start_player_card_set.update_attributes(params[:card_set])
@@ -62,6 +68,7 @@ class StartPlayerCardSetsController < ApplicationController
       end
     end
   end
+
 
   # DELETE /card_sets/1
   # DELETE /card_sets/1.xml

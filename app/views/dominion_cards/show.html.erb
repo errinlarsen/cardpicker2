@@ -40,7 +40,8 @@
   <%=h @dominion_card.creator.username %>
 </p>
 
+<%= link_to_function 'Back', 'history.back()' %>
 <% if can? :edit, @dominion_card %>
-    <%= link_to 'Edit this card', edit_dominion_card_path(@dominion_card) %> |
+    | <%= link_to 'Edit this card', edit_dominion_card_path(@dominion_card) %> |
+    <%= link_to 'Back to Dominion cards', dominion_cards_path %>
 <% end %>
-<%= link_to 'Back to Dominion cards', dominion_cards_path %>

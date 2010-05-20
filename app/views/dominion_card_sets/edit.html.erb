@@ -32,18 +32,11 @@
     </p>
     <p>
       <b>Cards:</b>
-    <table>
-      <tr><th>include?</th><th>Game</th><th>Expansion</th><th>Name</th></tr>
-      <% for card in @all_cards %>
-          <tr>
-            <td><%= check_box_tag "card_set[card_ids][]", card.id, @dominion_card_set.cards.include?(card) %></td>
-            <td><%=h card.game%></td><td><%=h card.expansion %></td><td><%=link_to card.name, card %></td></tr>
-      <% end %>
-    </table>
+      <%= check_boxes_for_card_set( @dominion_card_set ) %>
     <p>
       <%= f.submit 'Update' %>
     </p>
 <% end %>
 
-<%= link_to 'Show this set', dominion_card_set_path( @dominion_card_set  ) %> |
+<%= link_to 'Show this set', dominion_card_set_path(@dominion_card_set) %> |
 <%= link_to 'Back to Dominion card sets', dominion_card_sets_path %>

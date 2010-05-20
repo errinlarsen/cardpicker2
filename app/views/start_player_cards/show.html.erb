@@ -1,0 +1,29 @@
+<h2><%=h @start_player_card.name %></h2>
+
+<%= link_to 'Pick again', random_start_player_cards_path %> |
+<%= link_to 'Create a new card', new_start_player_card_path %>
+
+<p>
+  <b>Arrow:</b>
+  <%=h @start_player_card.card_type %>&deg;
+</p>
+
+<p>
+  <b>Number:</b>
+  <%=h @start_player_card.cost %>
+</p>
+
+<p>
+  <b>Card text:</b>
+  <%=h @start_player_card.card_text %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @start_player_card.creator.username %>
+</p>
+
+<% if can? :edit, @start_player_card %>
+    <%= link_to 'Edit this card', edit_start_player_card_path(@start_player_card) %> |
+    <%= link_to 'Back to Start Player cards', start_player_cards_path %>
+<% end %>

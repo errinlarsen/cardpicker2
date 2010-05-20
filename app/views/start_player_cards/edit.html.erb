@@ -1,9 +1,9 @@
-<h1>New card</h1>
+<h1>Editing Start Player card</h1>
 
-<% form_for(@card) do |f| %>
+<% form_for(@start_player_card) do |f| %>
   <%= f.error_messages %>
 
-    <% if can? :manage, Card %>
+    <% if can? :manage, @start_player_card %>
         <p>
           <%= f.label :game %><br />
           <%= f.text_field :game %>
@@ -12,11 +12,6 @@
           <%= f.check_box :custom %>
           <%= f.label :custom %><br />
         </p>
-
-    <% else %>
-        <%= hidden_field_tag "card[game]", @card.game %>
-        <%= hidden_field_tag "card[custom]", @card.custom %>
-
     <% end %>
 
   <p>
@@ -40,8 +35,13 @@
     <%= f.text_area :card_text %>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+    <b>Creator:</b>
+    <%=h @start_player_card.creator.username %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
   </p>
 <% end %>
 
-<%= link_to 'Back to cards', cards_path %>
+<%= link_to 'Show this card', start_player_card_path(@start_player_card)  %> |
+<%= link_to 'Back to Start Player cards', start_player_cards_path %>

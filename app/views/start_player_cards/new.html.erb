@@ -1,6 +1,6 @@
-<h1>New card</h1>
+<h1>New Start Player card</h1>
 
-<% form_for(@card) do |f| %>
+<% form_for(@start_player_card) do |f| %>
   <%= f.error_messages %>
 
     <% if can? :manage, Card %>
@@ -14,8 +14,8 @@
         </p>
 
     <% else %>
-        <%= hidden_field_tag "card[game]", @card.game %>
-        <%= hidden_field_tag "card[custom]", @card.custom %>
+        <%= hidden_field_tag "card[game]", @start_player_card.game %>
+        <%= hidden_field_tag "card[custom]", @start_player_card.custom %>
 
     <% end %>
 
@@ -28,11 +28,11 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :card_type %><br />
+    <%= f.label :arrow %><br />
     <%= f.text_field :card_type %>
   </p>
   <p>
-    <%= f.label :cost %><br />
+    <%= f.label :number %><br />
     <%= f.text_field :cost %>
   </p>
   <p>
@@ -44,4 +44,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back to cards', cards_path %>
+<%= link_to 'Back to Start Player cards', start_player_cards_path %>

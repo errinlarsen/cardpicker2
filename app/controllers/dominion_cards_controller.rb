@@ -1,5 +1,5 @@
 class DominionCardsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show]
   before_filter :get_dominion_cards, :only => [:index]
   load_and_authorize_resource :resource => 'Card'
 
@@ -33,6 +33,10 @@ class DominionCardsController < ApplicationController
 
   # GET /dominion/cards/1/edit
   def edit
+
+    respond_to do |format|
+      format.html # edit.html.erb
+    end
   end
 
 
@@ -44,7 +48,7 @@ class DominionCardsController < ApplicationController
     respond_to do |format|
       if @dominion_card.save
         flash[:notice] = 'Card was successfully created.'
-        format.html { redirect_to dominion_card_url @dominion_card }
+        format.html { redirect_to(dominion_card_path(@dominion_card)) }
       else
         format.html { render :action => "new" }
       end
@@ -58,7 +62,7 @@ class DominionCardsController < ApplicationController
     respond_to do |format|
       if @dominion_card.update_attributes(params[:card])
         flash[:notice] = 'Card was successfully updated.'
-        format.html { redirect_to dominion_card_url @dominion_card }
+        format.html { redirect_to(dominion_card_path(@dominion_card)) }
       else
         format.html { render :action => "edit" }
       end
@@ -70,7 +74,7 @@ class DominionCardsController < ApplicationController
     @dominion_card.destroy
 
     respond_to do |format|
-      format.html { redirect_to dominion_cards_url }
+      format.html { redirect_to(dominion_cards_url) }
     end
   end
 

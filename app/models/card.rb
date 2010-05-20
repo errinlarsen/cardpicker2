@@ -3,12 +3,12 @@ class Card < ActiveRecord::Base
   has_many :memberships
   has_many :card_sets, :through => :memberships
 
-  validates_uniqueness_of :name
+  validates_uniqueness_of :name, :scope => [:game, :expansion]
   validates_presence_of :creator_id, :name, :game, :expansion, :card_type, :cost
 
   POTION_VALUE = 3
 
-  default_scope :order => 'expansion, name'
+  default_scope :order => 'game, expansion, name'
   named_scope :dominion, :conditions => { :game => 'dominion' } do
     def all_expansions
       all( :select => 'DISTINCT expansion').collect { |card| card.expansion }
@@ -16,7 +16,11 @@ class Card < ActiveRecord::Base
   end
   named_scope :start_player, :conditions => { :game => 'start_player' }
   named_scope :without_customs, :conditions => { :custom => false }
-  
+
+  def self.random_start_player_card
+    start_player.shuffle.shift
+  end
+
   def dominion_cost_for_randomization
     chars = cost.chars
     chars.inject(0) { |sum, c| c == 'p' ? sum + POTION_VALUE : sum + c.to_i }
@@ -25,5 +29,9 @@ class Card < ActiveRecord::Base
   def dominion_cost_for_sort
     chars = cost.chars
     chars.inject(0) { |sum, c| c == 'p' ? sum + 0.5 : sum + c.to_i }
+  end
+
+  def card_ids
+    cards.collect{ |c| c.id }
   end
 end

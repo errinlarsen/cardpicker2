@@ -15,10 +15,10 @@ class CardSet < ActiveRecord::Base
   # entries in the Memberships model until 2.3.6 releases.
   accepts_nested_attributes_for :memberships, :cards
 
-  validates_uniqueness_of :name
+  validates_uniqueness_of :name, :scope => [:game]
   validates_presence_of :creator_id, :name, :set_type
 
-  default_scope :order => 'set_type, name'
+  default_scope :order => 'game, set_type, name'
   named_scope :dominion, :conditions => { :game => 'dominion' }
   named_scope :sets_of_10, :conditions => { :game => 'dominion', :set_type => 'Set of 10' }
   named_scope :start_player, :conditions => { :game => 'start_player' }

@@ -1,38 +1,34 @@
-<h1>Listing sets</h1>
+<h1>Listing card sets</h1>
 
 <table>
   <tr>
-    <% if @game.empty? %><th>Game</th><% end %>
+    <th>Game</th>
     <th>Name</th>
     <th>Set type</th>
     <th>Custom?</th>
   </tr>
 
-<% @card_sets.each do |card_set| %>
-  <tr>
-    <% if @game.empty? %><td><%=h card_set.game %></td><% end %>
-    <td><%=h card_set.name %></td>
-    <td><%=h card_set.set_type %></td>
-    <td><%=h card_set.show_custom %></td>
-    <td><%= link_to 'Show', card_set_path( card_set ) %></td>
+  <% @card_sets.each do |card_set| %>
+      <tr>
+        <td><%=h card_set.game %></td>
+        <td><%=h card_set.name %></td>
+        <td><%=h card_set.set_type %></td>
+        <td><%=h card_set.show_custom %></td>
+        <td><%= link_to 'Show', card_set_path( card_set ) %></td>
 
-    <% if can? :edit, card_set %>
-      <td><%= link_to 'Edit', edit_card_set_path( card_set ) %></td>
-    <% end %>
+        <% if can? :edit, card_set %>
+            <td><%= link_to 'Edit', edit_card_set_path( card_set ) %></td>
+        <% end %>
 
-    <% if can? :destroy, card_set %>
-      <td><%= link_to 'Destroy', card_set_path( card_set ), :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-  </tr>
-<% end %>
+        <% if can? :destroy, card_set %>
+            <td><%= link_to 'Destroy', card_set_path( card_set ), :confirm => 'Are you sure?', :method => :delete %></td>
+        <% end %>
+      </tr>
+  <% end %>
 </table>
 
 <br />
 
 <% if can? :create, CardSet %>
-  <%= link_to 'New set', new_card_set_path %>
-<% end %>
-<br />
-<% unless @game.empty? %>
-  <%= link_to 'New random set', random_game_card_sets_path(@game) %>
+    <%= link_to 'New card set', new_card_set_path %>
 <% end %>

@@ -1,0 +1,34 @@
+<h1>Listing Start Player cards</h1>
+
+<% if can? :create, Card %>
+  <%= link_to 'New card', new_start_player_card_path %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Expansion</th>
+    <th>Name</th>
+    <th>Arrow</th>
+    <th>Number</th>
+  </tr>
+
+<% @start_player_cards.each do |card| %>
+  <tr>
+    <td><%=h card.game.humanize %></td>
+    <td><%=h card.expansion %></td>
+    <td><%=h card.name %></td>
+    <td><%=h card.card_type %></td>
+    <td><%=h card.cost %></td>
+    <td><%= link_to 'Show', start_player_card_path( card ) %></td>
+
+    <% if can? :edit, card %>
+      <td><%= link_to 'Edit', edit_start_player_card_path( card ) %></td>
+    <% end %>
+
+    <% if can? :destroy, card %>
+      <td><%= link_to 'Destroy', start_player_card_path( card ), :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

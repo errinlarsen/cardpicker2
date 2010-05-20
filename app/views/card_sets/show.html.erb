@@ -19,23 +19,21 @@
 </p>
 
 <% if can? :manage, @card_set %>
-  <p>
-    <b>Custom?:</b>
-    <%=h @card_set.custom %>
-  </p>
+    <p>
+      <b>Custom?:</b>
+      <%=h @card_set.custom %>
+    </p>
 <% end %>
 
-<p>
-  <b>Cards:</b>
-  <table>
-    <tr><th>Game</th><th>Expansion</th><th>Name</th></tr>
-  <% for card in @card_set.cards.all( :order => "game, expansion, name" ) %>
-    <tr><td><%=h card.game%></td><td><%=h card.expansion %></td><td><%= link_to card.name, card %></td></tr>
+<b>Cards:</b>
+<table>
+  <tr><th>Game</th><th>Expansion</th><th>Name</th></tr>
+  <% for card in @card_set.cards %>
+      <tr><td><%=h card.game%></td><td><%=h card.expansion %></td><td><%= link_to card.name, card %></td></tr>
   <% end %>
-  </table>
-</p>
+</table>
 
 <% if can? :edit, @card_set %>
-  <%= link_to 'Edit this set', edit_card_set_path(@card_set) %> |
+    <%= link_to 'Edit this set', edit_card_set_path(@card_set) %> |
 <% end %>
-<%= link_to 'Back to sets', card_sets_path %>
+<%= link_to 'Back to card sets', card_sets_path %>

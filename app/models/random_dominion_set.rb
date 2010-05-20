@@ -18,7 +18,7 @@ class RandomDominionSet
     @deck = Card.dominion( @options[:expansions] )
     excludes = Card.dominion.find( @options[:excludes] )
     includes = Card.dominion.find( @options[:includes] )
-    if @replace[:card]
+    if @replace[:card] || @replace[:includes]
       @replace[:includes].delete( @replace[:card] )
       excludes = (excludes + Card.dominion.find(@replace[:excludes]) ).uniq
       includes = (includes + Card.dominion.find(@replace[:includes]) ).uniq
@@ -82,6 +82,11 @@ class RandomDominionSet
     else
       @cards << @deck.shuffle.shift
     end
+  end
+
+
+  def card_ids
+    @cards.collect { |card| card.id }
   end
 
 
