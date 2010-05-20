@@ -27,11 +27,11 @@
 <hr />
 <div id="navigation">
   Start Player: <%= link_to "random", random_start_player_cards_path %>
-  <% if user_signed_in? %><sub>(
-      <% if can?( :edit, CardSet ) %><%= link_to "card sets", start_player_card_sets_path %><% end %>
-      <% if can?( :edit, [Card, CardSet] ) %> | <% end %>
-      <% if can?( :edit, Card ) %><%= link_to "cards", start_player_cards_path %><% end %>
-      )</sub><% end %><br />
+  <% if can?( :edit, [Card, CardSet] ) %><sub>(<% end %>
+  <% if can?( :edit, CardSet ) %><%= link_to "card sets", start_player_card_sets_path %><% end %>
+  <% if can?( :edit, [Card, CardSet] ) %> | <% end %>
+  <% if can?( :edit, Card ) %><%= link_to "cards", start_player_cards_path %><% end %>
+  <% if can?( :edit, [Card, CardSet] ) %>)</sub><% end %><br />
 
   Dominion: <%= link_to "random", random_dominion_card_sets_path %>
   | <%= link_to "card sets", dominion_card_sets_path %>
@@ -47,5 +47,5 @@
 
 <%= yield %>
 
-</body>                                                                                
+</body>
 </html>
