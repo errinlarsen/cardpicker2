@@ -2,8 +2,13 @@
 
 <% form_for(@dominion_card_set) do |f| %>
     <%= f.error_messages %>
+    <%= f.error_messages %>
+    <% if @rds %>
+        <%= hidden_field_tag "card_set[game]", @dominion_card_set.game %>
+        <%= hidden_field_tag "card_set[custom]", @dominion_card_set.custom %>
+        <%= hidden_field_tag "card_set[set_type]", @dominion_card_set.set_type %>
 
-    <% if can? :manage, CardSet %>
+    <% else %>
         <p>
           <%= f.label :game %><br />
           <%= f.text_field :game %>
@@ -12,25 +17,27 @@
           <%= f.check_box :custom %>
           <%= f.label :custom %><br />
         </p>
-
-    <% else %>
-        <%= hidden_field_tag "card_set[game]", @dominion_card_set.game %>
-        <%= hidden_field_tag "card_set[custom]", @dominion_card_set.custom %>
-
+        <p>
+          <%= f.label :set_type %><br />
+          <%= f.text_field :set_type %>
+        </p>
+        
     <% end %>
+
 
     <p>
       <%= f.label :name %><br />
       <%= f.text_field :name %>
     </p>
     <p>
-      <%= f.label :set_type %><br />
-      <%= f.text_field :set_type %>
-    </p>
-    <p>
       <%= f.label :comments %><br />
       <%= f.text_area :comments %>
     </p>
+    
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+
     <b>Cards:</b>
     <% if @rds %>
         <%= check_boxes_for_card_set( @rds ) %>

@@ -2,22 +2,14 @@
 
 <% form_for(@card_set) do |f| %>
     <%= f.error_messages %>
-
-    <% if can? :manage, @card_set %>
-        <p>
-          <%= f.label :game %><br />
-          <%= f.text_field :game %>
-        </p>
-        <p>
-          <%= f.check_box :custom %>
-          <%= f.label :custom %><br />
-        </p>
-
-    <% else %>
-        <%= hidden_field_tag "card_set[game]", @card_set.game %>
-        <%= hidden_field_tag "card_set[custom]", @card_set.custom %>
-    <% end %>
-
+    <p>
+      <%= f.label :game %><br />
+      <%= f.text_field :game %>
+    </p>
+    <p>
+      <%= f.check_box :custom %>
+      <%= f.label :custom %><br />
+    </p>
     <p>
       <%= f.label :name %><br />
       <%= f.text_field :name %>
@@ -32,7 +24,7 @@
     </p>
 
     <b>Cards:</b>
-      <%= check_boxes_for_card_set( @card_set ) %>
+    <%= check_boxes_for_card_set( @card_set ) %>
     <p>
       <%= f.submit 'Create' %>
     </p>
