@@ -20,6 +20,11 @@ class User < ActiveRecord::Base
   # Roles for authorization with cancan
   ROLES = ['', 'admin', 'editor', 'consumer']
 
+  def before_validation_on_create
+    # All new users should be given the 'consumer' role
+    self.role = 'consumer'
+  end
+
   def admin?
     role == 'admin'
   end
