@@ -13,6 +13,9 @@ class Card < ActiveRecord::Base
   named_scope :dominion, :conditions => { :game => 'dominion' }
   named_scope :start_player, :conditions => { :game => 'start_player' }
   named_scope :without_customs, :conditions => { :custom => false }
+  named_scope :with_expansions, lambda { |expansions|
+    { :conditions => { :expansion => expansions }}
+  }
 
   def self.random_start_player_card
     (start_player).shuffle.shift

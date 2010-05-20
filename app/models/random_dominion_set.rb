@@ -15,7 +15,7 @@ class RandomDominionSet
   
   def initialize( options = {} )
     initialize_options!( options )
-    @deck = Card.dominion( @options[:expansions] )
+    @deck = Card.dominion.with_expansions( @options[:expansions] )
     excludes = Card.dominion.find( @options[:excludes] )
     includes = Card.dominion.find( @options[:includes] )
     if @replace[:card] || @replace[:includes]
