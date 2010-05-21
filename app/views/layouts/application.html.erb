@@ -16,7 +16,10 @@
         <%= link_to "Sign out", destroy_user_session_path %>
 
         <% if current_user.admin? %>
-            | <%= link_to 'Administer users', admin_index_path %>
+            | <%= link_to 'Users', admin_index_path %>
+        <% end %>
+        <% if (current_user.editor? || current_user.admin?) %>
+            | <%= link_to 'Edits', editor_path %>
         <% end %>
     <% else %>
         To create custom cards or save card sets,<br />
@@ -27,19 +30,11 @@
 <hr />
 <div id="navigation">
   Start Player: <%= link_to "random", random_start_player_cards_path %>
-  <% if can?( :edit, [Card, CardSet] ) %><sub>(<% end %>
-  <% if can?( :edit, CardSet ) %><%= link_to "card sets", start_player_card_sets_path %><% end %>
-  <% if can?( :edit, [Card, CardSet] ) %> | <% end %>
-  <% if can?( :edit, Card ) %><%= link_to "cards", start_player_cards_path %><% end %>
-  <% if can?( :edit, [Card, CardSet] ) %>)</sub><% end %><br />
+  | <%= link_to "cards", start_player_cards_path %><br />
 
   Dominion: <%= link_to "random", random_dominion_card_sets_path %>
   | <%= link_to "card sets", dominion_card_sets_path %>
-  <% if can?( :edit, Card ) %> <sub>( <%= link_to "cards", dominion_cards_path %> )</sub><% end %><br />
-
-  <% if can?( :manage, Card ) && can?( :manage, CardSet ) %>
-      All: <%= link_to "all card sets", card_sets_path %> | <%= link_to "all cards", cards_path %><br />
-  <% end %>
+  | <%= link_to "cards", dominion_cards_path %><br />
 </div>
 
 <p style="color: green"><%= flash[:notice] %></p>
