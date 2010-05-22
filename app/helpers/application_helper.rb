@@ -39,49 +39,4 @@ module ApplicationHelper
 
     return str
   end
-
-  def check_boxes_for_card_set( card_set )
-    card_sets_card_ids = card_set.card_ids
-    str = '<table><tr><th>include?</th><th>Game</th><th>Expansion</th><th>Name</th></tr>'
-
-    for card in Card.dominion
-      str << '<tr><td>'
-      str << check_box_tag( 'card_set[card_ids][]', card.id, card_sets_card_ids.include?( card.id ))
-      str << '</td><td>'
-      str << h( card.game )
-      str << '</td><td>'
-      str << h( card.expansion )
-      str << '</td><td>'
-      str << link_to( card.name, card )
-      str << '</td></tr>'
-    end
-
-    str << '</table>'
-    return str
-  end
-
-  def check_boxes_for_card_set_options( options )
-
-    puts "options = #{options.inspect}"
-    included_card_ids = options[:includes].collect { |id| id.to_i } || []
-    excluded_card_ids = options[:excludes].collect { |id| id.to_i } || []
-    puts "included_card_ids = #{included_card_ids.inspect}"
-    puts "excluded_card_ids = #{excluded_card_ids.inspect}"
-    str = '<table><tr><th>include?</th><th>exclude?</th><th>Expansion</th><th>Name</th></tr>'
-
-    for card in Card.dominion
-      str << '<tr><td>'
-      str << check_box_tag( 'rds_options[includes][]', card.id, included_card_ids.include?( card.id ))
-      str << '</td><td>'
-      str << check_box_tag( 'rds_options[excludes][]', card.id, excluded_card_ids.include?( card.id ))
-      str << '</td><td>'
-      str << h( card.expansion )
-      str << '</td><td>'
-      str << link_to( card.name, card )
-      str << '</td></tr>'
-    end
-
-    str << '</table>'
-    return str
-  end
 end
