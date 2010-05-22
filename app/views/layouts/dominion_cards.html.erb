@@ -1,0 +1,14 @@
+<% content_for :sub_nav_list_items do %>
+    <%= link_to 'random', random_dominion_card_sets_path %>
+    <% if user_signed_in? %>
+        / <%= link_to 'new set', new_dominion_card_set_path %>
+    <% end %>
+    / <%= link_to 'list sets', dominion_card_sets_path %>
+    <% if user_signed_in? %>
+        / <%= link_to 'new card', new_dominion_card_path %>
+        / <%= link_to 'list cards', dominion_cards_path %>
+    <% end %>
+    <%= yield :extra_items %>
+<% end %>
+
+<%= render :file => 'layouts/application' %>

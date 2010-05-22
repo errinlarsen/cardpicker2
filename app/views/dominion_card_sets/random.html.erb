@@ -1,8 +1,8 @@
-<h2>Random Dominion set</h2>
+<% content_for :extra_items do %>
+    / <%= link_to 'save this set', new_dominion_card_set_path %>
+<% end %>
 
-<%= link_to 'New random set', random_dominion_card_sets_path %> |
-<%= link_to 'Other Dominion sets', dominion_card_sets_path %> |
-<%= link_to 'Save this set', new_dominion_card_set_path %>
+<h2>Random Dominion set</h2>
 
 <table>
   <tr><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th><th></th></tr>

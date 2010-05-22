@@ -1,3 +1,7 @@
+<% content_for :extra_items do %>
+    / <%= link_to 'edit this set', edit_card_set_path( @card_set  ) %>
+<% end %>
+
 <p>
   <b>Creator:</b>
   <%=h @card_set.creator.username %>
@@ -32,8 +36,3 @@
       <tr><td><%=h card.game%></td><td><%=h card.expansion %></td><td><%= link_to card.name, card %></td></tr>
   <% end %>
 </table>
-
-<% if can? :edit, @card_set %>
-    <%= link_to 'Edit this set', edit_card_set_path(@card_set) %> |
-<% end %>
-<%= link_to 'Back to card sets', card_sets_path %>

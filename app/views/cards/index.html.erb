@@ -1,9 +1,5 @@
 <h1>Listing cards</h1>
 
-<% if can? :create, Card %>
-  <%= link_to 'New card', new_card_path %>
-<% end %>
-
 <table>
   <tr>
     <th>Game</th>
@@ -13,22 +9,22 @@
     <th>Cost</th>
   </tr>
 
-<% @cards.each do |card| %>
-  <tr>
-    <td><%=h card.game.humanize %></td>
-    <td><%=h card.expansion %></td>
-    <td><%=h card.name %></td>
-    <td><%=h card.card_type %></td>
-    <td><%=h card.cost %></td>
-    <td><%= link_to 'Show', card %></td>
+  <% @cards.each do |card| %>
+      <tr>
+        <td><%=h card.game.humanize %></td>
+        <td><%=h card.expansion %></td>
+        <td><%=h card.name %></td>
+        <td><%=h card.card_type %></td>
+        <td><%=h card.cost %></td>
+        <td><%= link_to 'Show', card %></td>
 
-    <% if can? :edit, card %>
-      <td><%= link_to 'Edit', edit_card_path( card ) %></td>
-    <% end %>
+        <% if can? :edit, card %>
+            <td><%= link_to 'Edit', edit_card_path( card ) %></td>
+        <% end %>
 
-    <% if can? :destroy, card %>
-      <td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-  </tr>
-<% end %>
+        <% if can? :destroy, card %>
+            <td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
+        <% end %>
+      </tr>
+  <% end %>
 </table>

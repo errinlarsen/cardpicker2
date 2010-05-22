@@ -1,3 +1,8 @@
+<% content_for :extra_items do %>
+    / <%= link_to 'show this user', admin_path( @user ) %>
+    / <%= link_to 'reset password', reset_admin_path( @user ) %>
+<% end %>
+
 <h1>Editing user</h1>
 
 <% form_for( @user, :url => { :action => :update } )do |f| %>
@@ -19,6 +24,3 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
-
-<%= link_to 'Show', admin_path( @user ) %> |
-<%= link_to 'Back to users', admin_index_path %>
