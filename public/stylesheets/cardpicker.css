@@ -1,7 +1,13 @@
 body {
     margin: 0px;
     padding: 0px;
+    background: #ffffee;
+    color: #330000;
 }
+
+a:link { color: #990000; text-decoration: none; }
+a:visited { color: #990000; text-decoration: none; }
+a:hover { color: #d60000; text-decoration: underline; }
 
 #top_line {
     background: url('../images/top_stripe.png') top center repeat-x;
@@ -27,7 +33,7 @@ body {
 }
 
 #main_nav {
-    background: #b7b0a4 url(../images/tan_bg.png);
+    background: #662200 url(../images/tan_bg.png);
 }
 
 #main_nav_list {
