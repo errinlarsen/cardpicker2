@@ -1,3 +1,9 @@
+<% content_for :extra_items do %>
+    / <%= link_to 'Edit this card', edit_card_path(@card) %>
+<% end %>
+
+<%= link_to_function 'Back', 'history.back()' %>
+
 <p>
   <b>Game:</b>
   <%=h @card.game.humanize %>
@@ -39,9 +45,3 @@
   <b>Creator:</b>
   <%=h @card.creator.username %>
 </p>
-
-<%= link_to_function 'Back', 'history.back()' %>
-<% if can? :edit, @card %>
-    | <%= link_to 'Edit this card', edit_card_path(@card) %> |
-    <%= link_to 'Back to cards', cards_path %>
-<% end %>

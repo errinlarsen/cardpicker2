@@ -1,0 +1,10 @@
+<% content_for :sub_nav_list_items do %>
+    <%= link_to 'random', random_start_player_cards_path %>
+    / <%= link_to 'new', new_start_player_card_path %>
+    <% if user_signed_in? %>
+        / <%= link_to 'list', start_player_cards_path %>
+    <% end %>
+    <%= yield :extra_items %>
+<% end %>
+
+<%= render :file => 'layouts/application' %>

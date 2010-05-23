@@ -5,47 +5,53 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= controller.controller_name %> : <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'cardpicker' %>
 </head>
 <body>
 
+<div id='top_line' ></div>
 <div id="container">
-  <div id="user_nav">
+  <div id="user_tray">
     <% if user_signed_in? %>
-        Signed in as <%=h current_user.username %>.  Not you?
-        <%= link_to "Sign out", destroy_user_session_path %>
-
-        <% if current_user.admin? %>
-            | <%= link_to 'Administer users', admin_index_path %>
-        <% end %>
+        Signed in as <%=h current_user.username %>.<br />
+        Not you? <%= link_to "Sign out", destroy_user_session_path %>
     <% else %>
         To create custom cards or save card sets,<br />
         you need to <%= link_to "sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
     <% end  %>
   </div>
+
+
+  <div id="header">
+    <h1>Card Picker</h1>
+  </div>
+
+  <div id="main_nav">
+    <%= create_main_nav_list %>
+  </div>
+
+
+  <div id="sub_nav">
+      <%= yield :sub_nav_list_items %>
+  </div>
+
+  <div id="divider_top"></div>
+
+  <div id="flash_tray" >
+    <p style="color: green"><%= flash[:notice] %></p>
+    <p style="color: red"><%= flash[:alert] %></p>
+  </div>
+
+  <div id="content">
+    <%= yield(:contents) or yield %>
+  </div>
+
+  <div id="divider_bottom"></div>
+
+  <div id="site_index"></div>
+
+  <div id="footer"></div>
 </div>
-<hr />
-<div id="navigation">
-  Start Player: <%= link_to "random", random_start_player_cards_path %>
-  <% if can?( :edit, [Card, CardSet] ) %><sub>(<% end %>
-  <% if can?( :edit, CardSet ) %><%= link_to "card sets", start_player_card_sets_path %><% end %>
-  <% if can?( :edit, [Card, CardSet] ) %> | <% end %>
-  <% if can?( :edit, Card ) %><%= link_to "cards", start_player_cards_path %><% end %>
-  <% if can?( :edit, [Card, CardSet] ) %>)</sub><% end %><br />
-
-  Dominion: <%= link_to "random", random_dominion_card_sets_path %>
-  | <%= link_to "card sets", dominion_card_sets_path %>
-  <% if can?( :edit, Card ) %> <sub>( <%= link_to "cards", dominion_cards_path %> )</sub><% end %><br />
-
-  <% if can?( :manage, Card ) && can?( :manage, CardSet ) %>
-      All: <%= link_to "all card sets", card_sets_path %> | <%= link_to "all cards", cards_path %><br />
-  <% end %>
-</div>
-
-<p style="color: green"><%= flash[:notice] %></p>
-<p style="color: red"><%= flash[:alert] %></p>
-
-<%= yield %>
 
 </body>
 </html>

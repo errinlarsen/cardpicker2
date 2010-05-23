@@ -1,3 +1,11 @@
+<% content_for :extra_items do %>
+    <% if can? :edit, @dominion_card %>
+       / <%= link_to 'edit this card', edit_dominion_card_path(@dominion_card) %>
+    <% end %>
+<% end %>
+
+<%= link_to_function 'Back', 'history.back()' %>
+
 <p>
   <b>Game:</b>
   <%=h @dominion_card.game.humanize %>
@@ -39,9 +47,3 @@
   <b>Creator:</b>
   <%=h @dominion_card.creator.username %>
 </p>
-
-<%= link_to_function 'Back', 'history.back()' %>
-<% if can? :edit, @dominion_card %>
-    | <%= link_to 'Edit this card', edit_dominion_card_path(@dominion_card) %> |
-    <%= link_to 'Back to Dominion cards', dominion_cards_path %>
-<% end %>

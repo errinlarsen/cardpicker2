@@ -1,3 +1,7 @@
+<% content_for :extra_items do %>
+    / <%= link_to 'show this card', dominion_card_path(@dominion_card) %>
+<% end %>
+
 <h1>Editing Dominion card</h1>
 
 <% form_for([:dominion, @dominion_card]) do |f| %>
@@ -42,6 +46,3 @@
       <%= f.submit 'Update' %>
     </p>
 <% end %>
-
-<%= link_to 'Show this card', dominion_card_path(@dominion_card) %> |
-<%= link_to 'Back to Dominion cards', dominion_cards_path %>

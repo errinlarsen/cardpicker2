@@ -1,3 +1,7 @@
+<% content_for :extra_items do %>
+    / <%= link_to 'show this set', dominion_card_set_path(@dominion_card_set) %>
+<% end %>
+
 <h1>Editing Dominion card set</h1>
 
 <% form_for([:dominion, @dominion_card_set]) do |f| %>
@@ -37,6 +41,3 @@
       <%= f.submit 'Update' %>
     </p>
 <% end %>
-
-<%= link_to 'Show this set', dominion_card_set_path(@dominion_card_set) %> |
-<%= link_to 'Back to Dominion card sets', dominion_card_sets_path %>

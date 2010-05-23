@@ -1,7 +1,11 @@
+<% content_for :extra_items do %>
+    / <%= link_to 'show this card', start_player_card_path(@start_player_card)  %>
+<% end %>
+
 <h1>Editing Start Player card</h1>
 
 <% form_for([:start_player, @start_player_card]) do |f| %>
-  <%= f.error_messages %>
+    <%= f.error_messages %>
 
     <% if can? :manage, @start_player_card %>
         <p>
@@ -42,6 +46,3 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
-
-<%= link_to 'Show this card', start_player_card_path(@start_player_card)  %> |
-<%= link_to 'Back to Start Player cards', start_player_cards_path %>

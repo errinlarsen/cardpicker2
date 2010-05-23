@@ -1,3 +1,7 @@
+<% content_for :extra_items do %>
+    / <%= link_to 'edit this user', edit_admin_path(@user) %>
+    / <%= link_to 'reset password', reset_admin_path( @user ) %>
+<% end %>
 
 <p>
   <b>Username:</b>
@@ -13,7 +17,3 @@
   <b>Role:</b>
   <%=h @user.role %>
 </p>
-
-
-<%= link_to 'Edit this user', edit_admin_path(@user) %> |
-<%= link_to 'Back to users', admin_index_path %>

@@ -30,6 +30,12 @@
 
     </p>
 
-    <br />
+    <%= submit_tag 'Save' %>
+
+    <p>
+      <b>Include/Exclude?</b>
+      <%= check_boxes_for_card_set_options( @options ) %>
+    </p>
+    
     <%= submit_tag 'Save' %>
 <% end %>

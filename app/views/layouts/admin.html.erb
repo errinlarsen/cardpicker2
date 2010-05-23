@@ -1,0 +1,9 @@
+<% content_for :sub_nav_list_items do %>
+    <% if current_user.admin? %>
+    <%= link_to 'new', new_admin_path %>
+    / <%= link_to 'list', admin_index_path %>
+    <% end %>
+    <%= yield :extra_items %>
+<% end %>
+
+<%= render :file => 'layouts/application' %>

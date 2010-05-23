@@ -1,23 +1,42 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
-  def check_boxes_for_card_set( card_set )
-    card_sets_card_ids = card_set.card_ids
-    str = '<table><tr><th>include?</th><th>Game</th><th>Expansion</th><th>Name</th></tr>'
+  def create_main_nav_list
+    str = "<ul id=\"main_nav_list\" ><li id=\"nav_home\">"
+    str << link_to( "Home", welcome_path )
+    str << "</li><li id=\"nav_start_player\">"
+    str << link_to( "Start Player", random_start_player_cards_path )
+    str << "</li><li id=\"nav_dominion\">"
+    str << link_to( "Dominion", random_dominion_card_sets_path )
 
-    for card in Card.dominion
-      str << '<tr><td>'
-      str << check_box_tag( 'card_set[card_ids][]', card.id, card_sets_card_ids.include?( card.id ))
-      str << '</td><td>'
-      str << h( card.game )
-      str << '</td><td>'
-      str << h( card.expansion )
-      str << '</td><td>'
-      str << link_to( card.name, card )
-      str << '</td></tr>'
+    if user_signed_in?
+      if current_user.editor? || current_user.admin?
+        str << "</li><li id=\"nav_edit\">"
+        str << link_to( "Edit", cards_path )
+      end
+
+      if current_user.admin?
+        str << "</li><li id=\"nav_users\">"
+        str << link_to( "Users", admin_index_path )
+      end
     end
 
-    str << '</table>'
+    str << "</li></ul>"
+
+    
+    case controller.controller_name
+      when /^start_player/
+        str.gsub!( /id="nav_start_player"/, "id=\"nav_start_player\" class=\"active\"")
+      when /^dominion/
+        str.gsub!( /id="nav_dominion"/, "id=\"nav_dominion\" class=\"active\"" )
+      when /^card/
+        str.gsub!( /id="nav_edit"/, "id=\"nav_edit\" class=\"active\"" )
+      when /^admin/
+        str.gsub!( /id="nav_users"/, "id=\"nav_users\" class=\"active\"" )
+      else
+        str.gsub!( /id="nav_home"/, "id=\"nav_home\" class=\"active\"" )
+    end
+
     return str
   end
 end
