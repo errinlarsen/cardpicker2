@@ -1,4 +1,5 @@
 class StartPlayerCardsController < ApplicationController
+  has_mobile_fu
   before_filter :authenticate_user!, :except => [:show, :index, :random]
   load_and_authorize_resource :resource => 'Card'
 
@@ -28,6 +29,7 @@ class StartPlayerCardsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to( start_player_card_path(@start_player_card) ) }
+      format.mobile { redirect_to( start_player_card_path(@start_player_card) ) }
     end
   end
 
