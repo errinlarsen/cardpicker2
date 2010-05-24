@@ -62,7 +62,6 @@ class AdminController < ApplicationController
           format.html { redirect_to(admin_path(@user)) }
           format.xml  { head :ok }
         else
-        puts "WE ARE HERE"
           format.html { render :action => "reset" }
           format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
         end

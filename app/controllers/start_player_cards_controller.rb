@@ -6,29 +6,11 @@ class StartPlayerCardsController < ApplicationController
   # GET /start_player/cards
   def index
     @start_player_cards = Card.start_player
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
 
   # GET /start_player/cards/1
   def show
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
-  end
-
-
-  # GET /start_player/cards/random
-  def random
-    @start_player_card = Card.random_start_player_card
-
-    respond_to do |format|
-      format.html { redirect_to( start_player_card_path(@start_player_card) ) }
-    end
   end
 
 
@@ -39,19 +21,11 @@ class StartPlayerCardsController < ApplicationController
             :custom => true,
             :expansion => 'Custom Cards'
             }
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
 
   # GET /start_player/cards/1/edit
   def edit
-
-    respond_to do |format|
-      format.html # edit.html.erb
-    end
   end
 
 

@@ -4,6 +4,10 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  has_mobile_fu
+
+  # iPhone user-agent string:
+  # 
 
   # Capture CanCan access problems
   rescue_from CanCan::AccessDenied do |exception|

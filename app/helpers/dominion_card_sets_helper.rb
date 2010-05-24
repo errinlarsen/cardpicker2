@@ -4,7 +4,6 @@ module DominionCardSetsHelper
     options.delete(:excludes) if options[:excludes].empty?
     options.delete(:includes) if options[:includes].empty?
     str = "<ul>"
-    puts "options = #{options.inspect}"
     options.keys.sort_by { |k| k.to_s }.each do |key|
       value = options[key]
       if options[key]

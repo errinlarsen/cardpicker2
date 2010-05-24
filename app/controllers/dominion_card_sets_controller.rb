@@ -28,10 +28,6 @@ class DominionCardSetsController < ApplicationController
     @rds = RandomDominionSet.new( options )
     flash.now[:notice] = @rds.replacement_message if params[:replace]
     session[:new_rds] = Hash[@rds.options].update( { :replace_includes => @rds.card_ids} )
-
-    respond_to do |format|
-      format.html # random.html.erb
-    end
   end
 
 
@@ -39,10 +35,6 @@ class DominionCardSetsController < ApplicationController
   def random_options
     @all_expansions = Card.all_dominion_expansions
     @options = Hash[session[:rds_options]] || RandomDominionSet::DEFAULT_OPTIONS
-
-    respond_to do |format|
-      format.html
-    end
   end
 
 

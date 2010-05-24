@@ -6,37 +6,21 @@ class DominionCardsController < ApplicationController
 
   # GET /dominion/cards
   def index
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
 
   # GET /dominion/cards/1
   def show
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
   end
 
 
   # GET /dominion/cards/new
   def new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
 
   # GET /dominion/cards/1/edit
   def edit
-
-    respond_to do |format|
-      format.html # edit.html.erb
-    end
   end
 
 

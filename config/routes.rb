@@ -3,13 +3,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :admin, :member => { :reset => [:get, :put] }
 
   map.resources :cards, :card_sets
-  map.resources :start_player_cards,
-                :as => 'start_player/cards',
-                :collection => { :random => :get }
+  map.resources :start_player_cards, :as => 'start_player/cards'
   map.resources :dominion_cards, :as => 'dominion/cards'
   map.resources :start_player_card_sets, :as => 'start_player/card_sets'
-  map.resources :dominion_card_sets,
-                :as => 'dominion/card_sets',
+  map.resources :dominion_card_sets, :as => 'dominion/card_sets',
                 :collection => { :random => [:get, :post], :random_options => :get }
 
   map.welcome 'welcome', :controller => :welcome, :action => 'index'
