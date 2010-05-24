@@ -4,6 +4,10 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  has_mobile_fu true
+
+  # iPhone user-agent string:
+  # Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_1_2 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7D11 Safari/528.16
 
   # Capture CanCan access problems
   rescue_from CanCan::AccessDenied do |exception|

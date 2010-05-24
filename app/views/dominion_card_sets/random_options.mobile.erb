@@ -1,0 +1,65 @@
+<% title "Dominion" %>
+
+<% content_for :toolbar_buttons do %>
+    <%= link_to 'Back', nil, :class => "back" %>
+<% end %>
+
+<h2>Change Dominion randomization options</h2>
+<% form_tag random_dominion_card_sets_path do %>
+
+    <ul class="edgetoedge">
+      <li class="sep">Expansions</li>
+      <% for exp in @all_expansions %>
+          <li>
+            <%=h exp %>
+            <span class="toggle">
+            <%= check_box_tag "rds_options[expansions][]", exp, @options[:expansions].include?(exp) %>
+          </span>
+          </li>
+      <% end %>
+
+      <li class="sep">Toggles</li>
+
+      <li>
+        BSW-style Randomization
+        <span class="toggle">
+          <%= check_box_tag "rds_options[bsw_style]", 'yes', @options[:bsw_style] %>
+        </span>
+      </li>
+
+      <li>Maximum Attack cards?
+        <span class="toggle">
+          <%= check_box_tag "rds_options[max_attacks_toggle]", 'yes', @options[:max_attacks_toggle] %>
+          </span>
+      </li>
+      <li class="edit">
+        <%= text_field_tag "rds_options[max_attacks]", @options[:max_attacks], :size => 3 %>
+      </li>
+
+      <li>Guarantee a minimum of one 2, 3, 4 and 5 cost cards.
+        <span class="toggle">
+          <%= check_box_tag "rds_options[minimums]", 'yes', @options[:minimums] %>
+            </span>
+      </li>
+
+      <li>Guarantee at least one Reaction card for any Attack cards.
+        <span class="toggle">
+          <%= check_box_tag "rds_options[defense_required]", 'yes', @options[:defense_required] %>
+            </span>
+      </li>
+
+      <li>Guarantee at least three and no more than five Alchemy cards if there are any Alchemy cards.
+        <span class="toggle">
+          <%= check_box_tag "rds_options[alchemy_requirements]", 'yes', @options[:alchemy_requirements] %>
+            </span>
+      </li>
+
+      <li><%= submit_tag 'Save Changes', :class => "grayButton submit"%></li>
+
+      <li class="sep">Include/Exclude?</li>
+
+      <%= check_boxes_for_mobile_card_set_options( @options ) %>
+
+      <li><%= submit_tag 'Save', :class => "grayButton submit" %></li>
+    </ul>
+<% end %>

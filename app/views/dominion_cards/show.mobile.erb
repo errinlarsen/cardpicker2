@@ -1,0 +1,30 @@
+<% title @dominion_card.name %>
+
+<div id="dominion_card">
+
+  <p>
+    <b>Expansion:</b>
+    <%=h @dominion_card.expansion %>
+  </p>
+
+  <p>
+    <b>Name:</b>
+    <%=h @dominion_card.name %>
+  </p>
+
+  <p>
+    <b>Card type:</b>
+    <%=h @dominion_card.card_type %>
+  </p>
+
+  <p>
+    <b>Cost:</b>
+    <%=h @dominion_card.cost %>
+  </p>
+
+  <p>
+    <b>Card text:</b>
+    <%= simple_format( @dominion_card.card_text ) %>
+  </p>
+
+</div>

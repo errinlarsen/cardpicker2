@@ -17,6 +17,14 @@ class Card < ActiveRecord::Base
     { :conditions => { :expansion => expansions }}
   }
 
+  def self.find( *args )
+    if args.first.to_s == 'random'
+      return random_start_player_card
+    else
+      super( *args )
+    end
+  end
+
   def self.random_start_player_card
     (start_player).shuffle.shift
   end

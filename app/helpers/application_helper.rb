@@ -5,7 +5,7 @@ module ApplicationHelper
     str = "<ul id=\"main_nav_list\" ><li id=\"nav_home\">"
     str << link_to( "Home", welcome_path )
     str << "</li><li id=\"nav_start_player\">"
-    str << link_to( "Start Player", random_start_player_cards_path )
+    str << link_to( "Start Player", start_player_card_path( :random ))
     str << "</li><li id=\"nav_dominion\">"
     str << link_to( "Dominion", random_dominion_card_sets_path )
 

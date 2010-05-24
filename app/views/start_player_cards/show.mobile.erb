@@ -1,8 +1,25 @@
-<h2><%=h @start_player_card.name %></h2>
+<% title @start_player_card.name %>
 
-<ul>
-  <li>Arrow: <%=h @start_player_card.card_type %>&deg;</li>
-  <li>Number: <%=h @start_player_card.cost %></li>
-  <li>Card text: <%=h @start_player_card.card_text %></li>
-  <li>Creator: <%=h @start_player_card.creator.username %></li>
-</ul>
+<div id="start_player_card">
+
+  <h2><%=h @start_player_card.name %></h2>
+  
+  <p>
+    <b>Arrow:</b>
+    <%=h @start_player_card.card_type %>&deg;
+  </p>
+
+  <p>
+    <b>Number:</b>
+    <%=h @start_player_card.cost %>
+  </p>
+
+  <p>
+    <b>Card text:</b>
+    <%=h @start_player_card.card_text %>
+  </p>
+
+  <ul>
+    <li class="grayButton flip"><%= link_to "Pick again", start_player_card_path( :random ) %></li>
+  </ul>
+</div>

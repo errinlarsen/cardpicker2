@@ -4,7 +4,6 @@ module DominionCardSetsHelper
     options.delete(:excludes) if options[:excludes].empty?
     options.delete(:includes) if options[:includes].empty?
     str = "<ul>"
-    puts "options = #{options.inspect}"
     options.keys.sort_by { |k| k.to_s }.each do |key|
       value = options[key]
       if options[key]
@@ -66,4 +65,28 @@ module DominionCardSetsHelper
     str << '</table>'
     return str
   end
+
+  def check_boxes_for_mobile_card_set_options( options )
+    included_card_ids = options[:includes] || []
+    included_card_ids.collect! { |id| id.to_i }
+    excluded_card_ids = options[:excludes] || []
+    excluded_card_ids.collect! { |id| id.to_i }
+    str = '<table><tr><th>include?</th><th>exclude?</th><th>Expansion</th><th>Name</th></tr>'
+
+    for card in Card.dominion
+      str << '<tr><td>'
+      str << check_box_tag( 'rds_options[includes][]', card.id, included_card_ids.include?( card.id ))
+      str << '</td><td>'
+      str << check_box_tag( 'rds_options[excludes][]', card.id, excluded_card_ids.include?( card.id ))
+      str << '</td><td>'
+      str << h( card.expansion )
+      str << '</td><td>'
+      str << link_to( card.name, card, :class => "grayButton" )
+      str << '</td></tr>'
+    end
+
+    str << '</table>'
+    return str
+  end
+
 end

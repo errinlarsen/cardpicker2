@@ -1,0 +1,31 @@
+<% title "Dominion" %>
+
+<% content_for :toolbar_buttons do %>
+    <%= link_to 'Back', root_path, :class => "back", :rel => "external" %>
+<% end %>
+
+<h2>Random Dominion set</h2>
+
+<ul class="plastic rounded">
+  <% for card in @rds.cards %>
+      <li class="arrow">
+        <% form_tag random_dominion_card_sets_path do %>
+            <%= hidden_field_tag "replace[replace_this]", card.id %>
+            <% for rep_card in @rds.cards %>
+                <%= hidden_field_tag "replace[replace_includes][]", rep_card.id %>
+                <%= hidden_field_tag "replace[replace_excludes][]", rep_card.id %>
+            <% end %>
+            <small>
+              <%= submit_tag 'Replace' %>
+            </small>
+        <% end %>
+        <%= link_to card.name, dominion_card_path( card ) %>
+      </li>
+  <% end %>
+</ul>
+<ul>
+  <li><%= link_to 'Pick Again', random_dominion_card_sets_path, :class => "grayButton" %></li>
+  <li><%= link_to 'Change options', random_options_dominion_card_sets_path, :class => "grayButton slideup" %></li>
+</ul>
+<h2>Options</h2>
+<%= list_for @rds.options %>
