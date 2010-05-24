@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  serialize :rds_options, Hash
+
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
   devise :registerable, :database_authenticatable, :recoverable,
@@ -9,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :card_sets
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :email, :role, :password, :password_confirmation
+  attr_accessible :username, :email, :role, :password, :password_confirmation, :rds_options
 
   # Validations for the new username column
   validates_presence_of :username

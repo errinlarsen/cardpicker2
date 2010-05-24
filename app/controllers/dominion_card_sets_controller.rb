@@ -24,7 +24,18 @@ class DominionCardSetsController < ApplicationController
 
   # GET /dominion/card_sets/random
   def random
+    if user_signed_in? && current_user.rds_options
+      session[:rds_options] = current_user.rds_options
+    end
     options = parse_params!
+    if user_signed_in?
+      unless current_user.rds_options == options
+        current_user.rds_options = options
+        if current_user.save
+          flash[:notice] << '<br />User options were updated and saved.'
+        end
+      end
+    end
     @rds = RandomDominionSet.new( options )
     flash.now[:notice] = @rds.replacement_message if params[:replace]
     session[:new_rds] = Hash[@rds.options].update( { :replace_includes => @rds.card_ids} )

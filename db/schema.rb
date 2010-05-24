@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100514155548) do
+ActiveRecord::Schema.define(:version => 20100524212100) do
 
   create_table "card_sets", :force => true do |t|
     t.string   "name"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20100514155548) do
     t.datetime "updated_at"
     t.string   "role"
     t.string   "username"
+    t.text     "rds_options"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
