@@ -4,29 +4,61 @@
 
 <h2>Random Dominion set</h2>
 
-<table>
-  <tr><th>Expansion</th><th>Cost</th><th>Card Type</th><th>Name</th><th></th></tr>
-  <% for card in @rds.cards %>
-      <tr>
-        <td><%=h card.expansion %></td>
-        <td><%=h card.cost %></td>
-        <td><%=h card.card_type %></td>
-        <td><%=link_to card.name, dominion_card_path( card ) %></td>
-        <td>
+<div class="equal_col">
+  <ul class="random_dominion_list">
+    <% for card in @rds.cards[0..4] %>
+        <li class="card <%= card.card_type.downcase.gsub( /\s/, '' ) %>">
+          <% link_to dominion_card_path( card ) do %>
+              <div class="card_link">
+              <img src="<%= card.list_expansion_img %>" alt="<%= card.list_expansion_alt %>" class="expansion" />
+              <span class="cost"><%= card.list_cost %></span>
+              <% if card.has_potion_cost? %>
+                  <img src="/images/Potion.png" alt="P" class="potion" />
+              <% end %>
+              <%= truncate card.name, :length => 17 %>
+              </div>
+          <% end %>
           <% form_tag random_dominion_card_sets_path do %>
               <%= hidden_field_tag "replace[replace_this]", card.id %>
               <% for rep_card in @rds.cards %>
                   <%= hidden_field_tag "replace[replace_includes][]", rep_card.id %>
                   <%= hidden_field_tag "replace[replace_excludes][]", rep_card.id %>
               <% end %>
-              <%= submit_tag 'Replace' %>
+              <%= image_submit_tag "/images/Refresh.png" %>
           <% end %>
-        </td>
-      </tr>
-  <% end %>
-</table>
+        </li>
+    <% end %>
+  </ul>
+</div>
 
-<p>
-  <b>Options used</b> <sub>(<%= link_to 'Change options', random_options_dominion_card_sets_path %>)</sub>
-  <%= list_for @rds.options %>
-</p>
+<div class="equal_col">
+  <ul class="random_dominion_list">
+    <% for card in @rds.cards[5..9] %>
+        <li class="card <%= card.card_type.downcase.gsub( /\s/, '' ) %>">
+          <% link_to dominion_card_path( card ) do %>
+              <div class="card_link">
+              <img src="<%= card.list_expansion_img %>" alt="<%= card.list_expansion_alt %>" class="expansion" />
+              <span class="cost"><%= card.list_cost %></span>
+              <% if card.has_potion_cost? %>
+                  <img src="/images/Potion.png" alt="P" class="potion" />
+              <% end %>
+              <%= truncate card.name, :length => 17 %>
+              </div>
+          <% end %>
+          <% form_tag random_dominion_card_sets_path do %>
+              <%= hidden_field_tag "replace[replace_this]", card.id %>
+              <% for rep_card in @rds.cards %>
+                  <%= hidden_field_tag "replace[replace_includes][]", rep_card.id %>
+                  <%= hidden_field_tag "replace[replace_excludes][]", rep_card.id %>
+              <% end %>
+              <%= image_submit_tag "/images/Refresh.png" %>
+          <% end %>
+        </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="options">
+<b>Options used</b><sub>(<%= link_to 'Change options', random_options_dominion_card_sets_path %>)</sub>
+<%= list_for @rds.options %>
+    </div>

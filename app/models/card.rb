@@ -68,4 +68,21 @@ class Card < ActiveRecord::Base
   def card_ids
     cards.collect{ |c| c.id }
   end
+
+
+  def list_expansion_img
+    "/images/" + expansion + ".png"
+  end
+
+  def list_expansion_alt
+    expansion[1,1]
+  end
+
+  def list_cost
+    cost[/^[0-9]+/]
+  end
+
+  def has_potion_cost?
+    cost.include? 'p'
+  end
 end
