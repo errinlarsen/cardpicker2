@@ -92,8 +92,7 @@ class RandomDominionSet
 
   def replacement_message
     replaced_card = Card.find( @replace[:card] )
-    cards_ids = @cards.collect { |card| card.id }
-    replacement_card = Card.find( (cards_ids - @replace[:includes]).first )
+    replacement_card = Card.find( (card_ids - @replace[:includes]).first )
     "#{replaced_card.name} was replaced by #{replacement_card.name}"
   end
 
@@ -149,7 +148,6 @@ private
 
 
   def do_defense_required
-    @cards << @deck.shuffle.shift
     if @cards.count { |card| card.card_type =~ /Attack/ } > 0
       if @cards.count { |card| card.card_type =~ /Reaction/ } == 0
         return @deck.select { |card| card.card_type =~ /Reaction/ }.shuffle.shift
