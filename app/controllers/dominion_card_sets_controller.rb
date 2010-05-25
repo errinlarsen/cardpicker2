@@ -29,8 +29,8 @@ class DominionCardSetsController < ApplicationController
     end
     options = parse_params!
     if user_signed_in?
-      unless current_user.rds_options == options
-        current_user.rds_options = options
+      unless current_user.rds_options == options || params[:replace]
+        current_user.rds_options = Hash[options]
         if current_user.save
           flash[:notice] << '<br />User options were updated and saved.'
         end
